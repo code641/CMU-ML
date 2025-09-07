@@ -1,0 +1,183 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.meta.RandomizableFilteredClassifier -F "weka.filters.unsupervised.attribute.RandomProjection -N 10 -R 42 -D Sparse1" -S 1 -W weka.classifiers.lazy.IBk -- -K 1 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     train-80-weka.filters.unsupervised.attribute.Remove-R43
+Instances:    118798
+Attributes:   42
+              duration
+              protocol_type
+              service
+              flag
+              src_bytes
+              dst_bytes
+              land
+              wrong_fragment
+              urgent
+              hot
+              num_failed_logins
+              logged_in
+              num_compromised
+              root_shell
+              su_attempted
+              num_root
+              num_file_creations
+              num_shells
+              num_access_files
+              num_outbound_cmds
+              is_host_login
+              is_guest_login
+              count
+              srv_count
+              serror_rate
+              srv_serror_rate
+              rerror_rate
+              srv_rerror_rate
+              same_srv_rate
+              diff_srv_rate
+              srv_diff_host_rate
+              dst_host_count
+              dst_host_srv_count
+              dst_host_same_srv_rate
+              dst_host_diff_srv_rate
+              dst_host_same_src_port_rate
+              dst_host_srv_diff_host_rate
+              dst_host_serror_rate
+              dst_host_srv_serror_rate
+              dst_host_rerror_rate
+              dst_host_srv_rerror_rate
+              outcome
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+RandomizableFilteredClassifier using weka.classifiers.lazy.IBk -K 1 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\"" on data filtered through weka.filters.unsupervised.attribute.RandomProjection -N 10 -R 2142908390 -D Sparse1
+
+Filtered Header
+@relation train-80-weka.filters.unsupervised.attribute.Remove-R43-weka.filters.supervised.attribute.NominalToBinary-weka.filters.unsupervised.attribute.RandomProjection-N10-R2142908390-DSparse1
+
+@attribute K1 numeric
+@attribute K2 numeric
+@attribute K3 numeric
+@attribute K4 numeric
+@attribute K5 numeric
+@attribute K6 numeric
+@attribute K7 numeric
+@attribute K8 numeric
+@attribute K9 numeric
+@attribute K10 numeric
+@attribute outcome {normal,neptune,warezclient,ipsweep,portsweep,teardrop,nmap,satan,smurf,pod,back,guess_passwd,ftp_write,multihop,rootkit,buffer_overflow,imap,warezmaster,phf,land,loadmodule,spy,perl,saint,mscan,apache2,snmpgetattack,processtable,httptunnel,ps,snmpguess,mailbomb,named,sendmail,xterm,worm,xlock,xsnoop,sqlattack,udpstorm}
+
+@data
+
+
+Classifier Model
+IB1 instance-based classifier
+using 1 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0.52 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 387.41 seconds
+
+=== Summary ===
+
+Correctly Classified Instances       28494               95.8781 %
+Incorrectly Classified Instances      1225                4.1219 %
+Kappa statistic                          0.935 
+Mean absolute error                      0.0021
+Root mean squared error                  0.0454
+Relative absolute error                  6.5851 %
+Root relative squared error             36.0674 %
+Total Number of Instances            29719     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.969    0.024    0.978      0.969    0.974      0.945    0.973     0.964     normal
+                 0.993    0.007    0.985      0.993    0.989      0.984    0.993     0.980     neptune
+                 0.848    0.001    0.774      0.848    0.810      0.809    0.924     0.659     warezclient
+                 0.933    0.003    0.898      0.933    0.915      0.913    0.963     0.842     ipsweep
+                 0.879    0.003    0.859      0.879    0.869      0.866    0.938     0.761     portsweep
+                 0.956    0.000    0.945      0.956    0.951      0.950    0.981     0.909     teardrop
+                 0.796    0.003    0.753      0.796    0.774      0.772    0.897     0.604     nmap
+                 0.802    0.004    0.845      0.802    0.823      0.818    0.899     0.683     satan
+                 0.983    0.000    0.989      0.983    0.986      0.986    0.992     0.974     smurf
+                 0.755    0.001    0.607      0.755    0.673      0.676    0.898     0.477     pod
+                 0.954    0.001    0.937      0.954    0.945      0.945    0.977     0.895     back
+                 0.930    0.001    0.879      0.930    0.904      0.903    0.965     0.818     guess_passwd
+                 0.333    0.000    1.000      0.333    0.500      0.577    0.668     0.333     ftp_write
+                 0.000    0.000    0.000      0.000    0.000      -0.000   0.502     0.000     multihop
+                 0.000    0.000    0.000      0.000    0.000      -0.000   0.502     0.000     rootkit
+                 0.500    0.000    0.417      0.500    0.455      0.456    0.751     0.209     buffer_overflow
+                 0.667    0.000    0.667      0.667    0.667      0.667    0.834     0.444     imap
+                 0.777    0.001    0.815      0.777    0.796      0.795    0.889     0.635     warezmaster
+                 0.000    0.000    ?          0.000    ?          ?        0.502     0.000     phf
+                 0.200    0.000    0.500      0.200    0.286      0.316    0.701     0.233     land
+                 0.000    0.000    ?          0.000    ?          ?        0.502     0.000     loadmodule
+                 0.000    0.000    0.000      0.000    0.000      -0.000   0.502     0.000     spy
+                 1.000    0.000    0.500      1.000    0.667      0.707    1.000     0.500     perl
+                 0.531    0.001    0.479      0.531    0.504      0.503    0.766     0.255     saint
+                 0.615    0.003    0.603      0.615    0.609      0.606    0.807     0.373     mscan
+                 0.993    0.000    0.987      0.993    0.990      0.990    0.997     0.980     apache2
+                 0.222    0.001    0.200      0.222    0.211      0.210    0.626     0.056     snmpgetattack
+                 1.000    0.000    0.986      1.000    0.993      0.993    1.000     0.986     processtable
+                 0.667    0.000    0.750      0.667    0.706      0.707    0.834     0.500     httptunnel
+                 0.000    0.000    0.000      0.000    0.000      -0.000   0.502     0.000     ps
+                 0.970    0.000    0.903      0.970    0.935      0.936    0.985     0.876     snmpguess
+                 0.966    0.000    0.934      0.966    0.950      0.950    0.983     0.903     mailbomb
+                 0.250    0.000    0.500      0.250    0.333      0.353    0.627     0.125     named
+                 0.000    0.000    0.000      0.000    0.000      -0.000   0.502     0.000     sendmail
+                 0.000    0.000    ?          0.000    ?          ?        0.502     0.000     xterm
+                 0.000    0.000    ?          0.000    ?          ?        0.502     0.000     worm
+                 0.000    0.000    0.000      0.000    0.000      -0.000   0.502     0.000     xlock
+                 0.000    0.000    ?          0.000    ?          ?        0.502     0.000     xsnoop
+                 0.000    0.000    ?          0.000    ?          ?        0.502     0.000     sqlattack
+                 0.000    0.000    ?          0.000    ?          ?        0.502     0.000     udpstorm
+Weighted Avg.    0.959    0.015    ?          0.959    ?          ?        0.972     0.934     
+
+=== Confusion Matrix ===
+
+     a     b     c     d     e     f     g     h     i     j     k     l     m     n     o     p     q     r     s     t     u     v     w     x     y     z    aa    ab    ac    ad    ae    af    ag    ah    ai    aj    ak    al    am    an   <-- classified as
+ 14940    40    19    41    47     8    54    42     6    12    15    31     0     1     3     3     0    16     0     1     0     1     0     3    73     2    31     1     5     2     7     4     0     3     0     0     0     0     0     0 |     a = normal
+    20  9109     0     0     4     1     0    34     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     2     4     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     b = neptune
+    12     0   151     0     0     0     0     0     0     0     1     0     0     0     0     0     0    13     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0 |     c = warezclient
+    22     0     1   698     2     0    18     0     0     7     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     d = ipsweep
+    21    19     0     0   543     0     0    29     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     3     0     0     0     1     0     0     0     0     0     0     0     0     1     0     0     0 |     e = portsweep
+     6     2     0     0     0   173     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     f = teardrop
+    27     0     0    30     1     0   250     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     3     1     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0 |     g = nmap
+    40    75     0     1    30     1     0   701     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0    26     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     h = satan
+     5     0     0     0     1     0     0     0   652     5     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     i = smurf
+     9     0     0     0     0     0     0     1     1    37     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     j = pod
+    11     0     0     0     0     0     0     0     0     0   251     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     k = back
+    16     1     0     0     0     0     0     0     0     0     0   239     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     l = guess_passwd
+     2     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     m = ftp_write
+     5     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     n = multihop
+     3     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     o = rootkit
+     5     0     0     0     0     0     0     0     0     0     0     0     0     0     0     5     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     p = buffer_overflow
+     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     q = imap
+    15     0    24     1     0     0     1     0     0     0     0     0     0     0     0     1     0   150     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0 |     r = warezmaster
+     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     s = phf
+     2     1     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     t = land
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     3     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     u = loadmodule
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     v = spy
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     w = perl
+     3     2     0     2     1     0     2    20     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0    34     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     x = saint
+    65     2     0     2     1     0     6     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0   123     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0 |     y = mscan
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0   147     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     z = apache2
+    28     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     8     0     0     0     0     0     0     0     0     0     0     0     0     0 |    aa = snmpgetattack
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0   137     0     0     0     0     0     0     0     0     0     0     0     0 |    ab = processtable
+     6     0     0     0     0     0     0     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0    18     0     0     0     0     0     0     0     0     0     0     0 |    ac = httptunnel
+     3     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    ad = ps
+     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0    65     0     0     0     0     0     0     0     0     0 |    ae = snmpguess
+     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0    57     0     0     0     0     0     0     0     0 |    af = mailbomb
+     1     0     0     1     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0 |    ag = named
+     2     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    ah = sendmail
+     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    ai = xterm
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    aj = worm
+     1     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    ak = xlock
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    al = xsnoop
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    am = sqlattack
+     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    an = udpstorm
+

@@ -1,0 +1,300 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.rules.JRip -F 3 -N 2.0 -O 2 -S 1
+Relation:     train-70-weka.filters.unsupervised.attribute.Remove-R43
+Instances:    103943
+Attributes:   42
+              duration
+              protocol_type
+              service
+              flag
+              src_bytes
+              dst_bytes
+              land
+              wrong_fragment
+              urgent
+              hot
+              num_failed_logins
+              logged_in
+              num_compromised
+              root_shell
+              su_attempted
+              num_root
+              num_file_creations
+              num_shells
+              num_access_files
+              num_outbound_cmds
+              is_host_login
+              is_guest_login
+              count
+              srv_count
+              serror_rate
+              srv_serror_rate
+              rerror_rate
+              srv_rerror_rate
+              same_srv_rate
+              diff_srv_rate
+              srv_diff_host_rate
+              dst_host_count
+              dst_host_srv_count
+              dst_host_same_srv_rate
+              dst_host_diff_srv_rate
+              dst_host_same_src_port_rate
+              dst_host_srv_diff_host_rate
+              dst_host_serror_rate
+              dst_host_srv_serror_rate
+              dst_host_rerror_rate
+              dst_host_srv_rerror_rate
+              outcome
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+JRIP rules:
+===========
+
+(root_shell >= 1) and (src_bytes <= 51) => outcome=phf (4.0/1.0)
+(src_bytes >= 31645608) and (duration <= 433) => outcome=xlock (3.0/1.0)
+(duration >= 134) and (duration <= 226) and (src_bytes >= 342) and (hot <= 0) and (dst_bytes >= 1011) => outcome=xlock (5.0/2.0)
+(num_shells >= 2) and (duration <= 103) => outcome=loadmodule (3.0/1.0)
+(num_access_files >= 1) and (src_bytes <= 116) => outcome=ftp_write (3.0/0.0)
+(service = imap4) and (dst_host_same_srv_rate >= 1) => outcome=imap (7.0/0.0)
+(num_root >= 1) and (dst_host_same_src_port_rate <= 0) and (num_compromised <= 0) and (dst_bytes >= 1125) and (duration <= 3) => outcome=sendmail (5.0/1.0)
+(service = auth) and (dst_host_srv_count <= 2) and (dst_host_diff_srv_rate <= 0.03) and (dst_bytes <= 35) => outcome=sendmail (5.0/2.0)
+(service = domain) and (count <= 1) and (duration >= 707) => outcome=named (3.0/0.0)
+(dst_host_count <= 10) and (dst_host_srv_count <= 1) and (service = domain) => outcome=named (2.0/0.0)
+(duration <= 60) and (dst_host_same_srv_rate <= 0.01) and (duration >= 49) and (dst_bytes <= 504) => outcome=rootkit (3.0/0.0)
+(srv_count <= 1) and (service = ftp_data) and (dst_host_rerror_rate >= 0.02) and (dst_host_serror_rate >= 0.2) and (dst_host_srv_count >= 49) => outcome=rootkit (6.0/2.0)
+(root_shell >= 1) and (dst_host_srv_serror_rate >= 0.25) and (su_attempted <= 0) => outcome=rootkit (2.0/0.0)
+(land >= 1) => outcome=land (23.0/6.0)
+(dst_host_srv_count <= 3) and (dst_host_diff_srv_rate <= 0.03) and (service = ftp) and (dst_bytes <= 426) => outcome=multihop (7.0/3.0)
+(num_root >= 26) and (num_compromised <= 22) => outcome=multihop (2.0/0.0)
+(service = other) and (dst_host_count <= 22) and (src_bytes >= 516) and (dst_host_same_src_port_rate <= 0.75) => outcome=multihop (3.0/0.0)
+(num_compromised >= 2) and (src_bytes >= 1559) and (dst_bytes <= 15242) and (num_root <= 4) => outcome=buffer_overflow (18.0/0.0)
+(dst_bytes >= 4194) and (service = ftp_data) and (dst_bytes <= 5928) => outcome=buffer_overflow (13.0/5.0)
+(hot >= 3) and (service = telnet) and (dst_host_count <= 9) => outcome=buffer_overflow (5.0/1.0)
+(service = other) and (dst_host_diff_srv_rate <= 0.1) and (dst_host_srv_rerror_rate >= 0.57) and (dst_host_same_src_port_rate <= 0.02) and (count <= 4) => outcome=httptunnel (89.0/0.0)
+(protocol_type = udp) and (dst_bytes >= 146) and (dst_host_same_srv_rate >= 0.97) and (dst_bytes <= 146) and (srv_count <= 1) and (dst_host_count >= 29) and (dst_host_count <= 229) => outcome=snmpgetattack (31.0/14.0)
+(protocol_type = udp) and (dst_host_same_srv_rate >= 0.97) and (count <= 3) and (dst_host_srv_count >= 212) and (srv_count <= 1) and (duration <= 0) and (dst_bytes >= 147) => outcome=snmpgetattack (26.0/10.0)
+(protocol_type = udp) and (dst_bytes >= 146) and (srv_count <= 3) and (dst_host_count >= 239) and (dst_host_same_srv_rate >= 1) => outcome=snmpgetattack (40.0/18.0)
+(wrong_fragment >= 1) and (protocol_type = icmp) => outcome=pod (172.0/10.0)
+(service = tim_i) and (dst_host_diff_srv_rate <= 0.03) => outcome=pod (8.0/1.0)
+(src_bytes >= 2599) and (src_bytes <= 2599) => outcome=mailbomb (206.0/1.0)
+(dst_host_diff_srv_rate >= 1) and (dst_host_rerror_rate >= 0.93) and (dst_host_serror_rate >= 0.03) and (serror_rate <= 0.06) and (serror_rate >= 0.04) and (count <= 505) and (dst_host_serror_rate <= 0.04) and (count >= 432) => outcome=saint (26.0/1.0)
+(diff_srv_rate >= 1) and (dst_host_rerror_rate >= 0.93) and (dst_host_serror_rate >= 0.05) and (serror_rate <= 0.07) and (serror_rate >= 0.05) and (rerror_rate >= 0.94) and (count <= 472) => outcome=saint (14.0/1.0)
+(diff_srv_rate >= 1) and (dst_host_rerror_rate >= 0.93) and (dst_host_serror_rate >= 0.03) and (serror_rate >= 0.04) and (rerror_rate >= 0.95) and (count >= 510) => outcome=saint (25.0/6.0)
+(diff_srv_rate >= 1) and (dst_host_rerror_rate >= 0.91) and (count <= 505) and (dst_host_serror_rate >= 0.05) and (service = other) and (count >= 490) and (serror_rate >= 0.04) => outcome=saint (17.0/1.0)
+(service = eco_i) and (srv_count >= 53) => outcome=saint (60.0/0.0)
+(diff_srv_rate >= 0.3) and (dst_host_diff_srv_rate >= 1) and (rerror_rate >= 0.91) and (count >= 444) and (count <= 447) and (serror_rate <= 0.07) and (dst_host_serror_rate <= 0.06) => outcome=saint (6.0/0.0)
+(diff_srv_rate >= 0.3) and (rerror_rate >= 0.94) and (count <= 488) and (count >= 482) => outcome=saint (21.0/8.0)
+(same_srv_rate <= 0.2) and (diff_srv_rate >= 1) and (dst_host_serror_rate <= 0.07) and (dst_host_serror_rate >= 0.05) and (dst_host_diff_srv_rate <= 0.75) => outcome=saint (15.0/4.0)
+(diff_srv_rate >= 0.3) and (dst_host_diff_srv_rate >= 1) and (rerror_rate >= 0.9) and (serror_rate >= 0.07) and (service = private) and (dst_host_serror_rate <= 0.07) => outcome=saint (10.0/1.0)
+(diff_srv_rate >= 0.3) and (rerror_rate >= 0.91) and (serror_rate >= 0.08) and (dst_host_rerror_rate <= 0.91) and (count >= 511) => outcome=saint (10.0/2.0)
+(dst_host_diff_srv_rate >= 0.18) and (service = finger) and (srv_count >= 2) and (dst_host_count <= 55) => outcome=saint (3.0/0.0)
+(protocol_type = udp) and (service = private) and (dst_host_srv_count >= 253) and (dst_bytes <= 41) and (src_bytes <= 56) => outcome=snmpguess (202.0/1.0)
+(protocol_type = udp) and (service = private) and (dst_host_srv_count >= 252) and (src_bytes <= 50) and (count <= 5) => outcome=snmpguess (27.0/0.0)
+(service = urp_i) and (dst_host_same_srv_rate >= 1) => outcome=snmpguess (4.0/1.0)
+(service = telnet) and (duration >= 7212) and (src_bytes <= 1) => outcome=processtable (344.0/1.0)
+(flag = S3) and (src_bytes <= 0) => outcome=processtable (136.0/0.0)
+(src_bytes >= 55044) and (service = http) and (duration >= 718) => outcome=apache2 (306.0/0.0)
+(dst_host_srv_rerror_rate >= 0.14) and (srv_count >= 28) and (serror_rate >= 0.01) => outcome=apache2 (161.0/1.0)
+(dst_host_srv_rerror_rate >= 0.11) and (flag = S0) and (dst_host_srv_count >= 244) and (dst_host_count >= 255) => outcome=apache2 (37.0/0.0)
+(flag = RSTR) and (srv_count >= 28) => outcome=apache2 (10.0/0.0)
+(src_bytes >= 334) and (src_bytes <= 334) and (service = ftp_data) => outcome=warezclient (307.0/1.0)
+(duration <= 4) and (hot >= 28) => outcome=warezclient (183.0/0.0)
+(service = ftp_data) and (duration >= 4) and (logged_in >= 1) and (dst_host_count <= 17) => outcome=warezclient (74.0/0.0)
+(duration >= 5041) and (hot >= 2) and (dst_bytes <= 2284) => outcome=warezclient (30.0/0.0)
+(service = ftp_data) and (dst_host_same_src_port_rate >= 1) and (logged_in >= 1) and (dst_host_srv_diff_host_rate >= 0.11) => outcome=warezclient (18.0/1.0)
+(service = ftp_data) and (duration >= 4) and (logged_in >= 1) and (dst_host_serror_rate >= 0.01) => outcome=warezclient (5.0/0.0)
+(service = ftp_data) and (dst_host_same_srv_rate >= 1) and (logged_in >= 1) and (src_bytes <= 246) and (src_bytes >= 246) => outcome=warezclient (5.0/0.0)
+(wrong_fragment >= 1) => outcome=teardrop (658.0/26.0)
+(duration >= 280) and (duration <= 289) and (dst_bytes <= 601) => outcome=warezmaster (501.0/1.0)
+(service = ftp_data) and (dst_host_same_srv_rate >= 0.9) and (src_bytes <= 12) and (src_bytes >= 12) => outcome=warezmaster (104.0/2.0)
+(service = ftp_data) and (duration >= 9) and (dst_bytes >= 5149533) => outcome=warezmaster (11.0/0.0)
+(service = ftp_data) and (src_bytes <= 12) and (src_bytes >= 12) and (logged_in <= 0) and (dst_host_count <= 29) => outcome=warezmaster (32.0/4.0)
+(service = ftp_data) and (src_bytes <= 12) and (src_bytes >= 12) and (logged_in <= 0) and (dst_host_srv_diff_host_rate >= 0.08) => outcome=warezmaster (9.0/1.0)
+(service = ftp_data) and (count <= 1) and (src_bytes <= 12) and (logged_in <= 0) and (dst_host_same_src_port_rate >= 0.14) and (dst_host_same_srv_rate <= 0.28) => outcome=warezmaster (15.0/6.0)
+(is_guest_login >= 1) and (num_file_creations >= 1) => outcome=warezmaster (4.0/1.0)
+(service = ftp_data) and (dst_bytes >= 848) and (dst_host_count <= 18) => outcome=warezmaster (7.0/3.0)
+(service = ftp) and (flag = S1) and (dst_host_count >= 255) => outcome=warezmaster (2.0/0.0)
+(srv_diff_host_rate >= 0.53) and (dst_host_srv_rerror_rate >= 0.08) and (dst_host_same_srv_rate <= 0.68) and (srv_count >= 4) => outcome=mscan (373.0/1.0)
+(srv_diff_host_rate >= 0.5) and (dst_host_same_srv_rate <= 0.37) and (src_bytes <= 24) and (dst_host_srv_rerror_rate >= 0.1) and (dst_host_srv_count >= 24) => outcome=mscan (144.0/0.0)
+(service = imap4) and (count <= 3) and (dst_host_srv_count >= 6) => outcome=mscan (54.0/0.0)
+(service = pop_3) and (src_bytes <= 0) and (count <= 4) and (dst_host_srv_count >= 3) => outcome=mscan (53.0/0.0)
+(service = telnet) and (srv_diff_host_rate >= 0.67) and (dst_host_same_srv_rate >= 0.34) => outcome=mscan (27.0/0.0)
+(service = pm_dump) and (diff_srv_rate <= 0.8) => outcome=mscan (13.0/0.0)
+(service = telnet) and (dst_host_srv_count >= 72) and (dst_host_srv_rerror_rate >= 0.19) and (duration <= 1) => outcome=mscan (12.0/0.0)
+(service = sunrpc) and (flag = REJ) => outcome=mscan (11.0/0.0)
+(service = telnet) and (dst_host_srv_diff_host_rate >= 0.02) and (dst_host_srv_count >= 85) and (duration <= 2) => outcome=mscan (8.0/0.0)
+(service = pop_3) and (dst_host_srv_count >= 25) => outcome=guess_passwd (477.0/0.0)
+(num_failed_logins >= 1) and (duration <= 0) => outcome=guess_passwd (344.0/1.0)
+(service = pop_3) and (dst_host_diff_srv_rate <= 0.02) and (src_bytes <= 32) => outcome=guess_passwd (26.0/0.0)
+(num_failed_logins >= 1) and (dst_bytes <= 188) and (service = telnet) => outcome=guess_passwd (21.0/0.0)
+(service = pop_3) and (dst_bytes >= 217) and (src_bytes <= 36) => outcome=guess_passwd (17.0/0.0)
+(service = telnet) and (dst_host_srv_rerror_rate >= 0.2) and (flag = SF) and (duration <= 26) and (dst_host_srv_count >= 5) and (src_bytes <= 123) => outcome=guess_passwd (9.0/0.0)
+(num_failed_logins >= 1) and (dst_host_same_srv_rate >= 0.55) => outcome=guess_passwd (3.0/1.0)
+(service = telnet) and (dst_host_srv_count >= 254) and (flag = SF) => outcome=guess_passwd (2.0/0.0)
+(src_bytes >= 21048) and (service = http) and (dst_bytes >= 1460) => outcome=back (916.0/0.0)
+(src_bytes >= 15492) and (flag = RSTR) => outcome=back (4.0/0.0)
+(dst_host_same_src_port_rate >= 0.81) and (srv_diff_host_rate >= 1) and (dst_host_srv_diff_host_rate <= 0.4) and (dst_host_srv_diff_host_rate >= 0.25) and (srv_count >= 3) and (src_bytes <= 8) => outcome=nmap (644.0/0.0)
+(flag = SH) => outcome=nmap (226.0/1.0)
+(dst_host_same_src_port_rate >= 0.8) and (dst_host_same_src_port_rate <= 0.87) and (src_bytes >= 207) and (protocol_type = udp) and (dst_host_count <= 250) => outcome=nmap (119.0/0.0)
+(dst_host_same_src_port_rate >= 0.12) and (service = private) and (src_bytes >= 100) and (dst_bytes <= 0) and (dst_host_count <= 228) and (dst_host_count >= 14) => outcome=nmap (48.0/1.0)
+(service = eco_i) and (dst_host_srv_diff_host_rate <= 0.4) and (src_bytes <= 8) and (dst_host_srv_count >= 3) => outcome=nmap (37.0/0.0)
+(dst_host_count <= 11) and (dst_host_srv_diff_host_rate <= 0) and (dst_host_same_src_port_rate >= 1) and (service = private) and (src_bytes >= 207) => outcome=nmap (8.0/0.0)
+(flag = RSTR) and (src_bytes <= 1) and (dst_host_rerror_rate >= 0.97) => outcome=portsweep (825.0/0.0)
+(flag = RSTR) and (src_bytes <= 1) and (service = private) and (count <= 25) => outcome=portsweep (572.0/0.0)
+(dst_host_srv_count <= 2) and (rerror_rate >= 0.98) and (dst_host_same_src_port_rate >= 0.08) and (dst_host_same_srv_rate <= 0.02) and (flag = REJ) => outcome=portsweep (374.0/0.0)
+(flag = RSTR) and (src_bytes <= 1) and (dst_host_diff_srv_rate <= 0.4) => outcome=portsweep (120.0/5.0)
+(dst_host_same_srv_rate <= 0.01) and (dst_host_same_src_port_rate >= 0.02) and (src_bytes <= 0) and (dst_host_serror_rate >= 0.01) and (dst_host_serror_rate <= 0.57) => outcome=portsweep (143.0/0.0)
+(flag = RSTR) and (src_bytes <= 1) and (dst_host_same_src_port_rate <= 0.91) => outcome=portsweep (54.0/8.0)
+(dst_host_srv_count <= 1) and (rerror_rate >= 1) and (dst_host_same_src_port_rate >= 0.03) and (diff_srv_rate >= 0.52) => outcome=portsweep (35.0/1.0)
+(dst_host_srv_count <= 1) and (flag = OTH) => outcome=portsweep (8.0/0.0)
+(flag = RSTOS0) => outcome=portsweep (10.0/1.0)
+(dst_host_rerror_rate >= 0.01) and (count <= 3) and (dst_host_same_srv_rate <= 0) and (src_bytes <= 0) and (dst_host_same_src_port_rate >= 0.01) => outcome=portsweep (17.0/4.0)
+(flag = RSTO) and (dst_host_same_src_port_rate >= 0.17) and (dst_host_count >= 84) => outcome=portsweep (6.0/0.0)
+(dst_host_rerror_rate >= 0.01) and (service = eco_i) and (src_bytes <= 8) => outcome=portsweep (3.0/0.0)
+(dst_host_same_src_port_rate >= 0.2) and (rerror_rate >= 0.06) and (dst_host_count >= 255) => outcome=portsweep (6.0/1.0)
+(service = ecr_i) and (count >= 9) => outcome=smurf (2287.0/0.0)
+(service = ecr_i) and (src_bytes >= 520) and (src_bytes <= 1032) => outcome=smurf (30.0/0.0)
+(dst_host_srv_diff_host_rate >= 0.25) and (service = eco_i) and (src_bytes <= 18) => outcome=ipsweep (2246.0/0.0)
+(dst_host_diff_srv_rate >= 1) and (count <= 1) and (src_bytes <= 0) => outcome=ipsweep (325.0/1.0)
+(dst_host_same_src_port_rate >= 1) and (protocol_type = icmp) and (src_bytes <= 18) => outcome=ipsweep (52.0/11.0)
+(dst_host_count <= 1) and (service = ftp_data) and (flag = REJ) => outcome=ipsweep (5.0/0.0)
+(dst_host_diff_srv_rate >= 0.18) and (src_bytes <= 6) and (dst_host_same_srv_rate <= 0) and (count >= 75) => outcome=satan (1737.0/11.0)
+(dst_host_diff_srv_rate >= 0.15) and (src_bytes <= 6) and (dst_host_count >= 128) and (dst_host_srv_count <= 1) and (diff_srv_rate >= 0.69) and (rerror_rate <= 0.92) and (count >= 5) => outcome=satan (146.0/0.0)
+(dst_host_diff_srv_rate >= 0.15) and (src_bytes <= 6) and (dst_host_count >= 203) and (dst_host_rerror_rate >= 0.16) and (dst_host_serror_rate >= 0.03) and (count >= 14) => outcome=satan (251.0/6.0)
+(src_bytes <= 6) and (dst_host_count >= 121) and (count <= 30) and (dst_host_diff_srv_rate <= 0.39) and (dst_bytes <= 0) and (dst_host_diff_srv_rate >= 0.2) => outcome=satan (224.0/6.0)
+(dst_host_diff_srv_rate >= 0.13) and (src_bytes <= 7) and (dst_host_same_srv_rate <= 0.04) and (dst_host_rerror_rate >= 0.1) and (diff_srv_rate >= 0.67) => outcome=satan (70.0/3.0)
+(protocol_type = udp) and (src_bytes <= 5) and (diff_srv_rate <= 0.1) => outcome=satan (348.0/5.0)
+(diff_srv_rate >= 0.11) and (dst_host_rerror_rate >= 0.02) and (dst_host_same_src_port_rate <= 0.67) and (dst_host_same_srv_rate <= 0.01) and (dst_host_serror_rate <= 0) => outcome=satan (86.0/1.0)
+(diff_srv_rate >= 0.11) and (dst_host_rerror_rate >= 0.02) and (protocol_type = udp) and (dst_bytes <= 0) and (count <= 36) and (diff_srv_rate <= 0.45) => outcome=satan (81.0/1.0)
+(diff_srv_rate >= 0.11) and (dst_host_same_src_port_rate >= 1) and (dst_host_diff_srv_rate <= 0.48) and (service = other) => outcome=satan (22.0/0.0)
+(diff_srv_rate >= 0.11) and (dst_host_rerror_rate >= 0.01) and (dst_host_same_srv_rate <= 0) and (src_bytes <= 7) and (count >= 19) and (serror_rate <= 0.02) => outcome=satan (9.0/0.0)
+(diff_srv_rate >= 0.11) and (dst_host_rerror_rate >= 0.01) and (dst_host_diff_srv_rate >= 0.74) and (dst_host_serror_rate >= 0.1) => outcome=satan (8.0/0.0)
+(diff_srv_rate >= 0.11) and (dst_host_same_src_port_rate >= 1) and (dst_host_diff_srv_rate <= 0.48) and (count >= 26) => outcome=satan (8.0/1.0)
+(diff_srv_rate >= 0.35) and (src_bytes <= 19) and (dst_host_srv_count <= 1) and (dst_host_diff_srv_rate >= 0.72) and (dst_host_diff_srv_rate <= 0.76) => outcome=satan (7.0/0.0)
+(diff_srv_rate >= 0.22) and (dst_host_rerror_rate >= 0.01) and (dst_host_same_srv_rate <= 0.02) and (same_srv_rate >= 0.11) and (count >= 4) and (dst_host_same_src_port_rate <= 0.04) and (dst_host_diff_srv_rate <= 0.1) => outcome=satan (6.0/0.0)
+(dst_host_srv_count <= 5) and (flag = SF) and (src_bytes <= 20) and (dst_bytes <= 35) and (dst_host_same_src_port_rate <= 0.03) and (count >= 2) => outcome=satan (22.0/5.0)
+(dst_host_diff_srv_rate >= 0.23) and (src_bytes <= 37) and (protocol_type = icmp) => outcome=satan (10.0/3.0)
+(dst_host_diff_srv_rate >= 0.15) and (src_bytes <= 10) and (num_compromised >= 1) => outcome=satan (3.0/0.0)
+(dst_host_diff_srv_rate >= 0.15) and (dst_host_rerror_rate >= 0.04) and (dst_host_count >= 178) and (dst_host_srv_count >= 125) and (service = smtp) => outcome=satan (6.0/0.0)
+(dst_host_srv_count <= 9) and (flag = SF) and (src_bytes <= 20) and (srv_count >= 2) and (dst_host_diff_srv_rate <= 0.52) and (count >= 3) and (src_bytes >= 6) => outcome=satan (8.0/0.0)
+(diff_srv_rate >= 0.57) and (count >= 71) and (dst_host_diff_srv_rate <= 0.52) => outcome=satan (4.0/0.0)
+(same_srv_rate <= 0.49) and (src_bytes <= 0) and (srv_count >= 3) => outcome=neptune (27766.0/1.0)
+(src_bytes <= 0) and (diff_srv_rate >= 0.05) and (diff_srv_rate <= 0.38) => outcome=neptune (3767.0/2.0)
+(flag = S0) and (dst_host_srv_serror_rate >= 0.18) and (dst_host_serror_rate >= 0.23) => outcome=neptune (544.0/0.0)
+(dst_host_serror_rate >= 0.92) and (flag = S0) and (service = smtp) => outcome=neptune (16.0/0.0)
+(dst_host_srv_rerror_rate >= 1) and (dst_host_count >= 255) and (dst_host_rerror_rate >= 0.96) => outcome=neptune (13.0/0.0)
+(dst_host_same_srv_rate <= 0) and (rerror_rate >= 1) and (dst_host_rerror_rate >= 0.73) => outcome=neptune (2.0/0.0)
+ => outcome=normal (53972.0/196.0)
+
+Number of Rules : 135
+
+
+Time taken to build model: 214.63 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0.44 seconds
+
+=== Summary ===
+
+Correctly Classified Instances       44259               99.2933 %
+Incorrectly Classified Instances       315                0.7067 %
+Kappa statistic                          0.9888
+Mean absolute error                      0.0005
+Root mean squared error                  0.0179
+Relative absolute error                  1.5852 %
+Root relative squared error             14.2122 %
+Total Number of Instances            44574     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.996    0.007    0.993      0.996    0.994      0.988    0.996     0.993     normal
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     neptune
+                 0.974    0.000    0.992      0.974    0.983      0.983    0.993     0.963     warezclient
+                 0.997    0.000    0.996      0.997    0.996      0.996    0.998     0.997     ipsweep
+                 0.992    0.000    0.986      0.992    0.989      0.989    0.996     0.990     portsweep
+                 1.000    0.000    0.961      1.000    0.980      0.980    1.000     0.961     teardrop
+                 0.985    0.000    0.998      0.985    0.991      0.991    0.996     0.989     nmap
+                 0.973    0.001    0.971      0.973    0.972      0.971    0.995     0.964     satan
+                 1.000    0.000    0.999      1.000    0.999      0.999    1.000     0.999     smurf
+                 1.000    0.000    0.913      1.000    0.954      0.955    1.000     0.935     pod
+                 0.995    0.000    0.985      0.995    0.990      0.990    0.997     0.980     back
+                 0.995    0.000    0.995      0.995    0.995      0.995    0.999     0.991     guess_passwd
+                 0.250    0.000    1.000      0.250    0.400      0.500    0.805     0.250     ftp_write
+                 0.125    0.000    1.000      0.125    0.222      0.354    0.743     0.175     multihop
+                 0.000    0.000    0.000      0.000    0.000      -0.000   0.703     0.001     rootkit
+                 0.400    0.000    0.545      0.400    0.462      0.467    0.777     0.334     buffer_overflow
+                 0.750    0.000    1.000      0.750    0.857      0.866    0.935     0.750     imap
+                 0.972    0.000    0.966      0.972    0.969      0.969    0.993     0.968     warezmaster
+                 1.000    0.000    0.400      1.000    0.571      0.632    1.000     0.400     phf
+                 1.000    0.000    0.889      1.000    0.941      0.943    1.000     0.889     land
+                 0.500    0.000    0.667      0.500    0.571      0.577    0.745     0.333     loadmodule
+                 0.000    0.000    ?          0.000    ?          ?        0.740     0.000     spy
+                 0.000    0.000    ?          0.000    ?          ?        0.740     0.000     perl
+                 0.740    0.000    0.845      0.740    0.789      0.790    0.945     0.717     saint
+                 0.980    0.000    0.997      0.980    0.988      0.988    0.991     0.981     mscan
+                 0.973    0.000    0.991      0.973    0.982      0.982    0.988     0.970     apache2
+                 0.333    0.001    0.419      0.333    0.371      0.373    0.826     0.134     snmpgetattack
+                 1.000    0.000    0.995      1.000    0.998      0.998    1.000     0.992     processtable
+                 0.925    0.000    1.000      0.925    0.961      0.962    0.980     0.925     httptunnel
+                 0.000    0.000    ?          0.000    ?          ?        0.640     0.000     ps
+                 0.970    0.000    1.000      0.970    0.985      0.985    0.985     0.970     snmpguess
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     mailbomb
+                 0.000    0.000    ?          0.000    ?          ?        0.740     0.000     named
+                 0.000    0.000    0.000      0.000    0.000      -0.000   0.740     0.000     sendmail
+                 0.000    0.000    ?          0.000    ?          ?        0.490     0.000     xterm
+                 0.000    0.000    ?          0.000    ?          ?        0.740     0.000     worm
+                 0.333    0.000    0.250      0.333    0.286      0.289    0.827     0.083     xlock
+                 0.000    0.000    ?          0.000    ?          ?        0.740     0.000     xsnoop
+                 0.000    0.000    ?          0.000    ?          ?        0.240     0.000     sqlattack
+                 0.000    0.000    ?          0.000    ?          ?        0.998     0.006     udpstorm
+Weighted Avg.    0.993    0.004    ?          0.993    ?          ?        0.996     0.990     
+
+=== Confusion Matrix ===
+
+     a     b     c     d     e     f     g     h     i     j     k     l     m     n     o     p     q     r     s     t     u     v     w     x     y     z    aa    ab    ac    ad    ae    af    ag    ah    ai    aj    ak    al    am    an   <-- classified as
+ 23013     1     2     3    10    11     1    18     1     7     2     1     0     0     5     1     0     8     0     1     1     0     0     0     1     1    25     1     0     0     0     0     0     0     0     0     3     0     0     0 |     a = normal
+     1 13760     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     b = neptune
+     7     0   260     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     c = warezclient
+     0     0     0  1119     2     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     d = ipsweep
+     3     1     0     0   920     0     0     1     0     0     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     e = portsweep
+     0     0     0     0     0   272     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     f = teardrop
+     4     0     0     2     0     0   463     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     g = nmap
+    22     0     0     0     0     0     0  1276     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0    13     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     h = satan
+     0     0     0     0     0     0     0     0   994     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     i = smurf
+     0     0     0     0     0     0     0     0     0    73     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     j = pod
+     2     0     0     0     0     0     0     0     0     0   393     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     k = back
+     2     0     0     0     0     0     0     0     0     0     0   384     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     l = guess_passwd
+     3     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     m = ftp_write
+     5     0     0     0     0     0     0     0     0     0     0     0     0     1     0     1     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     n = multihop
+     5     0     0     0     0     0     0     1     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     o = rootkit
+     7     0     0     0     0     0     0     0     0     0     0     0     0     0     0     6     0     0     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     p = buffer_overflow
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     3     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     q = imap
+     8     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0   282     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     r = warezmaster
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     s = phf
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     8     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     t = land
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     u = loadmodule
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     v = spy
+     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     w = perl
+    10     0     0     0     1     0     0    14     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0    71     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     x = saint
+     2     1     0     0     0     0     0     1     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0   293     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     y = mscan
+     4     0     0     0     0     0     0     0     0     0     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0   216     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     z = apache2
+    36     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0    18     0     0     0     0     0     0     0     0     0     0     0     0     0 |    aa = snmpgetattack
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0   206     0     0     0     0     0     0     0     0     0     0     0     0 |    ab = processtable
+     3     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0    37     0     0     0     0     0     0     0     0     0     0     0 |    ac = httptunnel
+     4     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    ad = ps
+     3     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0    97     0     0     0     0     0     0     0     0     0 |    ae = snmpguess
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0    88     0     0     0     0     0     0     0     0 |    af = mailbomb
+     6     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    ag = named
+     5     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    ah = sendmail
+     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    ai = xterm
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    aj = worm
+     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0 |    ak = xlock
+     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    al = xsnoop
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0 |    am = sqlattack
+     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    an = udpstorm
+

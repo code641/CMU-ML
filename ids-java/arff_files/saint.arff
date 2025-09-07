@@ -1,0 +1,111 @@
+@relation test-20
+
+@attribute duration numeric
+@attribute protocol_type {tcp,udp,icmp}
+@attribute service {http,domain_u,ftp_data,private,other,smtp,telnet,eco_i,X11,ntp_u,ftp,IRC,time,finger,urp_i,auth,ecr_i,domain,pop_3,urh_i,red_i,remote_job,tftp_u,ssh,shell,imap4,tim_i,link,uucp,whois,mtp,Z39_50,supdup,login,http_443,bgp,uucp_path,sql_net,hostnames,iso_tsap,nnsp,csnet_ns,vmnet,kshell,sunrpc,efs,klogin,ldap,pop_2,netstat,daytime,exec,discard,netbios_dgm,systat,name,ctf,rje,netbios_ns,courier,echo,gopher,netbios_ssn,printer,nntp,http_2784,aol,pm_dump,http_8001,harvest}
+@attribute flag {REJ,SF,RSTO,S0,S3,RSTR,S1,S2,OTH,RSTOS0,SH}
+@attribute src_bytes numeric
+@attribute dst_bytes numeric
+@attribute land numeric
+@attribute wrong_fragment numeric
+@attribute urgent numeric
+@attribute hot numeric
+@attribute num_failed_logins numeric
+@attribute logged_in numeric
+@attribute num_compromised numeric
+@attribute root_shell numeric
+@attribute su_attempted numeric
+@attribute num_root numeric
+@attribute num_file_creations numeric
+@attribute num_shells numeric
+@attribute num_access_files numeric
+@attribute num_outbound_cmds numeric
+@attribute is_host_login numeric
+@attribute is_guest_login numeric
+@attribute count numeric
+@attribute srv_count numeric
+@attribute serror_rate numeric
+@attribute srv_serror_rate numeric
+@attribute rerror_rate numeric
+@attribute srv_rerror_rate numeric
+@attribute same_srv_rate numeric
+@attribute diff_srv_rate numeric
+@attribute srv_diff_host_rate numeric
+@attribute dst_host_count numeric
+@attribute dst_host_srv_count numeric
+@attribute dst_host_same_srv_rate numeric
+@attribute dst_host_diff_srv_rate numeric
+@attribute dst_host_same_src_port_rate numeric
+@attribute dst_host_srv_diff_host_rate numeric
+@attribute dst_host_serror_rate numeric
+@attribute dst_host_srv_serror_rate numeric
+@attribute dst_host_rerror_rate numeric
+@attribute dst_host_srv_rerror_rate numeric
+@attribute outcome {normal,neptune,warezclient,ipsweep,portsweep,teardrop,nmap,satan,smurf,pod,back,guess_passwd,ftp_write,multihop,rootkit,buffer_overflow,imap,warezmaster,phf,land,loadmodule,spy,perl,saint,mscan,apache2,snmpgetattack,processtable,httptunnel,ps,snmpguess,mailbomb,named,sendmail,xterm,worm,xlock,xsnoop,sqlattack,udpstorm}
+@attribute difficulty_level numeric
+
+@data
+0,icmp,eco_i,SF,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,66,0,0,0,0,1,0,1,4,208,1,0,1,0.25,0,0,0,0,saint,15
+0,udp,private,SF,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,1,0,0,0,0,0.06,0.18,0,36,2,0.03,0.19,0.22,1,0,0,0,0,saint,12
+0,icmp,eco_i,SF,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,71,0,0,0,0,1,0,1,2,14,1,0,1,0.29,0,0,0,0,saint,15
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,510,1,0.06,0,0.94,1,0,1,0,255,1,0,1,0,0,0.05,0,0.95,1,saint,20
+0,icmp,eco_i,SF,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,70,0,0,0,0,1,0,1,3,36,1,0,1,0.28,0,0,0,0,saint,15
+0,tcp,other,S0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,487,1,0.04,1,0.96,0,0,1,0,255,1,0,1,0,0,0.06,1,0.94,0,saint,19
+0,tcp,private,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,262,1,0.06,0,0.93,1,0,1,0,255,1,0,0.96,0,0,0.07,0,0.88,1,saint,20
+0,icmp,eco_i,SF,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,68,0,0,0,0,1,0,1,4,134,1,0,1,0.26,0,0,0,0,saint,16
+0,icmp,eco_i,SF,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,75,0,0,0,0,1,0,1,4,88,1,0,1,0.25,0,0,0,0,saint,15
+0,tcp,private,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,408,1,0.08,0,0.91,1,0,1,0,255,1,0,1,0,0,0.05,0,0.93,1,saint,17
+0,tcp,private,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,133,1,0.13,0,0.86,1,0.01,1,0,255,1,0,0.47,0,0,0.07,0,0.39,1,saint,20
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,482,1,0.06,0,0.94,1,0,1,0,255,1,0,1,0,0,0.05,0,0.95,1,saint,20
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,487,1,0.04,0,0.96,1,0,1,0,255,1,0,1,0,0,0.05,0,0.95,1,saint,20
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,436,1,0.06,0,0.94,1,0,1,0,255,1,0,1,0,0,0.04,0,0.96,1,saint,18
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,510,1,0.05,0,0.95,1,0,1,0,255,1,0,1,0,0,0.04,0,0.96,1,saint,20
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,488,1,0.07,0,0.93,1,0,1,0,255,1,0,1,0,0,0.09,0,0.91,1,saint,19
+0,tcp,other,S0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,431,1,0.06,1,0.94,0,0,1,0,255,1,0,1,0,0,0.05,1,0.95,0,saint,19
+0,icmp,eco_i,SF,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,71,0,0,0,0,1,0,1,2,190,1,0,1,0.25,0,0,0,0,saint,16
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,510,1,0.03,0,0.97,1,0,1,0,255,1,0,1,0,0,0.02,0,0.98,1,saint,20
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,452,1,0.06,0,0.94,1,0,1,0,255,1,0,1,0,0,0.05,0,0.95,1,saint,18
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,476,1,0.04,0,0.96,1,0,1,0,255,1,0,1,0,0,0.04,0,0.96,1,saint,19
+0,tcp,private,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,183,1,0.09,0,0.9,1,0.01,1,0,255,1,0,0.67,0,0,0.07,0,0.58,1,saint,21
+0,icmp,eco_i,SF,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,59,0,0,0,0,1,0,1,2,43,1,0,1,0.28,0,0,0,0,saint,15
+0,tcp,private,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,511,1,0.05,0,0.95,1,0,1,0,255,1,0,1,0.01,0,0.07,0,0.93,1,saint,20
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,490,1,0.07,0,0.93,1,0,1,0,255,1,0,1,0,0,0.06,0,0.94,1,saint,19
+0,tcp,private,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,1,0,0,1,1,0.04,1,0,255,1,0,0.05,0,0,0.01,0,0.04,1,saint,20
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,511,1,0.04,0,0.96,1,0,1,0,255,1,0,1,0,0,0.05,0,0.95,1,saint,20
+0,icmp,eco_i,SF,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,75,0,0,0,0,1,0,1,1,135,1,0,1,0.27,0,0,0,0,saint,15
+0,udp,private,SF,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,12,2,0,0,0,0,0.17,0.42,0,255,2,0.01,0.29,1,0,0,0,0,0,saint,20
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,491,1,0.09,0,0.9,1,0,1,0,255,1,0,1,0,0,0.06,0,0.94,1,saint,19
+0,tcp,private,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,388,1,0.08,0,0.91,1,0,1,0,255,1,0,1,0,0,0.05,0,0.93,1,saint,18
+0,icmp,eco_i,SF,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,55,0,0,0,0,1,0,1,1,101,1,0,1,0.26,0,0,0,0,saint,15
+0,tcp,private,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,511,1,0.05,0,0.95,1,0,1,0,255,1,0,1,0,0,0.05,0,0.95,1,saint,20
+0,icmp,eco_i,SF,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,13,0,0,0,0,1,0,1,1,209,1,0,1,0.25,0,0,0,0,saint,15
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,502,1,0.06,0,0.94,1,0,1,0,255,1,0,1,0,0,0.05,0,0.95,1,saint,20
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,488,1,0.07,0,0.93,1,0,1,0,255,1,0,1,0,0,0.08,0,0.92,1,saint,19
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,491,1,0.04,0,0.96,1,0,1,0,255,1,0,1,0,0,0.04,0,0.96,1,saint,19
+0,tcp,other,S0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,436,1,0.04,1,0.96,0,0,1,0,255,1,0,1,0,0,0.05,1,0.95,0,saint,19
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,501,1,0.04,0,0.96,1,0,1,0,255,1,0,1,0,0,0.04,0,0.96,1,saint,20
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,431,1,0.05,0,0.95,1,0,1,0,255,1,0,1,0,0,0.05,0,0.95,1,saint,18
+0,tcp,private,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,65,1,0.18,0,0.8,1,0.02,1,0,255,1,0,0.21,0,0,0.05,0,0.14,1,saint,20
+0,icmp,eco_i,SF,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,65,0,0,0,0,1,0,1,1,57,1,0,1,0.26,0,0,0,0,saint,15
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,504,1,0.05,0,0.95,1,0,1,0,255,1,0,1,0,0,0.04,0,0.96,1,saint,20
+0,icmp,eco_i,SF,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,66,0,0,0,0,1,0,1,4,194,1,0,1,0.26,0,0,0,0,saint,15
+0,icmp,eco_i,SF,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,22,0,0,0,0,1,0,1,1,61,1,0,1,0.26,0,0,0,0,saint,15
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,511,1,0.08,0,0.92,1,0,1,0,255,1,0,1,0,0,0.13,0,0.87,1,saint,20
+0,tcp,private,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,446,1,0.04,0,0.93,1,0,1,0,255,1,0,1,0,0,0.06,0,0.89,1,saint,18
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,445,1,0.04,0,0.96,1,0,1,0,255,1,0,1,0,0,0.04,0,0.96,1,saint,18
+0,icmp,eco_i,SF,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,63,0,0,0,0,1,0,1,4,24,1,0,1,0.25,0,0,0,0,saint,15
+0,tcp,private,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,213,1,0.08,0,0.92,1,0,1,0,255,1,0,0.78,0,0,0.07,0,0.7,1,saint,20
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,436,1,0.05,0,0.95,1,0,1,0,255,1,0,1,0,0,0.05,0,0.95,1,saint,18
+0,icmp,eco_i,SF,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,51,0,0,0,0,1,0,1,4,140,1,0,1,0.25,0,0,0,0,saint,15
+0,icmp,eco_i,SF,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,56,0,0,0,0,1,0,1,2,148,1,0,1,0.26,0,0,0,0,saint,15
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,488,1,0.07,0,0.93,1,0,1,0,255,1,0,1,0,0,0.07,0,0.93,1,saint,19
+0,icmp,eco_i,SF,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,55,0,0,0,0,1,0,1,3,103,1,0,1,0.25,0,0,0,0,saint,15
+0,icmp,eco_i,SF,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,71,0,0,0,0,1,0,1,4,42,1,0,1,0.29,0,0,0,0,saint,15
+0,icmp,eco_i,SF,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,55,0,0,0,0,1,0,1,1,67,1,0,1,0.28,0,0,0,0,saint,15
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,499,1,0.05,0,0.95,1,0,1,0,255,1,0,1,0,0,0.04,0,0.96,1,saint,20
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,505,1,0.04,0,0.96,1,0,1,0,255,1,0,1,0,0,0.04,0,0.96,1,saint,20
+0,tcp,private,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,444,1,0.05,0,0.92,1,0,1,0,255,1,0,1,0,0,0.03,0,0.93,1,saint,18
+11,tcp,X11,SF,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,1,0,0,0.25,0,0.12,1,0,25,1,0.04,0.44,0.04,0,0,0,0.12,0,saint,4
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,506,1,0.05,0,0.95,1,0,1,0,255,1,0,1,0,0,0.05,0,0.95,1,saint,20
+0,icmp,eco_i,SF,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,51,0,0,0,0,1,0,1,2,36,1,0,1,0.31,0,0,0,0,saint,16
+0,udp,other,SF,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,255,21,0.08,0.02,0.08,0,0,0,0,0,saint,8

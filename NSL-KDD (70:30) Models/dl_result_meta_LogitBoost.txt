@@ -1,0 +1,4573 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.meta.LogitBoost -P 100 -L -1.7976931348623157E308 -H 1.0 -Z 3.0 -O 1 -E 1 -S 1 -I 10 -W weka.classifiers.trees.DecisionStump
+Relation:     train-70
+Instances:    103943
+Attributes:   43
+              duration
+              protocol_type
+              service
+              flag
+              src_bytes
+              dst_bytes
+              land
+              wrong_fragment
+              urgent
+              hot
+              num_failed_logins
+              logged_in
+              num_compromised
+              root_shell
+              su_attempted
+              num_root
+              num_file_creations
+              num_shells
+              num_access_files
+              num_outbound_cmds
+              is_host_login
+              is_guest_login
+              count
+              srv_count
+              serror_rate
+              srv_serror_rate
+              rerror_rate
+              srv_rerror_rate
+              same_srv_rate
+              diff_srv_rate
+              srv_diff_host_rate
+              dst_host_count
+              dst_host_srv_count
+              dst_host_same_srv_rate
+              dst_host_diff_srv_rate
+              dst_host_same_src_port_rate
+              dst_host_srv_diff_host_rate
+              dst_host_serror_rate
+              dst_host_srv_serror_rate
+              dst_host_rerror_rate
+              dst_host_srv_rerror_rate
+              outcome
+              difficulty_level
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+LogitBoost: Base classifiers and their weights: 
+
+Iteration 1
+	Class 1 (outcome=normal)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_serror_rate <= 0.975 : 2.865429044731635
+dst_host_srv_serror_rate > 0.975 : -0.962612357651879
+dst_host_srv_serror_rate is missing : 2.7382798965014374
+
+
+	Class 2 (outcome=neptune)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 0.5 : 2.928338130053439
+src_bytes > 0.5 : -1.024803506404581
+src_bytes is missing : 2.421590991488152
+
+
+	Class 3 (outcome=warezclient)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 14.5 : 1.497621902520173
+difficulty_level > 14.5 : -0.9981177658287513
+difficulty_level is missing : -0.7260740931291295
+
+
+	Class 4 (outcome=ipsweep)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_diff_host_rate <= 0.245 : -0.9453953387950513
+dst_host_srv_diff_host_rate > 0.245 : 2.804198299690659
+dst_host_srv_diff_host_rate is missing : 0.005849763837126665
+
+
+	Class 5 (outcome=portsweep)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_count <= 2.5 : 2.0407936357931074
+dst_host_srv_count > 2.5 : -0.9952793657650034
+dst_host_srv_count is missing : -0.1374612278529918
+
+
+	Class 6 (outcome=teardrop)
+
+Decision Stump
+
+Classifications
+
+wrong_fragment <= 2.0 : -1.0214878697520766
+wrong_fragment > 2.0 : 2.9874590622253523
+wrong_fragment is missing : -0.722048369246563
+
+
+	Class 7 (outcome=nmap)
+
+Decision Stump
+
+Classifications
+
+dst_host_same_src_port_rate <= 0.795 : -0.9896127865836281
+dst_host_same_src_port_rate > 0.795 : 1.3235544942849693
+dst_host_same_src_port_rate is missing : -0.5248078292887783
+
+
+	Class 8 (outcome=satan)
+
+Decision Stump
+
+Classifications
+
+dst_host_diff_srv_rate <= 0.14500000000000002 : -0.842874303963509
+dst_host_diff_srv_rate > 0.14500000000000002 : 2.373326984095768
+dst_host_diff_srv_rate is missing : 0.13277593075100394
+
+
+	Class 9 (outcome=smurf)
+
+Decision Stump
+
+Classifications
+
+service = ecr_i : 2.954266278817111
+service != ecr_i : -1.0256410256412154
+service is missing : -0.08717063828483722
+
+
+	Class 10 (outcome=pod)
+
+Decision Stump
+
+Classifications
+
+wrong_fragment <= 0.5 : -1.0220002415015867
+wrong_fragment > 0.5 : 2.049106009493952
+wrong_fragment is missing : -0.9400865669352514
+
+
+	Class 11 (outcome=back)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 20374.5 : -1.0245886908327866
+src_bytes > 20374.5 : 2.685297832159758
+src_bytes is missing : -0.5973181931706298
+
+
+	Class 12 (outcome=guess_passwd)
+
+Decision Stump
+
+Classifications
+
+service = pop_3 : 2.799720266941246
+service != pop_3 : -0.8372929558941582
+service is missing : -0.6065744257057655
+
+
+	Class 13 (outcome=ftp_write)
+
+Decision Stump
+
+Classifications
+
+urgent <= 1.5 : -1.0225447359613822
+urgent > 1.5 : 2.0710059171520947
+urgent is missing : -1.0220292895681842
+
+
+	Class 14 (outcome=multihop)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 0.5 : 0.48633682436499126
+difficulty_level > 0.5 : -1.0199605441691582
+difficulty_level is missing : -1.016880053292002
+
+
+	Class 15 (outcome=rootkit)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 8.5 : -0.4458907429204477
+difficulty_level > 8.5 : -1.0256410256390416
+difficulty_level is missing : -1.01739442807862
+
+
+	Class 16 (outcome=buffer_overflow)
+
+Decision Stump
+
+Classifications
+
+root_shell <= 0.5 : -1.0168673332437252
+root_shell > 0.5 : 1.5645837629605552
+root_shell is missing : -1.0076420941158675
+
+
+	Class 17 (outcome=imap)
+
+Decision Stump
+
+Classifications
+
+service = imap4 : -0.4691809270643039
+service != imap4 : -1.0256410256410744
+service is missing : -1.0215138165766025
+
+
+	Class 18 (outcome=warezmaster)
+
+Decision Stump
+
+Classifications
+
+duration <= 279.5 : -0.9346740621055075
+duration > 279.5 : 1.7738311757487881
+duration is missing : -0.703366925000654
+
+
+	Class 19 (outcome=phf)
+
+Decision Stump
+
+Classifications
+
+root_shell <= 0.5 : -1.0251239449770742
+root_shell > 0.5 : -0.16912165848369914
+root_shell is missing : -1.0235764421496845
+
+
+	Class 20 (outcome=land)
+
+Decision Stump
+
+Classifications
+
+land <= 0.5 : -1.0256410256384296
+land > 0.5 : 2.8961869076475284
+land is missing : -1.0168800532919895
+
+
+	Class 21 (outcome=loadmodule)
+
+Decision Stump
+
+Classifications
+
+num_shells <= 1.5 : -1.0230604534367347
+num_shells > 1.5 : 2.474916387955344
+num_shells is missing : -1.0220292895681855
+
+
+	Class 22 (outcome=spy)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 9.5 : -0.9901023716958396
+difficulty_level > 9.5 : -1.0256410256427444
+difficulty_level is missing : -1.0251246960620637
+
+
+	Class 23 (outcome=perl)
+
+Decision Stump
+
+Classifications
+
+num_shells <= 0.5 : -1.0256410256448263
+num_shells > 0.5 : 1.1503811503749253
+num_shells is missing : -1.024092404361637
+
+
+	Class 24 (outcome=saint)
+
+Decision Stump
+
+Classifications
+
+dst_host_diff_srv_rate <= 0.995 : -0.9726454028918454
+dst_host_diff_srv_rate > 0.995 : 0.8928409125336025
+dst_host_diff_srv_rate is missing : -0.9134543287244934
+
+
+	Class 25 (outcome=mscan)
+
+Decision Stump
+
+Classifications
+
+srv_diff_host_rate <= 0.515 : -0.9660754370963901
+srv_diff_host_rate > 0.515 : 1.0516313595802165
+srv_diff_host_rate is missing : -0.6932094852745195
+
+
+	Class 26 (outcome=apache2)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 54956.0 : -0.9194336404508399
+src_bytes > 54956.0 : 2.491407236598101
+src_bytes is missing : -0.7750148088139815
+
+
+	Class 27 (outcome=snmpgetattack)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 3.5 : 2.1922449491780354
+difficulty_level > 3.5 : -1.0122012441004593
+difficulty_level is missing : -0.9625370221027562
+
+
+	Class 28 (outcome=processtable)
+
+Decision Stump
+
+Classifications
+
+service = telnet : 1.9317333868156095
+service != telnet : -1.0256410256410111
+service is missing : -0.7915921288013146
+
+
+	Class 29 (outcome=httptunnel)
+
+Decision Stump
+
+Classifications
+
+service = other : 0.007156643750965571
+service != other : -1.0245713792255047
+service is missing : -0.978140836549909
+
+
+	Class 30 (outcome=ps)
+
+Decision Stump
+
+Classifications
+
+num_shells <= 0.5 : -1.0215123483116104
+num_shells > 0.5 : 0.7151767151720334
+num_shells is missing : -1.0204832371461536
+
+
+	Class 31 (outcome=snmpguess)
+
+Decision Stump
+
+Classifications
+
+protocol_type = udp : -0.21619934841713534
+protocol_type != udp : -1.0238845036444322
+protocol_type is missing : -0.9095370631817953
+
+
+	Class 32 (outcome=mailbomb)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 2598.5 : -1.0256410256402755
+src_bytes > 2598.5 : 0.6707594271272656
+src_bytes is missing : -0.9222947214383836
+
+
+	Class 33 (outcome=named)
+
+Decision Stump
+
+Classifications
+
+is_host_login <= 0.5 : -1.0209980195725112
+is_host_login > 0.5 : 2.0710059171749142
+is_host_login is missing : -1.019968130612178
+
+
+	Class 34 (outcome=sendmail)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 4.5 : -0.37272408281025116
+difficulty_level > 4.5 : -1.0251219045891815
+difficulty_level is missing : -1.0209984657902327
+
+
+	Class 35 (outcome=xterm)
+
+Decision Stump
+
+Classifications
+
+urgent <= 0.5 : -1.0230603541833942
+urgent > 0.5 : 2.5929127052445726
+urgent is missing : -1.0209984657902484
+
+
+	Class 36 (outcome=worm)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 0.5 : -0.6709589969501857
+difficulty_level > 0.5 : -1.0256410256427952
+difficulty_level is missing : -1.0251246960620637
+
+
+	Class 37 (outcome=xlock)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 2.6795564E7 : -1.0235763031671388
+src_bytes > 2.6795564E7 : 2.364372469657925
+src_bytes is missing : -1.022544884798295
+
+
+	Class 38 (outcome=xsnoop)
+
+Decision Stump
+
+Classifications
+
+service = X11 : 0.30514939605848734
+service != X11 : -1.0256410256407504
+service is missing : -1.024608488981999
+
+
+	Class 39 (outcome=sqlattack)
+
+Decision Stump
+
+Classifications
+
+urgent <= 0.5 : -1.0256410256427988
+urgent > 0.5 : 1.377726750856858
+urgent is missing : -1.0251246960620626
+
+
+	Class 40 (outcome=udpstorm)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 9.5 : -0.9901023716958396
+difficulty_level > 9.5 : -1.0256410256427442
+difficulty_level is missing : -1.0251246960620635
+
+
+Iteration 2
+	Class 1 (outcome=normal)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 28.5 : -0.7419299025101973
+src_bytes > 28.5 : 1.6349583893756385
+src_bytes is missing : 1.0031277786684207
+
+
+	Class 2 (outcome=neptune)
+
+Decision Stump
+
+Classifications
+
+same_srv_rate <= 0.495 : 1.8848971036190607
+same_srv_rate > 0.495 : -0.9688088573188471
+same_srv_rate is missing : 1.3304171048790885
+
+
+	Class 3 (outcome=warezclient)
+
+Decision Stump
+
+Classifications
+
+service = ftp_data : 1.3700112731551612
+service != ftp_data : -0.8501653106745092
+service is missing : -0.5597375282689295
+
+
+	Class 4 (outcome=ipsweep)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_diff_host_rate <= 0.495 : -0.818382485366471
+dst_host_srv_diff_host_rate > 0.495 : 2.5242924584961264
+dst_host_srv_diff_host_rate is missing : 0.1517900026898979
+
+
+	Class 5 (outcome=portsweep)
+
+Decision Stump
+
+Classifications
+
+flag = RSTR : 2.930544698569684
+flag != RSTR : -0.7865282980242582
+flag is missing : -0.1453580030897204
+
+
+	Class 6 (outcome=teardrop)
+
+Decision Stump
+
+Classifications
+
+wrong_fragment <= 0.5 : -1.0108039553531984
+wrong_fragment > 0.5 : 2.819822081384232
+wrong_fragment is missing : -0.5227071113849155
+
+
+	Class 7 (outcome=nmap)
+
+Decision Stump
+
+Classifications
+
+service = eco_i : 1.1793207553438787
+service != eco_i : -0.7249351966365901
+service is missing : -0.3626796205790886
+
+
+	Class 8 (outcome=satan)
+
+Decision Stump
+
+Classifications
+
+diff_srv_rate <= 0.08499999999999999 : -0.8603409286294535
+diff_srv_rate > 0.08499999999999999 : 1.8644202521902016
+diff_srv_rate is missing : 0.0516934444994363
+
+
+	Class 9 (outcome=smurf)
+
+Decision Stump
+
+Classifications
+
+service = ecr_i : 2.328245988046973
+service != ecr_i : -1.010803052318032
+service is missing : 0.2234268679438224
+
+
+	Class 10 (outcome=pod)
+
+Decision Stump
+
+Classifications
+
+service = ecr_i : 1.8730548103519369
+service != ecr_i : -1.010911802954683
+service is missing : -0.8464193928334092
+
+
+	Class 11 (outcome=back)
+
+Decision Stump
+
+Classifications
+
+num_compromised <= 0.5 : -0.9857982379938929
+num_compromised > 0.5 : 2.951129183294918
+num_compromised is missing : -0.4302200694858941
+
+
+	Class 12 (outcome=guess_passwd)
+
+Decision Stump
+
+Classifications
+
+num_failed_logins <= 0.5 : -0.6884232894873912
+num_failed_logins > 0.5 : 2.980317888748729
+num_failed_logins is missing : -0.40244025432481717
+
+
+	Class 13 (outcome=ftp_write)
+
+Decision Stump
+
+Classifications
+
+num_access_files <= 0.5 : -1.0057324665435572
+num_access_files > 0.5 : -0.11190560535666544
+num_access_files is missing : -1.0020877504107626
+
+
+	Class 14 (outcome=multihop)
+
+Decision Stump
+
+Classifications
+
+num_file_creations <= 0.5 : -0.9972024519939979
+num_file_creations > 0.5 : 0.9307837690111737
+num_file_creations is missing : -0.9897836180318549
+
+
+	Class 15 (outcome=rootkit)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 8.5 : -0.04487967266974664
+difficulty_level > 8.5 : -1.0107627949702738
+difficulty_level is missing : -0.9909154265439022
+
+
+	Class 16 (outcome=buffer_overflow)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 4.5 : 1.5108972339485967
+difficulty_level > 4.5 : -0.9995571899715608
+difficulty_level is missing : -0.9704601276480466
+
+
+	Class 17 (outcome=imap)
+
+Decision Stump
+
+Classifications
+
+service = imap4 : -0.21738540932774095
+service != imap4 : -1.010742545932842
+service is missing : -1.0008086873736213
+
+
+	Class 18 (outcome=warezmaster)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 14.5 : 1.689075292153549
+difficulty_level > 14.5 : -0.8718254661897799
+difficulty_level is missing : -0.5127302725533323
+
+
+	Class 19 (outcome=phf)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 4.5 : -0.024424030604968183
+difficulty_level > 4.5 : -1.0107790267191084
+difficulty_level is missing : -1.005764806673261
+
+
+	Class 20 (outcome=land)
+
+Decision Stump
+
+Classifications
+
+land <= 0.5 : -1.0107384522375493
+land > 0.5 : 2.232138472750277
+land is missing : -0.9942626856688148
+
+
+	Class 21 (outcome=loadmodule)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 4.5 : 0.09984626826182982
+difficulty_level > 4.5 : -1.0082870649937772
+difficulty_level is missing : -1.0023509877590473
+
+
+	Class 22 (outcome=spy)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 9.5 : -0.8973213329481613
+difficulty_level > 9.5 : -1.0107668340632072
+difficulty_level is missing : -1.0094745624919643
+
+
+	Class 23 (outcome=perl)
+
+Decision Stump
+
+Classifications
+
+num_file_creations <= 1.5 : -1.0108634946400143
+num_file_creations > 1.5 : 0.7967855320368377
+num_file_creations is missing : -1.0072279024209312
+
+
+	Class 24 (outcome=saint)
+
+Decision Stump
+
+Classifications
+
+diff_srv_rate <= 0.995 : -0.9123231437146385
+diff_srv_rate > 0.995 : 0.7008621407509453
+diff_srv_rate is missing : -0.7749278096085704
+
+
+	Class 25 (outcome=mscan)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 14.5 : 2.085982316122726
+difficulty_level > 14.5 : -0.8427194748097734
+difficulty_level is missing : -0.5131681184415805
+
+
+	Class 26 (outcome=apache2)
+
+Decision Stump
+
+Classifications
+
+flag = RSTR : 2.5206253206600584
+flag != RSTR : -0.8445170779315101
+flag is missing : -0.5850063446646006
+
+
+	Class 27 (outcome=snmpgetattack)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 9.5 : 0.5906492969258751
+difficulty_level > 9.5 : -1.0096501244744698
+difficulty_level is missing : -0.8922650523433652
+
+
+	Class 28 (outcome=processtable)
+
+Decision Stump
+
+Classifications
+
+duration <= 7211.0 : -0.9248668730000761
+duration > 7211.0 : 2.237427360878944
+duration is missing : -0.652964246791879
+
+
+	Class 29 (outcome=httptunnel)
+
+Decision Stump
+
+Classifications
+
+service = other : 0.2365262528001239
+service != other : -1.008242266787654
+service is missing : -0.9025961356588849
+
+
+	Class 30 (outcome=ps)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 7.5 : -0.06777869433101075
+difficulty_level > 7.5 : -1.0083075285887375
+difficulty_level is missing : -0.9983374810485662
+
+
+	Class 31 (outcome=snmpguess)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 17.5 : 0.49557480057015313
+difficulty_level > 17.5 : -1.0139649814646479
+difficulty_level is missing : -0.7755196296690735
+
+
+	Class 32 (outcome=mailbomb)
+
+Decision Stump
+
+Classifications
+
+service = smtp : 0.6983479064148829
+service != smtp : -1.015080224332573
+service is missing : -0.8057125185123142
+
+
+	Class 33 (outcome=named)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 6.5 : 0.2891413910932744
+difficulty_level > 6.5 : -1.0096052102495754
+difficulty_level is missing : -0.9973747146167777
+
+
+	Class 34 (outcome=sendmail)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 4.5 : 0.06892965977295833
+difficulty_level > 4.5 : -1.009485508914199
+difficulty_level is missing : -0.9995089471207905
+
+
+	Class 35 (outcome=xterm)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 5.5 : 0.4058955190024557
+difficulty_level > 5.5 : -1.010896792237248
+difficulty_level is missing : -1.0002761099638382
+
+
+	Class 36 (outcome=worm)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 0.5 : -0.24762792812311196
+difficulty_level > 0.5 : -1.010740959342844
+difficulty_level is missing : -1.0094759865206682
+
+
+	Class 37 (outcome=xlock)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 4.5 : 0.3010346668321918
+difficulty_level > 4.5 : -1.0108337370250853
+difficulty_level is missing : -1.0035434939766437
+
+
+	Class 38 (outcome=xsnoop)
+
+Decision Stump
+
+Classifications
+
+service = X11 : 0.331281538352804
+service != X11 : -1.010739065418704
+service is missing : -1.0083011468631085
+
+
+	Class 39 (outcome=sqlattack)
+
+Decision Stump
+
+Classifications
+
+num_shells <= 0.5 : -1.0107543363427072
+num_shells > 0.5 : 0.9913422817112575
+num_shells is missing : -1.0095443740511902
+
+
+	Class 40 (outcome=udpstorm)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 9.5 : -0.8970549193546058
+difficulty_level > 9.5 : -1.010766834062367
+difficulty_level is missing : -1.0094711474356122
+
+
+Iteration 3
+	Class 1 (outcome=normal)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 19.5 : -0.8270862360859009
+difficulty_level > 19.5 : 1.1176111361312784
+difficulty_level is missing : 0.2327475019097727
+
+
+	Class 2 (outcome=neptune)
+
+Decision Stump
+
+Classifications
+
+srv_count <= 2.5 : -1.193336776502958
+srv_count > 2.5 : 0.8131800383552483
+srv_count is missing : -0.027864553523433328
+
+
+	Class 3 (outcome=warezclient)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 333.5 : -1.0373422876366356
+src_bytes > 333.5 : 1.6767059276259948
+src_bytes is missing : 0.12547292438435573
+
+
+	Class 4 (outcome=ipsweep)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 18.5 : 0.4508476105279548
+difficulty_level > 18.5 : -1.4394583928210067
+difficulty_level is missing : -0.12408067373308782
+
+
+	Class 5 (outcome=portsweep)
+
+Decision Stump
+
+Classifications
+
+rerror_rate <= 0.015 : -0.9125485511671475
+rerror_rate > 0.015 : 1.285964431767444
+rerror_rate is missing : 0.37536359637211747
+
+
+	Class 6 (outcome=teardrop)
+
+Decision Stump
+
+Classifications
+
+wrong_fragment <= 0.5 : -1.0028396131377113
+wrong_fragment > 0.5 : 0.39828335894999034
+wrong_fragment is missing : -0.6903157343810243
+
+
+	Class 7 (outcome=nmap)
+
+Decision Stump
+
+Classifications
+
+flag = SH : 2.993104096284346
+flag != SH : 0.043107978036157735
+flag is missing : 0.28887480536440446
+
+
+	Class 8 (outcome=satan)
+
+Decision Stump
+
+Classifications
+
+same_srv_rate <= 0.025 : 2.066335943042214
+same_srv_rate > 0.025 : -0.5079335753185915
+same_srv_rate is missing : 0.29372583102744043
+
+
+	Class 9 (outcome=smurf)
+
+Decision Stump
+
+Classifications
+
+srv_count <= 25.5 : -1.2884958960278394
+srv_count > 25.5 : 1.4164122792626925
+srv_count is missing : 0.5328575039971903
+
+
+	Class 10 (outcome=pod)
+
+Decision Stump
+
+Classifications
+
+wrong_fragment <= 0.5 : -0.9558699131580257
+wrong_fragment > 0.5 : 2.4572317884649038
+wrong_fragment is missing : -0.2125268224030548
+
+
+	Class 11 (outcome=back)
+
+Decision Stump
+
+Classifications
+
+hot <= 0.5 : -0.9599974454682461
+hot > 0.5 : 1.4741933078225757
+hot is missing : 0.17725277077742715
+
+
+	Class 12 (outcome=guess_passwd)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 18.5 : 1.8043747520778481
+difficulty_level > 18.5 : -1.0017870985601913
+difficulty_level is missing : 0.7821764435492717
+
+
+	Class 13 (outcome=ftp_write)
+
+Decision Stump
+
+Classifications
+
+num_access_files <= 0.5 : -0.9724374715380689
+num_access_files > 0.5 : 0.8796409565405303
+num_access_files is missing : -0.9506036334408663
+
+
+	Class 14 (outcome=multihop)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 11.5 : 0.9299240579334669
+difficulty_level > 11.5 : -0.9875987693652578
+difficulty_level is missing : -0.8804627614495746
+
+
+	Class 15 (outcome=rootkit)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 8.5 : 0.3554461551505749
+difficulty_level > 8.5 : -1.0028245789164902
+difficulty_level is missing : -0.8893222625010312
+
+
+	Class 16 (outcome=buffer_overflow)
+
+Decision Stump
+
+Classifications
+
+num_compromised <= 0.5 : -0.920213061114199
+num_compromised > 0.5 : 1.9728537258779943
+num_compromised is missing : -0.7856808811186793
+
+
+	Class 17 (outcome=imap)
+
+Decision Stump
+
+Classifications
+
+service = imap4 : 0.4345562610890585
+service != imap4 : -1.00281482725702
+service is missing : -0.9444593149731483
+
+
+	Class 18 (outcome=warezmaster)
+
+Decision Stump
+
+Classifications
+
+is_guest_login <= 0.5 : -0.22430926849092003
+is_guest_login > 0.5 : 2.4604630412938633
+is_guest_login is missing : 0.22668561226067707
+
+
+	Class 19 (outcome=phf)
+
+Decision Stump
+
+Classifications
+
+root_shell <= 0.5 : -0.9952485425318017
+root_shell > 0.5 : 1.652393957924846
+root_shell is missing : -0.9726919658936342
+
+
+	Class 20 (outcome=land)
+
+Decision Stump
+
+Classifications
+
+land <= 0.5 : -1.0028238533332203
+land > 0.5 : 0.8319111698134083
+land is missing : -0.9528885688129668
+
+
+	Class 21 (outcome=loadmodule)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 4.5 : 0.6408602448384975
+difficulty_level > 4.5 : -0.9874950728587579
+difficulty_level is missing : -0.9515775210322033
+
+
+	Class 22 (outcome=spy)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 9.5 : -0.622623609535276
+difficulty_level > 9.5 : -1.0028239131122614
+difficulty_level is missing : -0.995154190631856
+
+
+	Class 23 (outcome=perl)
+
+Decision Stump
+
+Classifications
+
+num_shells <= 0.5 : -1.0028394346502465
+num_shells > 0.5 : 1.3035306780387201
+num_shells is missing : -0.9810288707547569
+
+
+	Class 24 (outcome=saint)
+
+Decision Stump
+
+Classifications
+
+count <= 430.5 : -0.4538106562596663
+count > 430.5 : 1.5104725856751804
+count is missing : -0.10851320948785537
+
+
+	Class 25 (outcome=mscan)
+
+Decision Stump
+
+Classifications
+
+diff_srv_rate <= 0.665 : -0.5072679601662481
+diff_srv_rate > 0.665 : 2.3808432501962074
+diff_srv_rate is missing : 0.07505693794179982
+
+
+	Class 26 (outcome=apache2)
+
+Decision Stump
+
+Classifications
+
+service = http : 1.1347778760135818
+service != http : -1.0171336116585152
+service is missing : 0.09677299241801839
+
+
+	Class 27 (outcome=snmpgetattack)
+
+Decision Stump
+
+Classifications
+
+protocol_type = udp : 1.3315143081014742
+protocol_type != udp : -1.038914292512372
+protocol_type is missing : -0.45503202031035395
+
+
+	Class 28 (outcome=processtable)
+
+Decision Stump
+
+Classifications
+
+flag = S3 : 2.8486554808764337
+flag != S3 : -0.5845226508807136
+flag is missing : -0.23211308379662252
+
+
+	Class 29 (outcome=httptunnel)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_rerror_rate <= 0.495 : -0.9827798360850445
+dst_host_srv_rerror_rate > 0.495 : 0.7867481023679331
+dst_host_srv_rerror_rate is missing : -0.5076796096551692
+
+
+	Class 30 (outcome=ps)
+
+Decision Stump
+
+Classifications
+
+num_file_creations <= 0.5 : -0.9583302889162555
+num_file_creations > 0.5 : 2.0075582955407767
+num_file_creations is missing : -0.9294618113542982
+
+
+	Class 31 (outcome=snmpguess)
+
+Decision Stump
+
+Classifications
+
+service = private : 1.2229648353354134
+service != private : -0.9917178747177307
+service is missing : -0.18358848158608337
+
+
+	Class 32 (outcome=mailbomb)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 14.5 : 2.223017186535336
+difficulty_level > 14.5 : -0.777331087392706
+difficulty_level is missing : -0.1655149003166185
+
+
+	Class 33 (outcome=named)
+
+Decision Stump
+
+Classifications
+
+service = domain : 2.0189146158472266
+service != domain : -0.9598891024912988
+service is missing : -0.9237927394286463
+
+
+	Class 34 (outcome=sendmail)
+
+Decision Stump
+
+Classifications
+
+num_root <= 0.5 : -0.9734026211936202
+num_root > 0.5 : 1.7179145597357532
+num_root is missing : -0.9367583880479018
+
+
+	Class 35 (outcome=xterm)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 5.5 : 0.6314351328444708
+difficulty_level > 5.5 : -1.0028666224545484
+difficulty_level is missing : -0.9391849732483433
+
+
+	Class 36 (outcome=worm)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 0.5 : 0.5760604287935073
+difficulty_level > 0.5 : -1.002825055932884
+difficulty_level is missing : -0.995164707078129
+
+
+	Class 37 (outcome=xlock)
+
+Decision Stump
+
+Classifications
+
+dst_bytes <= 60523.0 : -0.9877951902720888
+dst_bytes > 60523.0 : 1.9862552626695509
+dst_bytes is missing : -0.9591947303231261
+
+
+	Class 38 (outcome=xsnoop)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 0.5 : 1.6262950264428409
+difficulty_level > 0.5 : -0.9960815404002163
+difficulty_level is missing : -0.9885526048799138
+
+
+	Class 39 (outcome=sqlattack)
+
+Decision Stump
+
+Classifications
+
+urgent <= 0.5 : -1.0028363587202929
+urgent > 0.5 : 1.9842720892868668
+urgent is missing : -0.9956062339695523
+
+
+	Class 40 (outcome=udpstorm)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 9.5 : -0.62345382106809
+difficulty_level > 9.5 : -1.0028239131113303
+difficulty_level is missing : -0.9951780860358076
+
+
+Iteration 4
+	Class 1 (outcome=normal)
+
+Decision Stump
+
+Classifications
+
+service = private : -0.853313621145574
+service != private : 0.44090361530389705
+service is missing : 0.21988937408620363
+
+
+	Class 2 (outcome=neptune)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_count <= 75.5 : 0.6891018792616602
+dst_host_srv_count > 75.5 : -1.2888962057137414
+dst_host_srv_count is missing : 0.3299416614617305
+
+
+	Class 3 (outcome=warezclient)
+
+Decision Stump
+
+Classifications
+
+hot <= 2.5 : -0.6372931509516326
+hot > 2.5 : 2.698161158120164
+hot is missing : -0.20510902052752086
+
+
+	Class 4 (outcome=ipsweep)
+
+Decision Stump
+
+Classifications
+
+dst_host_diff_srv_rate <= 0.995 : -0.50319604872823
+dst_host_diff_srv_rate > 0.995 : 2.015377980078507
+dst_host_diff_srv_rate is missing : -0.28512906044321207
+
+
+	Class 5 (outcome=portsweep)
+
+Decision Stump
+
+Classifications
+
+dst_host_same_src_port_rate <= 0.125 : -1.0023848139543594
+dst_host_same_src_port_rate > 0.125 : 1.4434968795173297
+dst_host_same_src_port_rate is missing : 0.011297744425293993
+
+
+	Class 6 (outcome=teardrop)
+
+Decision Stump
+
+Classifications
+
+wrong_fragment <= 0.5 : -1.0014608666652554
+wrong_fragment > 0.5 : 0.6291357971688994
+wrong_fragment is missing : -0.06697397960046945
+
+
+	Class 7 (outcome=nmap)
+
+Decision Stump
+
+Classifications
+
+srv_diff_host_rate <= 0.98 : -0.3264826222129778
+srv_diff_host_rate > 0.98 : 1.1202873579995136
+srv_diff_host_rate is missing : 0.18530148041819478
+
+
+	Class 8 (outcome=satan)
+
+Decision Stump
+
+Classifications
+
+protocol_type = udp : 1.0509843699724988
+protocol_type != udp : -0.6688807703843666
+protocol_type is missing : -0.13560462384331268
+
+
+	Class 9 (outcome=smurf)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 507.5 : -1.2864241740897682
+src_bytes > 507.5 : 1.011871884811716
+src_bytes is missing : 0.03057626762137148
+
+
+	Class 10 (outcome=pod)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 563.5 : -1.0563042484925513
+src_bytes > 563.5 : 0.924938150739216
+src_bytes is missing : -0.4472018531983425
+
+
+	Class 11 (outcome=back)
+
+Decision Stump
+
+Classifications
+
+service = http : 1.167522148782104
+service != http : -1.0644533732138368
+service is missing : 0.06398371181231637
+
+
+	Class 12 (outcome=guess_passwd)
+
+Decision Stump
+
+Classifications
+
+dst_bytes <= 92.5 : -1.1066610797472725
+dst_bytes > 92.5 : 0.6204723098528557
+dst_bytes is missing : -0.41561390497175627
+
+
+	Class 13 (outcome=ftp_write)
+
+Decision Stump
+
+Classifications
+
+dst_host_count <= 2.5 : 0.6689068909355355
+dst_host_count > 2.5 : -0.9750741984366116
+dst_host_count is missing : -0.8327168846132187
+
+
+	Class 14 (outcome=multihop)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_count <= 3.5 : 0.24970952103937494
+dst_host_srv_count > 3.5 : -0.9536284149543247
+dst_host_srv_count is missing : -0.6795395740831538
+
+
+	Class 15 (outcome=rootkit)
+
+Decision Stump
+
+Classifications
+
+duration <= 9.5 : -0.8791258023264672
+duration > 9.5 : 0.9367529835002963
+duration is missing : -0.7000362162517529
+
+
+	Class 16 (outcome=buffer_overflow)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 14.5 : 0.41445971800411047
+difficulty_level > 14.5 : -1.0102086616253745
+difficulty_level is missing : -0.5883622420074937
+
+
+	Class 17 (outcome=imap)
+
+Decision Stump
+
+Classifications
+
+flag = SH : 2.015723212633647
+flag != SH : -0.8893254275945672
+flag is missing : -0.8230923474714373
+
+
+	Class 18 (outcome=warezmaster)
+
+Decision Stump
+
+Classifications
+
+service = ftp_data : 2.2589455554083617
+service != ftp_data : -0.8675756815824301
+service is missing : -0.0766471669547252
+
+
+	Class 19 (outcome=phf)
+
+Decision Stump
+
+Classifications
+
+num_access_files <= 0.5 : -0.9760569969428415
+num_access_files > 0.5 : 1.5626051862239327
+num_access_files is missing : -0.9056283098814367
+
+
+	Class 20 (outcome=land)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 8.5 : -1.8862561637404531
+difficulty_level > 8.5 : -0.9162050147653897
+difficulty_level is missing : -0.9641234074376098
+
+
+	Class 21 (outcome=loadmodule)
+
+Decision Stump
+
+Classifications
+
+num_file_creations <= 0.5 : -0.9066052022186928
+num_file_creations > 0.5 : 1.6626092776208357
+num_file_creations is missing : -0.8428126498199598
+
+
+	Class 22 (outcome=spy)
+
+Decision Stump
+
+Classifications
+
+duration <= 298.0 : -1.0015022995738332
+duration > 298.0 : 0.03490695704710414
+duration is missing : -0.9746542709008787
+
+
+	Class 23 (outcome=perl)
+
+Decision Stump
+
+Classifications
+
+num_file_creations <= 1.5 : -1.0022884886303127
+num_file_creations > 1.5 : 0.39936250047321814
+num_file_creations is missing : -0.9421542516222713
+
+
+	Class 24 (outcome=saint)
+
+Decision Stump
+
+Classifications
+
+service = eco_i : 2.2831729981269198
+service != eco_i : 0.04411693730234714
+service is missing : 0.3262184390268463
+
+
+	Class 25 (outcome=mscan)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 0.5 : 1.1534485761350008
+src_bytes > 0.5 : -0.9878959074927679
+src_bytes is missing : 0.1272522604496879
+
+
+	Class 26 (outcome=apache2)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_rerror_rate <= 0.07500000000000001 : -0.9163018443992472
+dst_host_srv_rerror_rate > 0.07500000000000001 : 1.3045101119500253
+dst_host_srv_rerror_rate is missing : 0.18252501435471444
+
+
+	Class 27 (outcome=snmpgetattack)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 104.5 : -1.074606409226471
+src_bytes > 104.5 : 0.6202144559121605
+src_bytes is missing : -0.5084099439127951
+
+
+	Class 28 (outcome=processtable)
+
+Decision Stump
+
+Classifications
+
+dst_host_rerror_rate <= 0.005 : -1.0903501477567963
+dst_host_rerror_rate > 0.005 : 0.5863051843175182
+dst_host_rerror_rate is missing : -0.1200210664333553
+
+
+	Class 29 (outcome=httptunnel)
+
+Decision Stump
+
+Classifications
+
+service = other : 1.093811880356633
+service != other : -0.9705820603744212
+service is missing : -0.18911763865017175
+
+
+	Class 30 (outcome=ps)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 7.5 : 0.724478674936576
+difficulty_level > 7.5 : -0.9510212726871671
+difficulty_level is missing : -0.7814019161897562
+
+
+	Class 31 (outcome=snmpguess)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_count <= 252.5 : -1.058175905176895
+dst_host_srv_count > 252.5 : 1.2229824575757078
+dst_host_srv_count is missing : -0.2445337312838573
+
+
+	Class 32 (outcome=mailbomb)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 2598.5 : -1.0374614951004397
+src_bytes > 2598.5 : 1.2102774236458507
+src_bytes is missing : -0.1978511535182692
+
+
+	Class 33 (outcome=named)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 10.5 : 0.8829725853208817
+difficulty_level > 10.5 : -1.002283633873378
+difficulty_level is missing : -0.7670872439784738
+
+
+	Class 34 (outcome=sendmail)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 8.5 : 0.9286828921364997
+difficulty_level > 8.5 : -1.0018830625064141
+difficulty_level is missing : -0.7983753696796178
+
+
+	Class 35 (outcome=xterm)
+
+Decision Stump
+
+Classifications
+
+hot <= 0.5 : -0.9594282392524937
+hot > 0.5 : 1.10229653166693
+hot is missing : -0.8185262262018587
+
+
+	Class 36 (outcome=worm)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 4204.5 : -1.001675001524297
+src_bytes > 4204.5 : -0.026220482114325417
+src_bytes is missing : -0.9751478777865827
+
+
+	Class 37 (outcome=xlock)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 1.5 : 1.8861867203433382
+difficulty_level > 1.5 : -0.9767781236846813
+difficulty_level is missing : -0.8817105204225353
+
+
+	Class 38 (outcome=xsnoop)
+
+Decision Stump
+
+Classifications
+
+service = X11 : 1.5554140994144632
+service != X11 : -1.0016405497094605
+service is missing : -0.9524265404972493
+
+
+	Class 39 (outcome=sqlattack)
+
+Decision Stump
+
+Classifications
+
+num_file_creations <= 2.5 : -1.002563096528462
+num_file_creations > 2.5 : 2.0089960738905654
+num_file_creations is missing : -0.9839990018919393
+
+
+	Class 40 (outcome=udpstorm)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 9.5 : -0.4146224811972167
+difficulty_level > 9.5 : -1.001455187549505
+difficulty_level is missing : -0.9747093747474573
+
+
+Iteration 5
+	Class 1 (outcome=normal)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 16.5 : -0.6599504622913832
+difficulty_level > 16.5 : 0.43691639650929753
+difficulty_level is missing : 0.07587972048440367
+
+
+	Class 2 (outcome=neptune)
+
+Decision Stump
+
+Classifications
+
+diff_srv_rate <= 0.335 : 0.30142732294592345
+diff_srv_rate > 0.335 : -1.3035713085361174
+diff_srv_rate is missing : -0.18797759807622674
+
+
+	Class 3 (outcome=warezclient)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_diff_host_rate <= 0.065 : -0.32472985347242445
+dst_host_srv_diff_host_rate > 0.065 : 1.8362203727228537
+dst_host_srv_diff_host_rate is missing : 0.3448556630900962
+
+
+	Class 4 (outcome=ipsweep)
+
+Decision Stump
+
+Classifications
+
+protocol_type = icmp : 0.9510145099693591
+protocol_type != icmp : -0.6160131766843409
+protocol_type is missing : 0.5009061070291068
+
+
+	Class 5 (outcome=portsweep)
+
+Decision Stump
+
+Classifications
+
+diff_srv_rate <= 0.355 : -0.8050196903543203
+diff_srv_rate > 0.355 : 1.3365117446767962
+diff_srv_rate is missing : -0.004874224531789127
+
+
+	Class 6 (outcome=teardrop)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 11.5 : -2.385343113444693
+difficulty_level > 11.5 : 0.02422331341615219
+difficulty_level is missing : -0.5145719210983948
+
+
+	Class 7 (outcome=nmap)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 14.5 : 1.7707275115099255
+difficulty_level > 14.5 : -0.480919446739217
+difficulty_level is missing : -0.2329607294147779
+
+
+	Class 8 (outcome=satan)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 20.5 : 0.6232232694541181
+src_bytes > 20.5 : -1.1271106100050967
+src_bytes is missing : 0.25781736666780763
+
+
+	Class 9 (outcome=smurf)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 519.5 : -1.1311336254314965
+src_bytes > 519.5 : 0.7903606426176925
+src_bytes is missing : 0.2117613149415535
+
+
+	Class 10 (outcome=pod)
+
+Decision Stump
+
+Classifications
+
+protocol_type = icmp : 0.7984832586085495
+protocol_type != icmp : -1.0308246004717174
+protocol_type is missing : -0.05019129864599199
+
+
+	Class 11 (outcome=back)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 12.5 : 1.6831183256039621
+difficulty_level > 12.5 : -0.7965377943035868
+difficulty_level is missing : 0.13765422607364686
+
+
+	Class 12 (outcome=guess_passwd)
+
+Decision Stump
+
+Classifications
+
+num_failed_logins <= 0.5 : -0.4969389765688666
+num_failed_logins > 0.5 : 1.1951949480690396
+num_failed_logins is missing : -0.20055262907869328
+
+
+	Class 13 (outcome=ftp_write)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 14.5 : 1.118845156697545
+difficulty_level > 14.5 : -0.9262110715995375
+difficulty_level is missing : -0.5790116112483037
+
+
+	Class 14 (outcome=multihop)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 14.5 : 0.5041382965286487
+difficulty_level > 14.5 : -1.001170566758693
+difficulty_level is missing : -0.33225387005640816
+
+
+	Class 15 (outcome=rootkit)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 7.5 : 0.5563306857680069
+difficulty_level > 7.5 : -0.9355804714378573
+difficulty_level is missing : -0.3593005429427746
+
+
+	Class 16 (outcome=buffer_overflow)
+
+Decision Stump
+
+Classifications
+
+dst_bytes <= 697.5 : -1.0179519036224738
+dst_bytes > 697.5 : 0.7413504526412106
+dst_bytes is missing : -0.2106376674115576
+
+
+	Class 17 (outcome=imap)
+
+Decision Stump
+
+Classifications
+
+service = imap4 : 0.7784026037212733
+service != imap4 : -1.0021674213649256
+service is missing : -0.576179871122169
+
+
+	Class 18 (outcome=warezmaster)
+
+Decision Stump
+
+Classifications
+
+duration <= 139.0 : -0.5072841212544854
+duration > 139.0 : 1.080805888536763
+duration is missing : 0.11743923371482558
+
+
+	Class 19 (outcome=phf)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 4.5 : 1.6076706111347117
+difficulty_level > 4.5 : -1.006040495372474
+difficulty_level is missing : -0.7539624668685776
+
+
+	Class 20 (outcome=land)
+
+Decision Stump
+
+Classifications
+
+land <= 0.5 : -1.0007748267807832
+land > 0.5 : 0.7209046762462883
+land is missing : -0.6324994244253023
+
+
+	Class 21 (outcome=loadmodule)
+
+Decision Stump
+
+Classifications
+
+dst_host_count <= 6.5 : 0.9125653251432587
+dst_host_count > 6.5 : -1.0133184326380742
+dst_host_count is missing : -0.6008222813281834
+
+
+	Class 22 (outcome=spy)
+
+Decision Stump
+
+Classifications
+
+duration <= 298.0 : -1.0007379247830213
+duration > 298.0 : 0.33929968047426334
+duration is missing : -0.9132598505332619
+
+
+	Class 23 (outcome=perl)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 6.5 : 0.7228693662603713
+difficulty_level > 6.5 : -1.0068226907966804
+difficulty_level is missing : -0.8172360070922219
+
+
+	Class 24 (outcome=saint)
+
+Decision Stump
+
+Classifications
+
+dst_host_rerror_rate <= 0.925 : -0.17494136142711625
+dst_host_rerror_rate > 0.925 : 1.2337161743451286
+dst_host_rerror_rate is missing : 0.13720228367957446
+
+
+	Class 25 (outcome=mscan)
+
+Decision Stump
+
+Classifications
+
+srv_diff_host_rate <= 0.485 : -0.7917072940689742
+srv_diff_host_rate > 0.485 : 1.1874078968551072
+srv_diff_host_rate is missing : -0.05642525566131141
+
+
+	Class 26 (outcome=apache2)
+
+Decision Stump
+
+Classifications
+
+serror_rate <= 0.005 : -0.7451992056326011
+serror_rate > 0.005 : 1.9929153392458745
+serror_rate is missing : 0.18098698091035323
+
+
+	Class 27 (outcome=snmpgetattack)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 10.5 : 0.4530730219675494
+difficulty_level > 10.5 : -1.0148544645898938
+difficulty_level is missing : -0.4369418832485013
+
+
+	Class 28 (outcome=processtable)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 0.5 : 0.3488231487885763
+src_bytes > 0.5 : -1.1858949573453748
+src_bytes is missing : -0.1938461788069963
+
+
+	Class 29 (outcome=httptunnel)
+
+Decision Stump
+
+Classifications
+
+dst_host_rerror_rate <= 0.175 : 0.6369550238238276
+dst_host_rerror_rate > 0.175 : -1.114190798849099
+dst_host_rerror_rate is missing : -0.1267152348606506
+
+
+	Class 30 (outcome=ps)
+
+Decision Stump
+
+Classifications
+
+dst_bytes <= 331.5 : -0.925822416967853
+dst_bytes > 331.5 : 0.5370513721083169
+dst_bytes is missing : -0.4906036311527357
+
+
+	Class 31 (outcome=snmpguess)
+
+Decision Stump
+
+Classifications
+
+dst_host_same_src_port_rate <= 0.025 : 0.29416212918502477
+dst_host_same_src_port_rate > 0.025 : -1.3963179546063016
+dst_host_same_src_port_rate is missing : -0.6161052105816406
+
+
+	Class 32 (outcome=mailbomb)
+
+Decision Stump
+
+Classifications
+
+service = smtp : 0.8863787453268926
+service != smtp : -1.0771861248444519
+service is missing : -0.15604536609717867
+
+
+	Class 33 (outcome=named)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 1561.5 : -0.810687269480386
+src_bytes > 1561.5 : 2.0125030099756276
+src_bytes is missing : -0.49369264411293995
+
+
+	Class 34 (outcome=sendmail)
+
+Decision Stump
+
+Classifications
+
+service = auth : 1.6423007522636544
+service != auth : -0.730283056759525
+service is missing : -0.54478218804277
+
+
+	Class 35 (outcome=xterm)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 2208.5 : -0.8370575817615699
+src_bytes > 2208.5 : 1.7141337626558735
+src_bytes is missing : -0.5562710424599654
+
+
+	Class 36 (outcome=worm)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 0.5 : 0.8164013845564901
+difficulty_level > 0.5 : -1.0007143666020564
+difficulty_level is missing : -0.914306113619236
+
+
+	Class 37 (outcome=xlock)
+
+Decision Stump
+
+Classifications
+
+duration <= 110.5 : -1.0052265783849184
+duration > 110.5 : 1.7229561009488776
+duration is missing : -0.6687869034008073
+
+
+	Class 38 (outcome=xsnoop)
+
+Decision Stump
+
+Classifications
+
+dst_host_same_srv_rate <= 0.005 : 0.42027986120127425
+dst_host_same_srv_rate > 0.005 : -1.0033407703026669
+dst_host_same_srv_rate is missing : -0.8799286392351218
+
+
+	Class 39 (outcome=sqlattack)
+
+Decision Stump
+
+Classifications
+
+num_shells <= 0.5 : -1.0023240521598007
+num_shells > 0.5 : 0.7079046475880135
+num_shells is missing : -0.9621578057521286
+
+
+	Class 40 (outcome=udpstorm)
+
+Decision Stump
+
+Classifications
+
+dst_host_diff_srv_rate <= 0.495 : -1.0007960996180516
+dst_host_diff_srv_rate > 0.495 : 0.12406592172234016
+dst_host_diff_srv_rate is missing : -0.9138944938910556
+
+
+Iteration 6
+	Class 1 (outcome=normal)
+
+Decision Stump
+
+Classifications
+
+dst_host_same_src_port_rate <= 0.005 : -0.5729549650736262
+dst_host_same_src_port_rate > 0.005 : 0.41167249211094253
+dst_host_same_src_port_rate is missing : 0.026191763941564424
+
+
+	Class 2 (outcome=neptune)
+
+Decision Stump
+
+Classifications
+
+dst_host_same_src_port_rate <= 0.015 : 0.5516463703238486
+dst_host_same_src_port_rate > 0.015 : -1.051381987618594
+dst_host_same_src_port_rate is missing : 0.10658811924548911
+
+
+	Class 3 (outcome=warezclient)
+
+Decision Stump
+
+Classifications
+
+logged_in <= 0.5 : -1.2786063372007999
+logged_in > 0.5 : 0.4524009376644783
+logged_in is missing : -0.14934960513509687
+
+
+	Class 4 (outcome=ipsweep)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_count <= 1.5 : 2.2599447814367974
+dst_host_srv_count > 1.5 : -0.36068676472029426
+dst_host_srv_count is missing : -0.14945076052598885
+
+
+	Class 5 (outcome=portsweep)
+
+Decision Stump
+
+Classifications
+
+dst_host_rerror_rate <= 0.005 : -1.074844301662367
+dst_host_rerror_rate > 0.005 : 0.36634198263575796
+dst_host_rerror_rate is missing : -0.009988390524806661
+
+
+	Class 6 (outcome=teardrop)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 10.5 : -2.4074563591147378
+difficulty_level > 10.5 : -0.2555283667115267
+difficulty_level is missing : -0.7467278268015488
+
+
+	Class 7 (outcome=nmap)
+
+Decision Stump
+
+Classifications
+
+dst_host_count <= 251.5 : 0.5271764531758957
+dst_host_count > 251.5 : -1.0246794076806303
+dst_host_count is missing : 0.27880821700032893
+
+
+	Class 8 (outcome=satan)
+
+Decision Stump
+
+Classifications
+
+serror_rate <= 0.445 : 0.3039711195689077
+serror_rate > 0.445 : -1.268603696362432
+serror_rate is missing : 0.0258520998571537
+
+
+	Class 9 (outcome=smurf)
+
+Decision Stump
+
+Classifications
+
+count <= 3.5 : -1.2022518135561207
+count > 3.5 : 0.8543235879937351
+count is missing : 0.33177170452962207
+
+
+	Class 10 (outcome=pod)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 563.5 : -1.0362689997422914
+src_bytes > 563.5 : 0.7408729301607967
+src_bytes is missing : 0.2154198051213854
+
+
+	Class 11 (outcome=back)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 15434.5 : -1.0473379809209715
+src_bytes > 15434.5 : 0.7934612587185806
+src_bytes is missing : -0.1611006529183519
+
+
+	Class 12 (outcome=guess_passwd)
+
+Decision Stump
+
+Classifications
+
+service = pop_3 : 1.331601564518039
+service != pop_3 : -0.7567325425365592
+service is missing : -0.07244804964553597
+
+
+	Class 13 (outcome=ftp_write)
+
+Decision Stump
+
+Classifications
+
+dst_host_count <= 2.5 : 0.7499478972740051
+dst_host_count > 2.5 : -0.858127758118605
+dst_host_count is missing : -0.35054251931681446
+
+
+	Class 14 (outcome=multihop)
+
+Decision Stump
+
+Classifications
+
+duration <= 25.5 : -0.5170909953675921
+duration > 25.5 : 1.4519910407447967
+duration is missing : -0.220056955180038
+
+
+	Class 15 (outcome=rootkit)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 31.5 : -0.9032207943937197
+src_bytes > 31.5 : 0.30012803469335825
+src_bytes is missing : -0.22785823614235262
+
+
+	Class 16 (outcome=buffer_overflow)
+
+Decision Stump
+
+Classifications
+
+dst_host_count <= 6.5 : 1.310702727023137
+dst_host_count > 6.5 : -0.6743399288247807
+dst_host_count is missing : -0.12533343239581946
+
+
+	Class 17 (outcome=imap)
+
+Decision Stump
+
+Classifications
+
+dst_host_count <= 11.5 : 1.7865268219242547
+dst_host_count > 11.5 : -0.9569908475845814
+dst_host_count is missing : -0.34253393948178656
+
+
+	Class 18 (outcome=warezmaster)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_diff_host_rate <= 0.095 : -0.5367345036840047
+dst_host_srv_diff_host_rate > 0.095 : 1.698692501378507
+dst_host_srv_diff_host_rate is missing : -0.009964754541109998
+
+
+	Class 19 (outcome=phf)
+
+Decision Stump
+
+Classifications
+
+service = http : 0.6350593560506121
+service != http : -1.0127456073035135
+service is missing : -0.6232018272495023
+
+
+	Class 20 (outcome=land)
+
+Decision Stump
+
+Classifications
+
+srv_diff_host_rate <= 0.98 : -1.011901810877585
+srv_diff_host_rate > 0.98 : 0.3323116408115055
+srv_diff_host_rate is missing : -0.4253337215469171
+
+
+	Class 21 (outcome=loadmodule)
+
+Decision Stump
+
+Classifications
+
+dst_bytes <= 692.5 : -1.0032204553476054
+dst_bytes > 692.5 : 1.1809413719909858
+dst_bytes is missing : -0.32783454302625503
+
+
+	Class 22 (outcome=spy)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 9.5 : 0.9571372056134435
+difficulty_level > 9.5 : -1.0003800992212706
+difficulty_level is missing : -0.7624029995886473
+
+
+	Class 23 (outcome=perl)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_diff_host_rate <= 0.985 : -0.7976780078444338
+dst_host_srv_diff_host_rate > 0.985 : 2.7807066399978764
+dst_host_srv_diff_host_rate is missing : -0.6632624830397471
+
+
+	Class 24 (outcome=saint)
+
+Decision Stump
+
+Classifications
+
+srv_count <= 50.5 : -0.016825422045547836
+srv_count > 50.5 : 1.4254384817930457
+srv_count is missing : 0.20218189800647934
+
+
+	Class 25 (outcome=mscan)
+
+Decision Stump
+
+Classifications
+
+service = pop_3 : 2.1553324452967977
+service != pop_3 : -0.4327951462836447
+service is missing : -0.17300616263707896
+
+
+	Class 26 (outcome=apache2)
+
+Decision Stump
+
+Classifications
+
+srv_count <= 7.5 : -0.981337560036685
+srv_count > 7.5 : 1.074853209256009
+srv_count is missing : -0.08668568144404082
+
+
+	Class 27 (outcome=snmpgetattack)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_count <= 246.5 : -0.9137887287596405
+dst_host_srv_count > 246.5 : 1.0073812145026364
+dst_host_srv_count is missing : -0.41813748416876206
+
+
+	Class 28 (outcome=processtable)
+
+Decision Stump
+
+Classifications
+
+dst_bytes <= 14.5 : -1.0508759194285417
+dst_bytes > 14.5 : 0.6608219405746334
+dst_bytes is missing : 0.07435443013289134
+
+
+	Class 29 (outcome=httptunnel)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_rerror_rate <= 0.495 : -0.9507416678425928
+dst_host_srv_rerror_rate > 0.495 : 0.916891642242059
+dst_host_srv_rerror_rate is missing : -0.12845893273630526
+
+
+	Class 30 (outcome=ps)
+
+Decision Stump
+
+Classifications
+
+service = ftp_data : 1.567428940292663
+service != ftp_data : -0.5112682142085637
+service is missing : -0.23592803413632854
+
+
+	Class 31 (outcome=snmpguess)
+
+Decision Stump
+
+Classifications
+
+dst_bytes <= 0.5 : 0.3722493221343862
+dst_bytes > 0.5 : -1.0897481817388486
+dst_bytes is missing : -0.4002455419129475
+
+
+	Class 32 (outcome=mailbomb)
+
+Decision Stump
+
+Classifications
+
+dst_host_rerror_rate <= 0.025 : -1.176297815928888
+dst_host_rerror_rate > 0.025 : 0.7713981429852363
+dst_host_rerror_rate is missing : -0.31448456359067883
+
+
+	Class 33 (outcome=named)
+
+Decision Stump
+
+Classifications
+
+dst_host_count <= 10.5 : 1.30342841098318
+dst_host_count > 10.5 : -0.9499028818836942
+dst_host_count is missing : -0.28636476558125945
+
+
+	Class 34 (outcome=sendmail)
+
+Decision Stump
+
+Classifications
+
+dst_bytes <= 1124.5 : -0.6727449928863806
+dst_bytes > 1124.5 : 1.3597182223677495
+dst_bytes is missing : -0.26565081637152643
+
+
+	Class 35 (outcome=xterm)
+
+Decision Stump
+
+Classifications
+
+dst_host_count <= 18.5 : 1.059413636412022
+dst_host_count > 18.5 : -0.9223197402604952
+dst_host_count is missing : -0.282574837207086
+
+
+	Class 36 (outcome=worm)
+
+Decision Stump
+
+Classifications
+
+dst_bytes <= 7918.5 : -1.0027782113237327
+dst_bytes > 7918.5 : 1.850856852853494
+dst_bytes is missing : -0.7770669114773991
+
+
+	Class 37 (outcome=xlock)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 4.5 : 0.361213599057655
+difficulty_level > 4.5 : -1.0223560392631712
+difficulty_level is missing : -0.554636219692714
+
+
+	Class 38 (outcome=xsnoop)
+
+Decision Stump
+
+Classifications
+
+dst_bytes <= 11239.5 : -1.0022895068833926
+dst_bytes > 11239.5 : 1.1937792380284418
+dst_bytes is missing : -0.7296921964541284
+
+
+	Class 39 (outcome=sqlattack)
+
+Decision Stump
+
+Classifications
+
+num_access_files <= 0.5 : -1.001994305730088
+num_access_files > 0.5 : 0.7203668242198312
+num_access_files is missing : -0.9119228862863409
+
+
+	Class 40 (outcome=udpstorm)
+
+Decision Stump
+
+Classifications
+
+dst_host_count <= 4.5 : 0.5692934879572691
+dst_host_count > 4.5 : -1.0005077872847785
+dst_host_count is missing : -0.7679023464351212
+
+
+Iteration 7
+	Class 1 (outcome=normal)
+
+Decision Stump
+
+Classifications
+
+dst_bytes <= 0.5 : -0.2883850036757443
+dst_bytes > 0.5 : 0.5888652787776766
+dst_bytes is missing : 0.06476576381106604
+
+
+	Class 2 (outcome=neptune)
+
+Decision Stump
+
+Classifications
+
+dst_host_serror_rate <= 0.825 : -0.5388124929820998
+dst_host_serror_rate > 0.825 : 1.0149819107349023
+dst_host_serror_rate is missing : -0.1377975214496603
+
+
+	Class 3 (outcome=warezclient)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 16.5 : 0.38313347348787197
+difficulty_level > 16.5 : -1.0645703179784742
+difficulty_level is missing : 0.00713287064642977
+
+
+	Class 4 (outcome=ipsweep)
+
+Decision Stump
+
+Classifications
+
+dst_host_count <= 72.5 : 0.5211870524537631
+dst_host_count > 72.5 : -1.1832105926291066
+dst_host_count is missing : 0.31092205586422395
+
+
+	Class 5 (outcome=portsweep)
+
+Decision Stump
+
+Classifications
+
+dst_host_same_src_port_rate <= 0.035 : -0.9488376169825715
+dst_host_same_src_port_rate > 0.035 : 0.5903848263250087
+dst_host_same_src_port_rate is missing : 0.0440770963804882
+
+
+	Class 6 (outcome=teardrop)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_count <= 1.5 : 1.4389904082585354
+dst_host_srv_count > 1.5 : -0.6983355098708791
+dst_host_srv_count is missing : -0.4453968732451866
+
+
+	Class 7 (outcome=nmap)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_diff_host_rate <= 0.28500000000000003 : 0.18999294282161822
+dst_host_srv_diff_host_rate > 0.28500000000000003 : -1.079175438834474
+dst_host_srv_diff_host_rate is missing : -0.18356702295180172
+
+
+	Class 8 (outcome=satan)
+
+Decision Stump
+
+Classifications
+
+rerror_rate <= 0.995 : 0.31353049103248554
+rerror_rate > 0.995 : -1.3510435449832567
+rerror_rate is missing : 0.05657871470912843
+
+
+	Class 9 (outcome=smurf)
+
+Decision Stump
+
+Classifications
+
+service = ecr_i : 0.7165655182608535
+service != ecr_i : -1.0073614591060345
+service is missing : 0.32608341659457224
+
+
+	Class 10 (outcome=pod)
+
+Decision Stump
+
+Classifications
+
+service = tim_i : 2.983687569681851
+service != tim_i : -0.3118966030122556
+service is missing : -0.06414057088791093
+
+
+	Class 11 (outcome=back)
+
+Decision Stump
+
+Classifications
+
+dst_host_rerror_rate <= 0.025 : -0.940188484054229
+dst_host_rerror_rate > 0.025 : 0.5547954462945761
+dst_host_rerror_rate is missing : -0.26288680545860654
+
+
+	Class 12 (outcome=guess_passwd)
+
+Decision Stump
+
+Classifications
+
+dst_host_same_srv_rate <= 0.355 : -0.9930706186376541
+dst_host_same_srv_rate > 0.355 : 0.259995818807546
+dst_host_same_srv_rate is missing : -0.16694855485047327
+
+
+	Class 13 (outcome=ftp_write)
+
+Decision Stump
+
+Classifications
+
+num_access_files <= 0.5 : -0.4108515302948566
+num_access_files > 0.5 : 2.119763683444073
+num_access_files is missing : -0.14074819883142642
+
+
+	Class 14 (outcome=multihop)
+
+Decision Stump
+
+Classifications
+
+dst_host_count <= 22.5 : 0.7382433256978103
+dst_host_count > 22.5 : -0.5075344794789495
+dst_host_count is missing : -0.15951783413272436
+
+
+	Class 15 (outcome=rootkit)
+
+Decision Stump
+
+Classifications
+
+dst_host_same_srv_rate <= 0.025 : 0.9520309638726898
+dst_host_same_srv_rate > 0.025 : -0.4284679903936619
+dst_host_same_srv_rate is missing : -0.1282777444907144
+
+
+	Class 16 (outcome=buffer_overflow)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 1505.5 : -0.47178824271157915
+src_bytes > 1505.5 : 1.342490893190192
+src_bytes is missing : 0.013389373905210698
+
+
+	Class 17 (outcome=imap)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 1333.5 : -0.6862322564016939
+src_bytes > 1333.5 : 2.529592933360751
+src_bytes is missing : -0.35504756835360396
+
+
+	Class 18 (outcome=warezmaster)
+
+Decision Stump
+
+Classifications
+
+duration <= 289.5 : 0.3592588932181994
+duration > 289.5 : -1.5359089557175023
+duration is missing : -0.03213589404186104
+
+
+	Class 19 (outcome=phf)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 0.5 : 1.0975063948925707
+difficulty_level > 0.5 : -0.7721296037324499
+difficulty_level is missing : -0.5463023137498603
+
+
+	Class 20 (outcome=land)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 12.5 : -1.7073214901277585
+difficulty_level > 12.5 : 0.13689280396299663
+difficulty_level is missing : -0.4069202982092837
+
+
+	Class 21 (outcome=loadmodule)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_count <= 4.5 : 0.8646068822092012
+dst_host_srv_count > 4.5 : -0.8516017555865129
+dst_host_srv_count is missing : -0.15770932681323502
+
+
+	Class 22 (outcome=spy)
+
+Decision Stump
+
+Classifications
+
+dst_bytes <= 846.5 : -1.0007064775004726
+dst_bytes > 846.5 : 0.9415883470721006
+dst_bytes is missing : -0.5459008773300195
+
+
+	Class 23 (outcome=perl)
+
+Decision Stump
+
+Classifications
+
+root_shell <= 0.5 : -0.9338634837884254
+root_shell > 0.5 : 2.3167652194318453
+root_shell is missing : -0.38006975520963177
+
+
+	Class 24 (outcome=saint)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 26.5 : 0.5227305213873983
+src_bytes > 26.5 : -0.9827108118094612
+src_bytes is missing : 0.13600574650734853
+
+
+	Class 25 (outcome=mscan)
+
+Decision Stump
+
+Classifications
+
+dst_host_same_srv_rate <= 0.505 : 0.6315436499505118
+dst_host_same_srv_rate > 0.505 : -0.9781304697091678
+dst_host_same_srv_rate is missing : 0.16718972286994854
+
+
+	Class 26 (outcome=apache2)
+
+Decision Stump
+
+Classifications
+
+dst_host_rerror_rate <= 0.005 : -1.0335372866341563
+dst_host_rerror_rate > 0.005 : 0.5836586985857359
+dst_host_rerror_rate is missing : -0.19414507826509683
+
+
+	Class 27 (outcome=snmpgetattack)
+
+Decision Stump
+
+Classifications
+
+dst_bytes <= 104.5 : -1.1079453724651782
+dst_bytes > 104.5 : 0.17405624452805504
+dst_bytes is missing : -0.34396776920011424
+
+
+	Class 28 (outcome=processtable)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 0.5 : 0.2080704459568192
+src_bytes > 0.5 : -1.2410447318178546
+src_bytes is missing : -0.3421184269105404
+
+
+	Class 29 (outcome=httptunnel)
+
+Decision Stump
+
+Classifications
+
+dst_host_rerror_rate <= 0.175 : 0.2784744336226544
+dst_host_rerror_rate > 0.175 : -1.1094817051407766
+dst_host_rerror_rate is missing : -0.20032345816474054
+
+
+	Class 30 (outcome=ps)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 14.5 : 0.5259640702416606
+difficulty_level > 14.5 : -1.0011813120507396
+difficulty_level is missing : -0.07432482508912105
+
+
+	Class 31 (outcome=snmpguess)
+
+Decision Stump
+
+Classifications
+
+count <= 6.5 : 0.3530032023843038
+count > 6.5 : -1.0110186492248314
+count is missing : -0.12685253842482944
+
+
+	Class 32 (outcome=mailbomb)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_count <= 238.5 : -0.9782806903339227
+dst_host_srv_count > 238.5 : 1.1487795381514794
+dst_host_srv_count is missing : -0.47523395906611554
+
+
+	Class 33 (outcome=named)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_count <= 1.5 : 0.9729034367248549
+dst_host_srv_count > 1.5 : -0.7239496856290056
+dst_host_srv_count is missing : -0.1960634898639964
+
+
+	Class 34 (outcome=sendmail)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_count <= 7.5 : 0.6026848217874392
+dst_host_srv_count > 7.5 : -1.006611837937463
+dst_host_srv_count is missing : -0.18173261015970338
+
+
+	Class 35 (outcome=xterm)
+
+Decision Stump
+
+Classifications
+
+num_compromised <= 3.5 : -0.4505633965634258
+num_compromised > 3.5 : 2.3660063008901484
+num_compromised is missing : -0.12719830116229602
+
+
+	Class 36 (outcome=worm)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 4204.5 : -1.0018259514213756
+src_bytes > 4204.5 : 1.485803647834794
+src_bytes is missing : -0.6112542171171773
+
+
+	Class 37 (outcome=xlock)
+
+Decision Stump
+
+Classifications
+
+dst_bytes <= 1010.5 : -1.0166724121486919
+dst_bytes > 1010.5 : 0.4489081608499278
+dst_bytes is missing : -0.401772807929651
+
+
+	Class 38 (outcome=xsnoop)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 0.5 : 0.7629667568212479
+difficulty_level > 0.5 : -0.8814599918975057
+difficulty_level is missing : -0.7460672436478326
+
+
+	Class 39 (outcome=sqlattack)
+
+Decision Stump
+
+Classifications
+
+urgent <= 0.5 : -1.0006228213518757
+urgent > 0.5 : 0.30172504437250613
+urgent is missing : -0.9000141982083238
+
+
+	Class 40 (outcome=udpstorm)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 9.5 : 0.9951583048655401
+difficulty_level > 9.5 : -1.000278669174351
+difficulty_level is missing : -0.5308958973522072
+
+
+Iteration 8
+	Class 1 (outcome=normal)
+
+Decision Stump
+
+Classifications
+
+service = http : 1.056861377996983
+service != http : -0.1345003183307259
+service is missing : 0.03544232436805904
+
+
+	Class 2 (outcome=neptune)
+
+Decision Stump
+
+Classifications
+
+dst_host_rerror_rate <= 0.985 : -0.5861014436029952
+dst_host_rerror_rate > 0.985 : 0.9580131493423343
+dst_host_rerror_rate is missing : -0.02725868805622414
+
+
+	Class 3 (outcome=warezclient)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_serror_rate <= 0.055 : 0.21977208042064383
+dst_host_srv_serror_rate > 0.055 : -1.5265812442026276
+dst_host_srv_serror_rate is missing : -0.04780492621151629
+
+
+	Class 4 (outcome=ipsweep)
+
+Decision Stump
+
+Classifications
+
+srv_count <= 1.5 : 0.4270166585764287
+srv_count > 1.5 : -0.5834243135921221
+srv_count is missing : -0.17110854714721938
+
+
+	Class 5 (outcome=portsweep)
+
+Decision Stump
+
+Classifications
+
+dst_host_count <= 70.5 : -1.301211592802474
+dst_host_count > 70.5 : 0.1095940560047011
+dst_host_count is missing : -0.271974420667419
+
+
+	Class 6 (outcome=teardrop)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 8.5 : -1.5704543196168887
+difficulty_level > 8.5 : 0.12446397456179316
+difficulty_level is missing : -0.12859555242756096
+
+
+	Class 7 (outcome=nmap)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 8.5 : 0.5387025551814489
+src_bytes > 8.5 : -0.6590391469408199
+src_bytes is missing : 0.08622484710459366
+
+
+	Class 8 (outcome=satan)
+
+Decision Stump
+
+Classifications
+
+dst_host_diff_srv_rate <= 0.14500000000000002 : 0.9706714446227019
+dst_host_diff_srv_rate > 0.14500000000000002 : -0.372743703029617
+dst_host_diff_srv_rate is missing : 0.021324739295827542
+
+
+	Class 9 (outcome=smurf)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 1032.5 : 0.3574572412543425
+src_bytes > 1032.5 : -1.4996829247884913
+src_bytes is missing : -0.18800421824340877
+
+
+	Class 10 (outcome=pod)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 6.5 : -1.6572809644017263
+difficulty_level > 6.5 : 0.725517195308141
+difficulty_level is missing : 0.4041320963247566
+
+
+	Class 11 (outcome=back)
+
+Decision Stump
+
+Classifications
+
+dst_bytes <= 1459.5 : -0.9665133288177297
+dst_bytes > 1459.5 : 0.9289063033280265
+dst_bytes is missing : 0.1710035892493453
+
+
+	Class 12 (outcome=guess_passwd)
+
+Decision Stump
+
+Classifications
+
+dst_bytes <= 92.5 : -1.141973523986617
+dst_bytes > 92.5 : 0.6508835571473246
+dst_bytes is missing : 0.34134270727393784
+
+
+	Class 13 (outcome=ftp_write)
+
+Decision Stump
+
+Classifications
+
+service = ftp_data : 1.487123185399817
+service != ftp_data : -0.5542519000118853
+service is missing : 0.03311953440348725
+
+
+	Class 14 (outcome=multihop)
+
+Decision Stump
+
+Classifications
+
+dst_host_same_srv_rate <= 0.005 : 1.561310466250953
+dst_host_same_srv_rate > 0.005 : -0.17523704358402684
+dst_host_same_srv_rate is missing : 0.08602372982281818
+
+
+	Class 15 (outcome=rootkit)
+
+Decision Stump
+
+Classifications
+
+dst_host_serror_rate <= 0.195 : -0.22138582221558442
+dst_host_serror_rate > 0.195 : 1.4955440119342496
+dst_host_serror_rate is missing : 0.027413109835033443
+
+
+	Class 16 (outcome=buffer_overflow)
+
+Decision Stump
+
+Classifications
+
+service = ftp_data : 1.8781013675409057
+service != ftp_data : -0.19204972461064662
+service is missing : 0.15290183835877028
+
+
+	Class 17 (outcome=imap)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_count <= 11.5 : 1.2407934042314144
+dst_host_srv_count > 11.5 : -1.0992830211890312
+dst_host_srv_count is missing : 0.022231563187480763
+
+
+	Class 18 (outcome=warezmaster)
+
+Decision Stump
+
+Classifications
+
+duration <= 8.5 : -0.38886104225665286
+duration > 8.5 : 0.7790282968510419
+duration is missing : 0.03190720477051366
+
+
+	Class 19 (outcome=phf)
+
+Decision Stump
+
+Classifications
+
+service = http : 0.8034907248852985
+service != http : -1.0072297293840147
+service is missing : -0.024280010872095397
+
+
+	Class 20 (outcome=land)
+
+Decision Stump
+
+Classifications
+
+land <= 0.5 : -1.0001857487056083
+land > 0.5 : 0.6182004329615921
+land is missing : 0.0032192177403730098
+
+
+	Class 21 (outcome=loadmodule)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_diff_host_rate <= 0.295 : -0.37715756398362177
+dst_host_srv_diff_host_rate > 0.295 : 2.2452101390693535
+dst_host_srv_diff_host_rate is missing : 0.08826215396265816
+
+
+	Class 22 (outcome=spy)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_serror_rate <= 0.305 : -1.000664909382727
+dst_host_srv_serror_rate > 0.305 : 1.2317688107692344
+dst_host_srv_serror_rate is missing : -0.23423755560732226
+
+
+	Class 23 (outcome=perl)
+
+Decision Stump
+
+Classifications
+
+dst_host_same_srv_rate <= 0.045 : 0.9340051669647126
+dst_host_same_srv_rate > 0.045 : -1.0622394921263416
+dst_host_same_srv_rate is missing : -0.2573764135832517
+
+
+	Class 24 (outcome=saint)
+
+Decision Stump
+
+Classifications
+
+rerror_rate <= 0.975 : 0.33648171705828217
+rerror_rate > 0.975 : -1.0567857199684239
+rerror_rate is missing : 0.09869995947710086
+
+
+	Class 25 (outcome=mscan)
+
+Decision Stump
+
+Classifications
+
+service = imap4 : 2.3482094511876626
+service != imap4 : -0.27701058417050356
+service is missing : -0.049462518788512155
+
+
+	Class 26 (outcome=apache2)
+
+Decision Stump
+
+Classifications
+
+dst_host_same_src_port_rate <= 0.005 : 0.36788549537360016
+dst_host_same_src_port_rate > 0.005 : -1.0906904104367798
+dst_host_same_src_port_rate is missing : -0.33015130912418766
+
+
+	Class 27 (outcome=snmpgetattack)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 10.5 : 0.6859208831085875
+difficulty_level > 10.5 : -1.0093391132778402
+difficulty_level is missing : 0.13840260689780357
+
+
+	Class 28 (outcome=processtable)
+
+Decision Stump
+
+Classifications
+
+duration <= 7211.0 : -0.724058538985249
+duration > 7211.0 : 0.575037970523503
+duration is missing : -0.15723032170093726
+
+
+	Class 29 (outcome=httptunnel)
+
+Decision Stump
+
+Classifications
+
+dst_host_same_src_port_rate <= 0.025 : 0.35719607469883025
+dst_host_same_src_port_rate > 0.025 : -0.9912711107984139
+dst_host_same_src_port_rate is missing : -0.20677331661429849
+
+
+	Class 30 (outcome=ps)
+
+Decision Stump
+
+Classifications
+
+dst_bytes <= 331.5 : -0.782016252008599
+dst_bytes > 331.5 : 0.9493542455145064
+dst_bytes is missing : 0.07729332498491881
+
+
+	Class 31 (outcome=snmpguess)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 53.5 : 0.31049553371985084
+src_bytes > 53.5 : -1.194428467535953
+src_bytes is missing : -0.10718997260935194
+
+
+	Class 32 (outcome=mailbomb)
+
+Decision Stump
+
+Classifications
+
+duration <= 0.5 : -1.1633029400209187
+duration > 0.5 : 0.8372619973163807
+duration is missing : 0.18722906199588826
+
+
+	Class 33 (outcome=named)
+
+Decision Stump
+
+Classifications
+
+duration <= 146.0 : -0.46559144094104027
+duration > 146.0 : 1.412712302117118
+duration is missing : -0.05104377762634819
+
+
+	Class 34 (outcome=sendmail)
+
+Decision Stump
+
+Classifications
+
+num_compromised <= 0.5 : 0.3824959040256619
+num_compromised > 0.5 : -1.3618674694452861
+num_compromised is missing : 0.008698935507025524
+
+
+	Class 35 (outcome=xterm)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_count <= 6.5 : 0.9719937146698637
+dst_host_srv_count > 6.5 : -0.8585948299267256
+dst_host_srv_count is missing : 0.11823903626140682
+
+
+	Class 36 (outcome=worm)
+
+Decision Stump
+
+Classifications
+
+service = telnet : 1.2757431951568134
+service != telnet : -1.00416141080664
+service is missing : -0.4089573941894337
+
+
+	Class 37 (outcome=xlock)
+
+Decision Stump
+
+Classifications
+
+dst_host_same_srv_rate <= 0.015 : 1.1114841898500645
+dst_host_same_srv_rate > 0.015 : -0.6596723095833513
+dst_host_same_srv_rate is missing : -0.11232281985110722
+
+
+	Class 38 (outcome=xsnoop)
+
+Decision Stump
+
+Classifications
+
+flag = S1 : 1.3953859956571202
+flag != S1 : -0.7399074169533113
+flag is missing : -0.3295132008370327
+
+
+	Class 39 (outcome=sqlattack)
+
+Decision Stump
+
+Classifications
+
+num_shells <= 0.5 : -1.0013334409015489
+num_shells > 0.5 : 0.9398618905177899
+num_shells is missing : -0.5609884948750603
+
+
+	Class 40 (outcome=udpstorm)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_count <= 1.5 : 1.2041171523555345
+dst_host_srv_count > 1.5 : -1.0012171658870033
+dst_host_srv_count is missing : -0.2537291256828286
+
+
+Iteration 9
+	Class 1 (outcome=normal)
+
+Decision Stump
+
+Classifications
+
+dst_host_diff_srv_rate <= 0.395 : 0.07641558951855854
+dst_host_diff_srv_rate > 0.395 : 0.8713259679762501
+dst_host_diff_srv_rate is missing : 0.1701993217916219
+
+
+	Class 2 (outcome=neptune)
+
+Decision Stump
+
+Classifications
+
+count <= 1.5 : -1.1221999314055175
+count > 1.5 : 0.5264775526030423
+count is missing : 0.17839986564887272
+
+
+	Class 3 (outcome=warezclient)
+
+Decision Stump
+
+Classifications
+
+logged_in <= 0.5 : -1.163027159631283
+logged_in > 0.5 : 0.0849681425026726
+logged_in is missing : -0.14783045016676752
+
+
+	Class 4 (outcome=ipsweep)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 18.5 : 0.35590669033523664
+src_bytes > 18.5 : -1.3803552779190074
+src_bytes is missing : 0.12150404526844193
+
+
+	Class 5 (outcome=portsweep)
+
+Decision Stump
+
+Classifications
+
+service = other : -1.2706890934657802
+service != other : 0.09259729196799993
+service is missing : -0.24164391792915207
+
+
+	Class 6 (outcome=teardrop)
+
+Decision Stump
+
+Classifications
+
+dst_host_count <= 72.5 : -1.3129182910457375
+dst_host_count > 72.5 : 0.2875292628631988
+dst_host_count is missing : 0.0013022553572679487
+
+
+	Class 7 (outcome=nmap)
+
+Decision Stump
+
+Classifications
+
+service = private : 0.8137281099009741
+service != private : -0.5017235553396321
+service is missing : -0.21485909482762053
+
+
+	Class 8 (outcome=satan)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 6.5 : 0.2143377737818844
+src_bytes > 6.5 : -0.8523729440260929
+src_bytes is missing : -0.08050063941647329
+
+
+	Class 9 (outcome=smurf)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 507.5 : -1.2307091246123463
+src_bytes > 507.5 : 0.42126477265363765
+src_bytes is missing : -0.2297298018074787
+
+
+	Class 10 (outcome=pod)
+
+Decision Stump
+
+Classifications
+
+service = tim_i : 2.288164667291782
+service != tim_i : -0.6834691423956767
+service is missing : -0.45414423690024575
+
+
+	Class 11 (outcome=back)
+
+Decision Stump
+
+Classifications
+
+service = http : 0.867489054044609
+service != http : -1.0683810289656592
+service is missing : 0.3024065322363392
+
+
+	Class 12 (outcome=guess_passwd)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 11.5 : 0.9815385298315233
+difficulty_level > 11.5 : -0.49665943575292626
+difficulty_level is missing : -0.09576621938430076
+
+
+	Class 13 (outcome=ftp_write)
+
+Decision Stump
+
+Classifications
+
+is_guest_login <= 0.5 : -0.27385195942242285
+is_guest_login > 0.5 : 2.832381597725846
+is_guest_login is missing : -0.044742183453189865
+
+
+	Class 14 (outcome=multihop)
+
+Decision Stump
+
+Classifications
+
+flag = SF : 0.2940629526847536
+flag != SF : -1.0796178716897271
+flag is missing : -0.014272823451381644
+
+
+	Class 15 (outcome=rootkit)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 31.5 : -0.8355426711325896
+src_bytes > 31.5 : 0.45731146689369495
+src_bytes is missing : 8.511033636697536E-4
+
+
+	Class 16 (outcome=buffer_overflow)
+
+Decision Stump
+
+Classifications
+
+dst_bytes <= 697.5 : -1.0374226194732437
+dst_bytes > 697.5 : 0.6493799223962947
+dst_bytes is missing : 0.1038858961155944
+
+
+	Class 17 (outcome=imap)
+
+Decision Stump
+
+Classifications
+
+service = imap4 : 1.0720802220878047
+service != imap4 : -1.0087654819411542
+service is missing : -0.2723297721639068
+
+
+	Class 18 (outcome=warezmaster)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_count <= 31.5 : 0.4749052357135898
+dst_host_srv_count > 31.5 : -0.7487885367711611
+dst_host_srv_count is missing : -0.03637303808124916
+
+
+	Class 19 (outcome=phf)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 4.5 : 1.235338644476505
+difficulty_level > 4.5 : -1.0004075689566285
+difficulty_level is missing : 0.3327304994555968
+
+
+	Class 20 (outcome=land)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 12.5 : -1.3538484983907542
+difficulty_level > 12.5 : 0.4060205568700805
+difficulty_level is missing : -0.28562371308482004
+
+
+	Class 21 (outcome=loadmodule)
+
+Decision Stump
+
+Classifications
+
+diff_srv_rate <= 0.665 : -0.26774580514613067
+diff_srv_rate > 0.665 : 2.405413597989215
+diff_srv_rate is missing : 0.043251189213686037
+
+
+	Class 22 (outcome=spy)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_serror_rate <= 0.315 : 0.8454926616930631
+dst_host_srv_serror_rate > 0.315 : -1.0127530163257348
+dst_host_srv_serror_rate is missing : -0.2273219095931578
+
+
+	Class 23 (outcome=perl)
+
+Decision Stump
+
+Classifications
+
+num_shells <= 0.5 : -1.0027445910093038
+num_shells > 0.5 : 0.47175496972437625
+num_shells is missing : -0.16597850954034588
+
+
+	Class 24 (outcome=saint)
+
+Decision Stump
+
+Classifications
+
+dst_host_serror_rate <= 0.135 : 0.051111241340336136
+dst_host_serror_rate > 0.135 : -1.0459771875757
+dst_host_serror_rate is missing : -0.11352502517657655
+
+
+	Class 25 (outcome=mscan)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_diff_host_rate <= 0.015 : -0.578692021959548
+dst_host_srv_diff_host_rate > 0.015 : 0.9874143506722743
+dst_host_srv_diff_host_rate is missing : -0.05191157147026774
+
+
+	Class 26 (outcome=apache2)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_count <= 225.5 : -1.0250219169483432
+dst_host_srv_count > 225.5 : 0.8596485072416541
+dst_host_srv_count is missing : 0.015542503888907908
+
+
+	Class 27 (outcome=snmpgetattack)
+
+Decision Stump
+
+Classifications
+
+dst_host_same_srv_rate <= 0.945 : -1.0558459607639965
+dst_host_same_srv_rate > 0.945 : 0.5517959536116426
+dst_host_same_srv_rate is missing : -0.2732702010672487
+
+
+	Class 28 (outcome=processtable)
+
+Decision Stump
+
+Classifications
+
+dst_bytes <= 44.5 : 0.2584434778178918
+dst_bytes > 44.5 : -1.2525025465617843
+dst_bytes is missing : -0.10884188267915693
+
+
+	Class 29 (outcome=httptunnel)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 7.5 : 1.289134425609899
+difficulty_level > 7.5 : -0.4868887832748831
+difficulty_level is missing : -0.2600533380676253
+
+
+	Class 30 (outcome=ps)
+
+Decision Stump
+
+Classifications
+
+dst_host_same_src_port_rate <= 0.005 : -0.8815394895987778
+dst_host_same_src_port_rate > 0.005 : 0.37429657725979293
+dst_host_same_src_port_rate is missing : -0.057979301102845916
+
+
+	Class 31 (outcome=snmpguess)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 35.5 : -1.0547555063535625
+src_bytes > 35.5 : 0.6436084370331047
+src_bytes is missing : -0.1168543695591573
+
+
+	Class 32 (outcome=mailbomb)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 2600.0 : 0.5499034630491645
+src_bytes > 2600.0 : -1.2938081326497517
+src_bytes is missing : -0.10986887330618297
+
+
+	Class 33 (outcome=named)
+
+Decision Stump
+
+Classifications
+
+dst_host_rerror_rate <= 0.195 : -0.5004261811270427
+dst_host_rerror_rate > 0.195 : 1.2416579282214701
+dst_host_rerror_rate is missing : -0.12126677384517404
+
+
+	Class 34 (outcome=sendmail)
+
+Decision Stump
+
+Classifications
+
+dst_bytes <= 33.5 : -1.0108354113124638
+dst_bytes > 33.5 : 0.5519616855451325
+dst_bytes is missing : -0.042596896891700105
+
+
+	Class 35 (outcome=xterm)
+
+Decision Stump
+
+Classifications
+
+is_host_login <= 0.5 : -0.3307933663097594
+is_host_login > 0.5 : 2.5434784986643337
+is_host_login is missing : -0.0752429973376998
+
+
+	Class 36 (outcome=worm)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 0.5 : 0.8969948793237663
+difficulty_level > 0.5 : -1.0144705489243564
+difficulty_level is missing : -0.49866104927628774
+
+
+	Class 37 (outcome=xlock)
+
+Decision Stump
+
+Classifications
+
+service = IRC : 2.8821511387614347
+service != IRC : -0.422937891341823
+service is missing : -0.09028152287650236
+
+
+	Class 38 (outcome=xsnoop)
+
+Decision Stump
+
+Classifications
+
+dst_host_same_srv_rate <= 0.005 : 0.9813531866814338
+dst_host_same_srv_rate > 0.005 : -1.0136139246112066
+dst_host_same_srv_rate is missing : -0.052746603721777904
+
+
+	Class 39 (outcome=sqlattack)
+
+Decision Stump
+
+Classifications
+
+urgent <= 0.5 : -1.0026328707647425
+urgent > 0.5 : 0.6283814102164589
+urgent is missing : -0.6474337231123976
+
+
+	Class 40 (outcome=udpstorm)
+
+Decision Stump
+
+Classifications
+
+protocol_type = udp : 1.554352969712382
+protocol_type != udp : -1.007069626462239
+protocol_type is missing : -0.218136502806709
+
+
+Iteration 10
+	Class 1 (outcome=normal)
+
+Decision Stump
+
+Classifications
+
+service = eco_i : -0.8056877738703083
+service != eco_i : 0.09685245436911502
+service is missing : 0.025783874005009495
+
+
+	Class 2 (outcome=neptune)
+
+Decision Stump
+
+Classifications
+
+dst_host_serror_rate <= 0.385 : -0.558527181261855
+dst_host_serror_rate > 0.385 : 1.0136754099298866
+dst_host_serror_rate is missing : 0.024111258200866327
+
+
+	Class 3 (outcome=warezclient)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_diff_host_rate <= 0.10500000000000001 : -0.38649938264820566
+dst_host_srv_diff_host_rate > 0.10500000000000001 : 0.9582137169856819
+dst_host_srv_diff_host_rate is missing : -0.053856098830976494
+
+
+	Class 4 (outcome=ipsweep)
+
+Decision Stump
+
+Classifications
+
+dst_host_serror_rate <= 0.005 : -0.1155538626702307
+dst_host_serror_rate > 0.005 : -1.4210831006490836
+dst_host_serror_rate is missing : -0.23682984709699506
+
+
+	Class 5 (outcome=portsweep)
+
+Decision Stump
+
+Classifications
+
+flag = RSTOS0 : 2.0499504494531227
+flag != RSTOS0 : -0.10589127389858242
+flag is missing : 0.05448825285838468
+
+
+	Class 6 (outcome=teardrop)
+
+Decision Stump
+
+Classifications
+
+dst_host_diff_srv_rate <= 0.14500000000000002 : -0.5405495337736641
+dst_host_diff_srv_rate > 0.14500000000000002 : 0.7001531822927797
+dst_host_diff_srv_rate is missing : -0.2294296333993328
+
+
+	Class 7 (outcome=nmap)
+
+Decision Stump
+
+Classifications
+
+count <= 3.5 : 0.29115759980497463
+count > 3.5 : -1.3600236259555518
+count is missing : 0.08938398433370245
+
+
+	Class 8 (outcome=satan)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_serror_rate <= 0.005 : 0.29415000379597384
+dst_host_srv_serror_rate > 0.005 : -1.0428344241729304
+dst_host_srv_serror_rate is missing : 0.09714289454928066
+
+
+	Class 9 (outcome=smurf)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 1032.5 : 0.22003861079712475
+src_bytes > 1032.5 : -1.5120412051532455
+src_bytes is missing : -0.31639882949912723
+
+
+	Class 10 (outcome=pod)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 11.5 : -1.156346258355632
+difficulty_level > 11.5 : 0.22874817991026122
+difficulty_level is missing : -0.180758479456075
+
+
+	Class 11 (outcome=back)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 24246.0 : -0.9760675225398043
+src_bytes > 24246.0 : 0.7110266751051729
+src_bytes is missing : 0.14640402896313345
+
+
+	Class 12 (outcome=guess_passwd)
+
+Decision Stump
+
+Classifications
+
+dst_host_rerror_rate <= 0.005 : -0.5231681101402335
+dst_host_rerror_rate > 0.005 : 0.7498390064372318
+dst_host_rerror_rate is missing : 0.09703777020218338
+
+
+	Class 13 (outcome=ftp_write)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_diff_host_rate <= 0.395 : -0.292330691429658
+dst_host_srv_diff_host_rate > 0.395 : 2.134006658452534
+dst_host_srv_diff_host_rate is missing : 2.6772155248502334E-4
+
+
+	Class 14 (outcome=multihop)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 167.5 : -0.42734678907978507
+src_bytes > 167.5 : 0.7163881427952513
+src_bytes is missing : -0.021425251592753103
+
+
+	Class 15 (outcome=rootkit)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 8.5 : 0.2989849710357539
+difficulty_level > 8.5 : -1.0033791934005862
+difficulty_level is missing : -0.01213148375456796
+
+
+	Class 16 (outcome=buffer_overflow)
+
+Decision Stump
+
+Classifications
+
+dst_host_serror_rate <= 0.005 : 0.43339838717971163
+dst_host_serror_rate > 0.005 : -1.0495223757976855
+dst_host_serror_rate is missing : -0.08754325167882951
+
+
+	Class 17 (outcome=imap)
+
+Decision Stump
+
+Classifications
+
+srv_rerror_rate <= 0.025 : -0.9908976372492647
+srv_rerror_rate > 0.025 : 1.210787641197245
+srv_rerror_rate is missing : -0.3278054827661856
+
+
+	Class 18 (outcome=warezmaster)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 166.5 : 0.3337043905332759
+src_bytes > 166.5 : -0.7917371524939611
+src_bytes is missing : -0.06751646792299962
+
+
+	Class 19 (outcome=phf)
+
+Decision Stump
+
+Classifications
+
+service = http : 0.8587442410905566
+service != http : -1.013413897310269
+service is missing : -0.11822505007990618
+
+
+	Class 20 (outcome=land)
+
+Decision Stump
+
+Classifications
+
+land <= 0.5 : -1.0001117785061133
+land > 0.5 : 0.39473961040052885
+land is missing : -0.13952471120412036
+
+
+	Class 21 (outcome=loadmodule)
+
+Decision Stump
+
+Classifications
+
+dst_bytes <= 692.5 : -1.0071026302774546
+dst_bytes > 692.5 : 0.8355058682443547
+dst_bytes is missing : 0.16312606468493612
+
+
+	Class 22 (outcome=spy)
+
+Decision Stump
+
+Classifications
+
+dst_host_srv_serror_rate <= 0.305 : -1.000584265155036
+dst_host_srv_serror_rate > 0.305 : 0.7593789167560907
+dst_host_srv_serror_rate is missing : -0.1935883701775168
+
+
+	Class 23 (outcome=perl)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 269.5 : 0.4418399765320977
+src_bytes > 269.5 : -1.0693400714949033
+src_bytes is missing : -0.16173363241283506
+
+
+	Class 24 (outcome=saint)
+
+Decision Stump
+
+Classifications
+
+same_srv_rate <= 0.20500000000000002 : 0.5238795487972698
+same_srv_rate > 0.20500000000000002 : -0.42338057043244237
+same_srv_rate is missing : 0.018594410694248102
+
+
+	Class 25 (outcome=mscan)
+
+Decision Stump
+
+Classifications
+
+service = telnet : 1.1405171842595845
+service != telnet : -0.4239018236001049
+service is missing : -0.09986734212832336
+
+
+	Class 26 (outcome=apache2)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 17.5 : 0.5852204069056411
+difficulty_level > 17.5 : -0.6470399310870927
+difficulty_level is missing : -0.07891147440493507
+
+
+	Class 27 (outcome=snmpgetattack)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 104.5 : -1.186792485947221
+src_bytes > 104.5 : 0.45507658417484126
+src_bytes is missing : -0.053168034092112716
+
+
+	Class 28 (outcome=processtable)
+
+Decision Stump
+
+Classifications
+
+rerror_rate <= 0.605 : 0.357167549665193
+rerror_rate > 0.605 : -1.1901400883708027
+rerror_rate is missing : -0.07841466802672965
+
+
+	Class 29 (outcome=httptunnel)
+
+Decision Stump
+
+Classifications
+
+count <= 3.5 : 0.19185212022339165
+count > 3.5 : -1.0113186308702236
+count is missing : -0.1205000649001126
+
+
+	Class 30 (outcome=ps)
+
+Decision Stump
+
+Classifications
+
+count <= 1.5 : 0.27990945454052524
+count > 1.5 : -1.034565920238112
+count is missing : -0.0018310309840968235
+
+
+	Class 31 (outcome=snmpguess)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 52.5 : 0.25982134141688173
+src_bytes > 52.5 : -1.0729924807649365
+src_bytes is missing : -0.14299566585953657
+
+
+	Class 32 (outcome=mailbomb)
+
+Decision Stump
+
+Classifications
+
+count <= 1.5 : -1.1559165559384668
+count > 1.5 : 0.5092053338501231
+count is missing : -0.1105668506964776
+
+
+	Class 33 (outcome=named)
+
+Decision Stump
+
+Classifications
+
+dst_bytes <= 574.5 : -0.35446467422727307
+dst_bytes > 574.5 : 1.315350040163948
+dst_bytes is missing : 0.021061834615957408
+
+
+	Class 34 (outcome=sendmail)
+
+Decision Stump
+
+Classifications
+
+dst_host_count <= 1.5 : 1.6299171523028535
+dst_host_count > 1.5 : -0.36233327393988585
+dst_host_count is missing : -0.19675143278632296
+
+
+	Class 35 (outcome=xterm)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 126.5 : -1.0812057239962614
+src_bytes > 126.5 : 0.7709972777586108
+src_bytes is missing : 0.12029900378287889
+
+
+	Class 36 (outcome=worm)
+
+Decision Stump
+
+Classifications
+
+dst_host_count <= 113.5 : 0.2595215174488353
+dst_host_count > 113.5 : -1.0125519746017224
+dst_host_count is missing : -0.47739262858134074
+
+
+	Class 37 (outcome=xlock)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 335.5 : -1.0231357036880886
+src_bytes > 335.5 : 0.5753755080492604
+src_bytes is missing : 0.1042886561654183
+
+
+	Class 38 (outcome=xsnoop)
+
+Decision Stump
+
+Classifications
+
+duration <= 467.0 : -0.8368497907760533
+duration > 467.0 : 0.9339176659985696
+duration is missing : -0.2777555208673429
+
+
+	Class 39 (outcome=sqlattack)
+
+Decision Stump
+
+Classifications
+
+difficulty_level <= 1.5 : 0.4463591621889531
+difficulty_level > 1.5 : -1.0011488400854898
+difficulty_level is missing : -0.44264312641254755
+
+
+	Class 40 (outcome=udpstorm)
+
+Decision Stump
+
+Classifications
+
+src_bytes <= 0.5 : 1.4851444158644502
+src_bytes > 0.5 : -1.0104889364017842
+src_bytes is missing : -0.2045492087628634
+
+Number of performed iterations: 10
+
+
+Time taken to build model: 234.78 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0.85 seconds
+
+=== Summary ===
+
+Correctly Classified Instances       44056               98.8379 %
+Incorrectly Classified Instances       518                1.1621 %
+Kappa statistic                          0.9817
+Mean absolute error                      0.0015
+Root mean squared error                  0.0229
+Relative absolute error                  4.6864 %
+Root relative squared error             18.2194 %
+Total Number of Instances            44574     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.992    0.005    0.995      0.992    0.994      0.987    0.999     0.999     normal
+                 1.000    0.001    0.998      1.000    0.999      0.998    1.000     1.000     neptune
+                 0.951    0.001    0.898      0.951    0.924      0.924    1.000     0.973     warezclient
+                 0.964    0.001    0.977      0.964    0.971      0.970    1.000     0.985     ipsweep
+                 0.977    0.001    0.975      0.977    0.976      0.976    1.000     0.992     portsweep
+                 0.996    0.000    0.993      0.996    0.994      0.994    1.000     1.000     teardrop
+                 0.968    0.002    0.843      0.968    0.901      0.902    1.000     0.953     nmap
+                 0.967    0.003    0.916      0.967    0.941      0.939    0.998     0.926     satan
+                 1.000    0.000    0.999      1.000    0.999      0.999    1.000     1.000     smurf
+                 1.000    0.000    0.901      1.000    0.948      0.949    1.000     0.999     pod
+                 0.995    0.000    0.992      0.995    0.994      0.994    1.000     0.997     back
+                 0.992    0.000    0.975      0.992    0.983      0.983    1.000     0.997     guess_passwd
+                 0.250    0.000    1.000      0.250    0.400      0.500    0.981     0.255     ftp_write
+                 0.000    0.000    ?          0.000    ?          ?        0.997     0.060     multihop
+                 0.000    0.000    0.000      0.000    0.000      -0.000   0.995     0.038     rootkit
+                 0.800    0.000    0.667      0.800    0.727      0.730    0.999     0.812     buffer_overflow
+                 0.750    0.000    1.000      0.750    0.857      0.866    1.000     0.893     imap
+                 0.945    0.001    0.913      0.945    0.929      0.928    1.000     0.979     warezmaster
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     phf
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     land
+                 0.000    0.000    0.000      0.000    0.000      -0.000   0.999     0.380     loadmodule
+                 0.000    0.000    ?          0.000    ?          ?        1.000     0.500     spy
+                 1.000    0.000    0.500      1.000    0.667      0.707    1.000     1.000     perl
+                 0.031    0.000    0.333      0.031    0.057      0.102    0.987     0.303     saint
+                 0.946    0.001    0.913      0.946    0.929      0.929    1.000     0.983     mscan
+                 0.991    0.000    0.991      0.991    0.991      0.991    1.000     0.999     apache2
+                 1.000    0.000    0.982      1.000    0.991      0.991    1.000     0.999     snmpgetattack
+                 0.995    0.000    1.000      0.995    0.998      0.998    1.000     1.000     processtable
+                 0.925    0.000    0.949      0.925    0.937      0.937    0.995     0.966     httptunnel
+                 0.200    0.000    0.333      0.200    0.250      0.258    0.998     0.307     ps
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     snmpguess
+                 1.000    0.000    0.989      1.000    0.994      0.994    1.000     1.000     mailbomb
+                 0.167    0.000    1.000      0.167    0.286      0.408    0.999     0.395     named
+                 0.000    0.000    ?          0.000    ?          ?        0.999     0.184     sendmail
+                 0.250    0.000    0.333      0.250    0.286      0.289    1.000     0.625     xterm
+                 0.000    0.000    ?          0.000    ?          ?        1.000     1.000     worm
+                 0.000    0.000    ?          0.000    ?          ?        0.988     0.342     xlock
+                 0.000    0.000    ?          0.000    ?          ?        0.814     0.000     xsnoop
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     sqlattack
+                 0.000    0.000    ?          0.000    ?          ?        1.000     0.063     udpstorm
+Weighted Avg.    0.988    0.003    ?          0.988    ?          ?        0.999     0.994     
+
+=== Confusion Matrix ===
+
+     a     b     c     d     e     f     g     h     i     j     k     l     m     n     o     p     q     r     s     t     u     v     w     x     y     z    aa    ab    ac    ad    ae    af    ag    ah    ai    aj    ak    al    am    an   <-- classified as
+ 22925    14    26    17    20     2     7    50     0     8     2     7     0     0     1     1     0    20     0     0     0     0     0     0    14     2     0     0     1     0     0     0     0     0     0     0     0     0     0     0 |     a = normal
+     1 13756     0     1     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     3     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     b = neptune
+    12     0   254     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     c = warezclient
+     8     0     0  1082     0     0    30     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     d = ipsweep
+     7     0     0     1   906     0     6     3     0     0     0     0     0     0     0     0     0     2     0     0     0     0     0     0     1     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0 |     e = portsweep
+     0     0     0     0     0   271     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     f = teardrop
+     9     1     0     5     0     0   455     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     g = nmap
+    15     3     0     0     1     0     9  1268     1     0     0     1     0     0     0     0     0     2     0     0     1     0     0     6     4     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     h = satan
+     0     0     0     0     0     0     0     0   994     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     i = smurf
+     0     0     0     0     0     0     0     0     0    73     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     j = pod
+     1     0     0     0     1     0     0     0     0     0   393     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     k = back
+     3     0     0     0     0     0     0     0     0     0     0   383     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     l = guess_passwd
+     2     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     m = ftp_write
+     3     0     0     0     0     0     1     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     1     0     1     0     1     0     0     0     0     0     0     0     0     0     0     0 |     n = multihop
+     2     0     0     0     0     0     1     0     0     0     0     0     0     0     0     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     2     0     0     0     0     0 |     o = rootkit
+     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0    12     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     p = buffer_overflow
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     3     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     q = imap
+    14     0     0     1     0     0     0     1     0     0     0     0     0     0     0     0     0   274     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     r = warezmaster
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     s = phf
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     8     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     t = land
+     1     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0 |     u = loadmodule
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0 |     v = spy
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     w = perl
+     1     1     0     0     0     0    29    61     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     3     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     x = saint
+     4    11     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0   283     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     y = mscan
+     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0   220     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     z = apache2
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0    54     0     0     0     0     0     0     0     0     0     0     0     0     0 |    aa = snmpgetattack
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0   205     0     0     0     0     0     0     0     0     0     0     0     0 |    ab = processtable
+     2     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0    37     0     0     0     0     0     0     0     0     0     0     0 |    ac = httptunnel
+     3     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0 |    ad = ps
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0   100     0     0     0     0     0     0     0     0     0 |    ae = snmpguess
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0    88     0     0     0     0     0     0     0     0 |    af = mailbomb
+     3     0     1     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0 |    ag = named
+     4     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    ah = sendmail
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0 |    ai = xterm
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    aj = worm
+     2     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    ak = xlock
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    al = xsnoop
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0 |    am = sqlattack
+     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    an = udpstorm
+

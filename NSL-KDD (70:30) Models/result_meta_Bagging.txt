@@ -1,0 +1,162 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.meta.Bagging -P 100 -S 1 -num-slots 1 -I 10 -W weka.classifiers.trees.REPTree -- -M 2 -V 0.001 -N 3 -S 1 -L -1 -I 0.0
+Relation:     train-70-weka.filters.unsupervised.attribute.Remove-R43
+Instances:    103943
+Attributes:   42
+              duration
+              protocol_type
+              service
+              flag
+              src_bytes
+              dst_bytes
+              land
+              wrong_fragment
+              urgent
+              hot
+              num_failed_logins
+              logged_in
+              num_compromised
+              root_shell
+              su_attempted
+              num_root
+              num_file_creations
+              num_shells
+              num_access_files
+              num_outbound_cmds
+              is_host_login
+              is_guest_login
+              count
+              srv_count
+              serror_rate
+              srv_serror_rate
+              rerror_rate
+              srv_rerror_rate
+              same_srv_rate
+              diff_srv_rate
+              srv_diff_host_rate
+              dst_host_count
+              dst_host_srv_count
+              dst_host_same_srv_rate
+              dst_host_diff_srv_rate
+              dst_host_same_src_port_rate
+              dst_host_srv_diff_host_rate
+              dst_host_serror_rate
+              dst_host_srv_serror_rate
+              dst_host_rerror_rate
+              dst_host_srv_rerror_rate
+              outcome
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+Bagging with 10 iterations and base learner
+
+weka.classifiers.trees.REPTree -M 2 -V 0.001 -N 3 -S 1 -L -1 -I 0.0
+
+Time taken to build model: 9.37 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0.28 seconds
+
+=== Summary ===
+
+Correctly Classified Instances       44167               99.0869 %
+Incorrectly Classified Instances       407                0.9131 %
+Kappa statistic                          0.9855
+Mean absolute error                      0.0007
+Root mean squared error                  0.0186
+Relative absolute error                  2.3344 %
+Root relative squared error             14.8008 %
+Total Number of Instances            44574     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.997    0.006    0.994      0.997    0.995      0.990    1.000     1.000     normal
+                 1.000    0.003    0.993      1.000    0.996      0.995    1.000     0.998     neptune
+                 0.966    0.000    0.981      0.966    0.974      0.973    1.000     0.993     warezclient
+                 0.994    0.000    0.990      0.994    0.992      0.992    0.999     0.998     ipsweep
+                 0.930    0.000    0.980      0.930    0.954      0.953    0.993     0.977     portsweep
+                 1.000    0.000    0.975      1.000    0.987      0.987    1.000     0.993     teardrop
+                 0.955    0.000    0.993      0.955    0.974      0.974    0.980     0.962     nmap
+                 0.947    0.001    0.960      0.947    0.953      0.952    0.993     0.984     satan
+                 1.000    0.000    0.999      1.000    0.999      0.999    1.000     0.999     smurf
+                 1.000    0.000    0.901      1.000    0.948      0.949    1.000     0.969     pod
+                 1.000    0.000    0.992      1.000    0.996      0.996    1.000     0.997     back
+                 0.995    0.000    0.990      0.995    0.992      0.992    1.000     1.000     guess_passwd
+                 0.000    0.000    ?          0.000    ?          ?        0.874     0.482     ftp_write
+                 0.000    0.000    0.000      0.000    0.000      -0.000   0.868     0.193     multihop
+                 0.143    0.000    1.000      0.143    0.250      0.378    0.914     0.324     rootkit
+                 0.600    0.000    0.750      0.600    0.667      0.671    1.000     0.854     buffer_overflow
+                 0.250    0.000    1.000      0.250    0.400      0.500    1.000     0.917     imap
+                 0.972    0.000    0.989      0.972    0.981      0.981    0.996     0.991     warezmaster
+                 0.500    0.000    1.000      0.500    0.667      0.707    1.000     1.000     phf
+                 0.875    0.000    0.875      0.875    0.875      0.875    0.937     0.709     land
+                 0.500    0.000    1.000      0.500    0.667      0.707    0.874     0.750     loadmodule
+                 0.000    0.000    ?          0.000    ?          ?        0.999     0.017     spy
+                 0.500    0.000    1.000      0.500    0.667      0.707    1.000     1.000     perl
+                 0.667    0.000    0.842      0.667    0.744      0.749    0.976     0.845     saint
+                 1.000    0.001    0.917      1.000    0.957      0.957    1.000     0.994     mscan
+                 0.995    0.000    1.000      0.995    0.998      0.998    1.000     1.000     apache2
+                 0.093    0.000    0.385      0.093    0.149      0.188    0.998     0.439     snmpgetattack
+                 0.995    0.000    1.000      0.995    0.998      0.998    1.000     1.000     processtable
+                 0.950    0.000    0.974      0.950    0.962      0.962    0.987     0.947     httptunnel
+                 0.400    0.000    0.500      0.400    0.444      0.447    1.000     0.675     ps
+                 0.960    0.000    1.000      0.960    0.980      0.980    1.000     0.986     snmpguess
+                 1.000    0.000    0.989      1.000    0.994      0.994    1.000     1.000     mailbomb
+                 0.000    0.000    0.000      0.000    0.000      -0.000   0.989     0.077     named
+                 0.000    0.000    ?          0.000    ?          ?        0.999     0.803     sendmail
+                 0.250    0.000    0.333      0.250    0.286      0.289    1.000     0.492     xterm
+                 0.000    0.000    ?          0.000    ?          ?        1.000     1.000     worm
+                 0.000    0.000    ?          0.000    ?          ?        0.832     0.058     xlock
+                 0.000    0.000    ?          0.000    ?          ?        0.500     0.000     xsnoop
+                 0.000    0.000    ?          0.000    ?          ?        1.000     0.500     sqlattack
+                 0.000    0.000    ?          0.000    ?          ?        1.000     1.000     udpstorm
+Weighted Avg.    0.991    0.004    ?          0.991    ?          ?        0.999     0.996     
+
+=== Confusion Matrix ===
+
+     a     b     c     d     e     f     g     h     i     j     k     l     m     n     o     p     q     r     s     t     u     v     w     x     y     z    aa    ab    ac    ad    ae    af    ag    ah    ai    aj    ak    al    am    an   <-- classified as
+ 23043     7     2     2     3     7     2    16     1     8     3     3     0     0     0     0     0     2     0     1     0     0     0     0     7     0     8     0     0     1     0     1     0     0     0     0     0     0     0     0 |     a = normal
+     0 13758     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     4     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     b = neptune
+     9     0   258     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     c = warezclient
+     0     2     0  1115     3     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     d = ipsweep
+     9    44     1     1   862     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     7     0     0     0     0     0     0     0     2     0     0     0     0     0     0     0 |     e = portsweep
+     0     0     0     0     0   272     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     f = teardrop
+     2     9     0     2     8     0   449     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     g = nmap
+    13    29     0     6     4     0     0  1241     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0    12     4     0     0     0     1     0     0     0     1     0     0     0     0     0     0     0 |     h = satan
+     0     0     0     0     0     0     0     0   994     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     i = smurf
+     0     0     0     0     0     0     0     0     0    73     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     j = pod
+     0     0     0     0     0     0     0     0     0     0   395     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     k = back
+     2     0     0     0     0     0     0     0     0     0     0   384     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     l = guess_passwd
+     1     0     0     0     0     0     0     2     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     m = ftp_write
+     6     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     n = multihop
+     3     0     1     0     0     0     0     1     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0 |     o = rootkit
+     6     0     0     0     0     0     0     0     0     0     0     0     0     0     0     9     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     p = buffer_overflow
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     3     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     q = imap
+     8     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0   282     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     r = warezmaster
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     s = phf
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     7     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     t = land
+     1     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     u = loadmodule
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     v = spy
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     w = perl
+     2     1     0     0     0     0     0    29     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0    64     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     x = saint
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0   299     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     y = mscan
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0   221     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     z = apache2
+    49     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     5     0     0     0     0     0     0     0     0     0     0     0     0     0 |    aa = snmpgetattack
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0   205     0     0     0     0     0     0     0     0     0     0     0     0 |    ab = processtable
+     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0    38     0     0     0     0     0     0     0     0     0     0     0 |    ac = httptunnel
+     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     2     0     0     0     0     0     0     0     0     0     0 |    ad = ps
+     4     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0    96     0     0     0     0     0     0     0     0     0 |    ae = snmpguess
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0    88     0     0     0     0     0     0     0     0 |    af = mailbomb
+     4     1     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    ag = named
+     5     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    ah = sendmail
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0 |    ai = xterm
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    aj = worm
+     2     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    ak = xlock
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0 |    al = xsnoop
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0 |    am = sqlattack
+     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    an = udpstorm
+

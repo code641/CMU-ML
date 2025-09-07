@@ -1,0 +1,106 @@
+@relation test-20
+
+@attribute duration numeric
+@attribute protocol_type {tcp,udp,icmp}
+@attribute service {http,domain_u,ftp_data,private,other,smtp,telnet,eco_i,X11,ntp_u,ftp,IRC,time,finger,urp_i,auth,ecr_i,domain,pop_3,urh_i,red_i,remote_job,tftp_u,ssh,shell,imap4,tim_i,link,uucp,whois,mtp,Z39_50,supdup,login,http_443,bgp,uucp_path,sql_net,hostnames,iso_tsap,nnsp,csnet_ns,vmnet,kshell,sunrpc,efs,klogin,ldap,pop_2,netstat,daytime,exec,discard,netbios_dgm,systat,name,ctf,rje,netbios_ns,courier,echo,gopher,netbios_ssn,printer,nntp,http_2784,aol,pm_dump,http_8001,harvest}
+@attribute flag {REJ,SF,RSTO,S0,S3,RSTR,S1,S2,OTH,RSTOS0,SH}
+@attribute src_bytes numeric
+@attribute dst_bytes numeric
+@attribute land numeric
+@attribute wrong_fragment numeric
+@attribute urgent numeric
+@attribute hot numeric
+@attribute num_failed_logins numeric
+@attribute logged_in numeric
+@attribute num_compromised numeric
+@attribute root_shell numeric
+@attribute su_attempted numeric
+@attribute num_root numeric
+@attribute num_file_creations numeric
+@attribute num_shells numeric
+@attribute num_access_files numeric
+@attribute num_outbound_cmds numeric
+@attribute is_host_login numeric
+@attribute is_guest_login numeric
+@attribute count numeric
+@attribute srv_count numeric
+@attribute serror_rate numeric
+@attribute srv_serror_rate numeric
+@attribute rerror_rate numeric
+@attribute srv_rerror_rate numeric
+@attribute same_srv_rate numeric
+@attribute diff_srv_rate numeric
+@attribute srv_diff_host_rate numeric
+@attribute dst_host_count numeric
+@attribute dst_host_srv_count numeric
+@attribute dst_host_same_srv_rate numeric
+@attribute dst_host_diff_srv_rate numeric
+@attribute dst_host_same_src_port_rate numeric
+@attribute dst_host_srv_diff_host_rate numeric
+@attribute dst_host_serror_rate numeric
+@attribute dst_host_srv_serror_rate numeric
+@attribute dst_host_rerror_rate numeric
+@attribute dst_host_srv_rerror_rate numeric
+@attribute outcome {normal,neptune,warezclient,ipsweep,portsweep,teardrop,nmap,satan,smurf,pod,back,guess_passwd,ftp_write,multihop,rootkit,buffer_overflow,imap,warezmaster,phf,land,loadmodule,spy,perl,saint,mscan,apache2,snmpgetattack,processtable,httptunnel,ps,snmpguess,mailbomb,named,sendmail,xterm,worm,xlock,xsnoop,sqlattack,udpstorm}
+@attribute difficulty_level numeric
+
+@data
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,1,0,0,255,235,0.92,0.08,0,0,0,0,0.07,0,mailbomb,14
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,1,0,0,255,111,0.44,0.15,0,0,0,0,0.55,0,mailbomb,11
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,1,0,0,255,226,0.89,0.11,0,0,0,0,0.1,0,mailbomb,14
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,3,0,0,0,0,1,0,0.67,255,246,0.96,0.04,0,0,0,0,0.03,0,mailbomb,16
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,21,0.08,0.16,0,0,0,0,0.9,0,mailbomb,12
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,65,0.25,0.14,0,0,0,0,0.73,0,mailbomb,12
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,17,0.07,0.16,0,0,0,0,0.91,0,mailbomb,13
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,181,0.71,0.13,0,0,0,0,0.28,0,mailbomb,11
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,1,0,0,255,15,0.06,0.16,0,0,0,0,0.92,0,mailbomb,12
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,22,0.09,0.16,0,0,0,0,0.89,0,mailbomb,12
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,2,0,0,0,0,1,0,1,255,247,0.97,0.04,0,0,0,0,0.03,0,mailbomb,15
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,4,3,0,0,0.25,0,0.75,0.5,0,255,244,0.96,0.05,0,0,0,0,0.04,0,mailbomb,18
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,110,0.43,0.15,0,0,0,0,0.55,0,mailbomb,11
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,1,0,0,255,198,0.78,0.13,0,0,0,0,0.21,0,mailbomb,11
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,13,0.05,0.16,0,0,0,0,0.93,0,mailbomb,12
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,1,0,0,255,163,0.64,0.13,0,0,0,0,0.35,0,mailbomb,11
+1,tcp,smtp,SF,2599,261,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,246,0.96,0.04,0,0,0,0,0.04,0,mailbomb,16
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,1,0,0,255,219,0.86,0.13,0,0,0,0,0.13,0,mailbomb,14
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,1,0,0,255,244,0.96,0.05,0,0,0,0,0.03,0,mailbomb,18
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,124,0.49,0.15,0,0,0,0,0.5,0,mailbomb,11
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,1,0,0,255,83,0.33,0.14,0,0,0,0,0.66,0,mailbomb,11
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,245,0.96,0.04,0,0,0,0,0.04,0,mailbomb,18
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,1,0,0,255,103,0.4,0.14,0,0,0,0,0.58,0,mailbomb,11
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,1,0,0,255,228,0.89,0.11,0,0,0,0,0.09,0,mailbomb,14
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,49,0.19,0.16,0,0,0,0,0.79,0,mailbomb,13
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,1,0,0,255,167,0.65,0.13,0,0,0,0,0.33,0,mailbomb,11
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,173,0.68,0.13,0,0,0,0,0.31,0,mailbomb,11
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,53,0.21,0.16,0,0,0,0,0.77,0,mailbomb,12
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,1,0,0,255,171,0.67,0.13,0,0,0,0,0.32,0,mailbomb,11
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,1,0,0,255,116,0.45,0.15,0,0,0,0,0.53,0,mailbomb,11
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,1,0,0,255,191,0.75,0.13,0,0,0,0,0.24,0,mailbomb,11
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,77,0.3,0.14,0,0,0,0,0.68,0,mailbomb,11
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,4,3,0,0,0.25,0,0.75,0.5,0,255,245,0.96,0.04,0,0,0,0,0.04,0,mailbomb,18
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,1,0,0,255,63,0.25,0.14,0,0,0,0,0.74,0,mailbomb,12
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,9,0.04,0.16,0,0,0,0,0.95,0,mailbomb,12
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,232,0.91,0.09,0,0,0,0,0.08,0,mailbomb,14
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,1,0,0,255,238,0.93,0.07,0,0,0,0,0.06,0,mailbomb,14
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,1,0,0,255,10,0.04,0.16,0,0,0,0,0.94,0,mailbomb,12
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,236,0.93,0.08,0,0,0,0,0.07,0,mailbomb,14
+1,tcp,smtp,SF,2599,261,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,1,0,0,255,246,0.96,0.04,0,0,0,0,0.03,0,mailbomb,16
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,205,0.8,0.13,0,0,0,0,0.18,0,mailbomb,11
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,178,0.7,0.13,0,0,0,0,0.29,0,mailbomb,11
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,4,3,0,0,0,0,0.75,0.5,0,255,246,0.96,0.04,0,0,0,0,0.03,0,mailbomb,18
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,1,0,0,255,79,0.31,0.14,0,0,0,0,0.67,0,mailbomb,11
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,202,0.79,0.13,0,0,0,0,0.2,0,mailbomb,11
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,1,0,0,255,227,0.89,0.11,0,0,0,0,0.1,0,mailbomb,14
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,1,0,0,255,95,0.37,0.14,0,0,0,0,0.61,0,mailbomb,11
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,82,0.32,0.14,0,0,0,0,0.66,0,mailbomb,11
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,136,0.53,0.15,0,0,0,0,0.45,0,mailbomb,11
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,1,0,0,255,48,0.19,0.16,0,0,0,0,0.79,0,mailbomb,13
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,161,0.63,0.13,0,0,0,0,0.36,0,mailbomb,11
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,182,0.71,0.13,0,0,0,0,0.27,0,mailbomb,11
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,69,0.27,0.14,0,0,0,0,0.71,0,mailbomb,12
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,2,0,0,0.33,0,0.67,0.67,0,255,243,0.95,0.05,0,0,0,0,0.04,0,mailbomb,17
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,243,0.95,0.05,0,0,0,0,0.04,0,mailbomb,17
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,86,0.34,0.14,0,0,0,0,0.65,0,mailbomb,11
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,189,0.74,0.13,0,0,0,0,0.25,0,mailbomb,11
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,109,0.43,0.15,0,0,0,0,0.56,0,mailbomb,11
+1,tcp,smtp,SF,2599,293,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,255,144,0.56,0.13,0,0,0,0,0.42,0,mailbomb,11

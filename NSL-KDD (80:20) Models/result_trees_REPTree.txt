@@ -1,0 +1,983 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.REPTree -M 2 -V 0.001 -N 3 -S 1 -L -1 -I 0.0
+Relation:     train-80-weka.filters.unsupervised.attribute.Remove-R43
+Instances:    118798
+Attributes:   42
+              duration
+              protocol_type
+              service
+              flag
+              src_bytes
+              dst_bytes
+              land
+              wrong_fragment
+              urgent
+              hot
+              num_failed_logins
+              logged_in
+              num_compromised
+              root_shell
+              su_attempted
+              num_root
+              num_file_creations
+              num_shells
+              num_access_files
+              num_outbound_cmds
+              is_host_login
+              is_guest_login
+              count
+              srv_count
+              serror_rate
+              srv_serror_rate
+              rerror_rate
+              srv_rerror_rate
+              same_srv_rate
+              diff_srv_rate
+              srv_diff_host_rate
+              dst_host_count
+              dst_host_srv_count
+              dst_host_same_srv_rate
+              dst_host_diff_srv_rate
+              dst_host_same_src_port_rate
+              dst_host_srv_diff_host_rate
+              dst_host_serror_rate
+              dst_host_srv_serror_rate
+              dst_host_rerror_rate
+              dst_host_srv_rerror_rate
+              outcome
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+
+REPTree
+============
+
+service = http
+|   flag = REJ
+|   |   diff_srv_rate < 0.03 : normal (1406/3) [696/5]
+|   |   diff_srv_rate >= 0.03 : neptune (119/8) [68/2]
+|   flag = SF
+|   |   src_bytes < 46908
+|   |   |   src_bytes < 94.5
+|   |   |   |   logged_in < 0.5 : normal (35/0) [14/0]
+|   |   |   |   logged_in >= 0.5
+|   |   |   |   |   hot < 1 : apache2 (3/1) [2/0]
+|   |   |   |   |   hot >= 1 : phf (3/1) [1/0]
+|   |   |   src_bytes >= 94.5 : normal (22165/0) [11053/0]
+|   |   src_bytes >= 46908
+|   |   |   src_bytes < 66371 : back (629/0) [304/0]
+|   |   |   src_bytes >= 66371 : normal (2/0) [1/0]
+|   flag = RSTO : normal (43/0) [25/1]
+|   flag = S0
+|   |   dst_host_srv_serror_rate < 0.85
+|   |   |   dst_host_same_src_port_rate < 0.01 : apache2 (123/1) [69/0]
+|   |   |   dst_host_same_src_port_rate >= 0.01 : normal (138/1) [65/0]
+|   |   dst_host_srv_serror_rate >= 0.85 : neptune (596/1) [327/1]
+|   flag = S3 : normal (13/3) [7/1]
+|   flag = RSTR
+|   |   duration < 366
+|   |   |   src_bytes < 7881.5 : portsweep (7/3) [1/0]
+|   |   |   src_bytes >= 7881.5 : back (67/0) [42/0]
+|   |   duration >= 366 : apache2 (266/0) [125/1]
+|   flag = S1 : normal (88/1) [49/2]
+|   flag = S2
+|   |   src_bytes < 27510.5 : normal (48/0) [20/0]
+|   |   src_bytes >= 27510.5 : back (4/0) [3/0]
+|   flag = OTH : normal (2/0) [0/0]
+|   flag = RSTOS0 : portsweep (1/0) [1/0]
+|   flag = SH : nmap (1/0) [0/0]
+service = domain_u
+|   src_bytes < 9
+|   |   dst_host_same_src_port_rate < 0.25 : satan (6/0) [4/1]
+|   |   dst_host_same_src_port_rate >= 0.25 : normal (3/1) [1/0]
+|   src_bytes >= 9 : normal (5290/0) [2668/0]
+service = ftp_data
+|   flag = REJ
+|   |   rerror_rate < 0.97 : satan (7/0) [5/0]
+|   |   rerror_rate >= 0.97
+|   |   |   count < 11 : ipsweep (6/1) [6/2]
+|   |   |   count >= 11 : neptune (66/0) [25/1]
+|   flag = SF
+|   |   dst_host_same_src_port_rate < 0.98
+|   |   |   duration < 157.5
+|   |   |   |   src_bytes < 13
+|   |   |   |   |   logged_in < 0.5
+|   |   |   |   |   |   src_bytes < 11.5 : normal (27/1) [21/0]
+|   |   |   |   |   |   src_bytes >= 11.5
+|   |   |   |   |   |   |   dst_host_count < 15.5 : warezmaster (20/1) [10/0]
+|   |   |   |   |   |   |   dst_host_count >= 15.5
+|   |   |   |   |   |   |   |   dst_host_diff_srv_rate < 0.11
+|   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate < 0.1
+|   |   |   |   |   |   |   |   |   |   dst_host_count < 31 : warezmaster (4/0) [2/0]
+|   |   |   |   |   |   |   |   |   |   dst_host_count >= 31 : normal (34/10) [20/5]
+|   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate >= 0.1 : warezmaster (6/0) [1/0]
+|   |   |   |   |   |   |   |   dst_host_diff_srv_rate >= 0.11 : normal (8/0) [1/1]
+|   |   |   |   |   logged_in >= 0.5 : normal (130/0) [89/0]
+|   |   |   |   src_bytes >= 13
+|   |   |   |   |   src_bytes < 353.5
+|   |   |   |   |   |   src_bytes < 326.5 : normal (626/4) [326/0]
+|   |   |   |   |   |   src_bytes >= 326.5 : warezclient (20/0) [12/0]
+|   |   |   |   |   src_bytes >= 353.5
+|   |   |   |   |   |   duration < 3.5 : normal (1768/3) [938/5]
+|   |   |   |   |   |   duration >= 3.5
+|   |   |   |   |   |   |   src_bytes < 1100832 : warezclient (4/0) [2/1]
+|   |   |   |   |   |   |   src_bytes >= 1100832 : normal (8/0) [6/0]
+|   |   |   duration >= 157.5 : warezmaster (42/0) [27/6]
+|   |   dst_host_same_src_port_rate >= 0.98
+|   |   |   logged_in < 0.5
+|   |   |   |   dst_host_srv_count < 47.5 : warezmaster (185/14) [93/6]
+|   |   |   |   dst_host_srv_count >= 47.5 : normal (28/0) [12/0]
+|   |   |   logged_in >= 0.5
+|   |   |   |   dst_host_srv_diff_host_rate < 0.1
+|   |   |   |   |   dst_host_srv_count < 46.5
+|   |   |   |   |   |   count < 2.5
+|   |   |   |   |   |   |   src_bytes < 245.5 : normal (9/0) [7/4]
+|   |   |   |   |   |   |   src_bytes >= 245.5
+|   |   |   |   |   |   |   |   src_bytes < 358.5 : warezclient (40/1) [16/1]
+|   |   |   |   |   |   |   |   src_bytes >= 358.5
+|   |   |   |   |   |   |   |   |   duration < 2 : normal (12/0) [8/0]
+|   |   |   |   |   |   |   |   |   duration >= 2 : warezclient (11/0) [5/0]
+|   |   |   |   |   |   count >= 2.5 : normal (27/1) [10/1]
+|   |   |   |   |   dst_host_srv_count >= 46.5 : normal (56/5) [24/3]
+|   |   |   |   dst_host_srv_diff_host_rate >= 0.1 : warezclient (239/3) [115/2]
+|   flag = RSTO : normal (0/0) [0/0]
+|   flag = S0 : neptune (603/3) [325/1]
+|   flag = S3 : normal (9/0) [2/0]
+|   flag = RSTR : portsweep (5/1) [1/0]
+|   flag = S1 : normal (17/0) [16/1]
+|   flag = S2 : normal (1/1) [3/0]
+|   flag = OTH : normal (2/0) [0/0]
+|   flag = RSTOS0 : portsweep (1/0) [0/0]
+|   flag = SH : nmap (1/0) [0/0]
+service = private
+|   flag = REJ
+|   |   dst_host_diff_srv_rate < 0.11
+|   |   |   diff_srv_rate < 0.36
+|   |   |   |   dst_host_rerror_rate < 0.1 : portsweep (3/0) [1/0]
+|   |   |   |   dst_host_rerror_rate >= 0.1 : neptune (2214/0) [1123/1]
+|   |   |   diff_srv_rate >= 0.36
+|   |   |   |   dst_host_same_src_port_rate < 0.01 : satan (7/2) [4/0]
+|   |   |   |   dst_host_same_src_port_rate >= 0.01 : portsweep (16/0) [7/0]
+|   |   dst_host_diff_srv_rate >= 0.11
+|   |   |   dst_host_same_src_port_rate < 0.01
+|   |   |   |   diff_srv_rate < 0.52
+|   |   |   |   |   dst_host_diff_srv_rate < 0.98 : neptune (5/1) [4/0]
+|   |   |   |   |   dst_host_diff_srv_rate >= 0.98 : ipsweep (15/0) [8/0]
+|   |   |   |   diff_srv_rate >= 0.52
+|   |   |   |   |   serror_rate < 0.04 : satan (207/0) [91/1]
+|   |   |   |   |   serror_rate >= 0.04
+|   |   |   |   |   |   dst_host_serror_rate < 0.08
+|   |   |   |   |   |   |   count < 273
+|   |   |   |   |   |   |   |   dst_host_diff_srv_rate < 0.45 : saint (5/0) [1/0]
+|   |   |   |   |   |   |   |   dst_host_diff_srv_rate >= 0.45
+|   |   |   |   |   |   |   |   |   dst_host_serror_rate < 0.06 : satan (113/0) [45/0]
+|   |   |   |   |   |   |   |   |   dst_host_serror_rate >= 0.06
+|   |   |   |   |   |   |   |   |   |   dst_host_diff_srv_rate < 0.76 : saint (3/0) [1/0]
+|   |   |   |   |   |   |   |   |   |   dst_host_diff_srv_rate >= 0.76 : satan (23/1) [11/2]
+|   |   |   |   |   |   |   count >= 273
+|   |   |   |   |   |   |   |   dst_host_serror_rate < 0.03 : satan (6/0) [0/0]
+|   |   |   |   |   |   |   |   dst_host_serror_rate >= 0.03
+|   |   |   |   |   |   |   |   |   count < 478 : saint (14/2) [7/0]
+|   |   |   |   |   |   |   |   |   count >= 478 : satan (5/2) [4/0]
+|   |   |   |   |   |   dst_host_serror_rate >= 0.08 : satan (203/0) [96/0]
+|   |   |   dst_host_same_src_port_rate >= 0.01
+|   |   |   |   dst_host_same_srv_rate < 0.01 : portsweep (239/0) [125/0]
+|   |   |   |   dst_host_same_srv_rate >= 0.01
+|   |   |   |   |   same_srv_rate < 0.58
+|   |   |   |   |   |   count < 77 : portsweep (4/1) [3/1]
+|   |   |   |   |   |   count >= 77 : neptune (27/0) [14/0]
+|   |   |   |   |   same_srv_rate >= 0.58 : ipsweep (153/0) [88/1]
+|   flag = SF
+|   |   src_bytes < 34
+|   |   |   src_bytes < 17
+|   |   |   |   diff_srv_rate < 0.11 : satan (363/2) [162/2]
+|   |   |   |   diff_srv_rate >= 0.11
+|   |   |   |   |   count < 30.5
+|   |   |   |   |   |   dst_host_serror_rate < 0.03
+|   |   |   |   |   |   |   dst_bytes < 0.5 : satan (132/13) [77/3]
+|   |   |   |   |   |   |   dst_bytes >= 0.5
+|   |   |   |   |   |   |   |   srv_count < 1.5
+|   |   |   |   |   |   |   |   |   count < 19 : saint (2/0) [3/1]
+|   |   |   |   |   |   |   |   |   count >= 19 : satan (6/0) [5/0]
+|   |   |   |   |   |   |   |   srv_count >= 1.5 : normal (9/0) [6/0]
+|   |   |   |   |   |   dst_host_serror_rate >= 0.03 : satan (146/3) [66/5]
+|   |   |   |   |   count >= 30.5
+|   |   |   |   |   |   srv_count < 1.5 : satan (78/1) [54/0]
+|   |   |   |   |   |   srv_count >= 1.5
+|   |   |   |   |   |   |   diff_srv_rate < 0.23 : satan (16/5) [9/1]
+|   |   |   |   |   |   |   diff_srv_rate >= 0.23 : normal (39/2) [20/1]
+|   |   |   src_bytes >= 17
+|   |   |   |   dst_host_serror_rate < 0.14
+|   |   |   |   |   dst_host_count < 116.5
+|   |   |   |   |   |   dst_host_same_srv_rate < 0.44 : teardrop (21/1) [18/2]
+|   |   |   |   |   |   dst_host_same_srv_rate >= 0.44 : normal (9/2) [6/1]
+|   |   |   |   |   dst_host_count >= 116.5 : teardrop (461/4) [227/3]
+|   |   |   |   dst_host_serror_rate >= 0.14 : normal (9/3) [1/0]
+|   |   src_bytes >= 34
+|   |   |   dst_bytes < 48.5
+|   |   |   |   src_bytes < 78
+|   |   |   |   |   dst_host_same_src_port_rate < 0.03 : snmpguess (169/0) [86/0]
+|   |   |   |   |   dst_host_same_src_port_rate >= 0.03 : normal (32/0) [23/0]
+|   |   |   |   src_bytes >= 78
+|   |   |   |   |   dst_host_same_src_port_rate < 0.1 : normal (88/3) [42/3]
+|   |   |   |   |   dst_host_same_src_port_rate >= 0.1
+|   |   |   |   |   |   dst_host_count < 10
+|   |   |   |   |   |   |   src_bytes < 156 : normal (3/0) [1/0]
+|   |   |   |   |   |   |   src_bytes >= 156 : nmap (6/1) [1/0]
+|   |   |   |   |   |   dst_host_count >= 10
+|   |   |   |   |   |   |   dst_host_count < 250.5 : nmap (127/0) [66/4]
+|   |   |   |   |   |   |   dst_host_count >= 250.5 : normal (2/0) [3/0]
+|   |   |   dst_bytes >= 48.5
+|   |   |   |   count < 4.5
+|   |   |   |   |   dst_host_same_srv_rate < 0.96 : normal (203/2) [114/1]
+|   |   |   |   |   dst_host_same_srv_rate >= 0.96
+|   |   |   |   |   |   src_bytes < 77 : snmpguess (5/0) [1/0]
+|   |   |   |   |   |   src_bytes >= 77
+|   |   |   |   |   |   |   duration < 2.5
+|   |   |   |   |   |   |   |   dst_host_diff_srv_rate < 0.04
+|   |   |   |   |   |   |   |   |   dst_host_srv_count < 249.5
+|   |   |   |   |   |   |   |   |   |   dst_bytes < 145.5 : normal (21/1) [10/0]
+|   |   |   |   |   |   |   |   |   |   dst_bytes >= 145.5
+|   |   |   |   |   |   |   |   |   |   |   dst_bytes < 146.5
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_count < 8 : normal (6/0) [0/0]
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_count >= 8
+|   |   |   |   |   |   |   |   |   |   |   |   |   count < 1.5 : snmpgetattack (29/11) [24/10]
+|   |   |   |   |   |   |   |   |   |   |   |   |   count >= 1.5 : normal (9/1) [10/2]
+|   |   |   |   |   |   |   |   |   |   |   dst_bytes >= 146.5 : normal (103/19) [30/4]
+|   |   |   |   |   |   |   |   |   dst_host_srv_count >= 249.5 : normal (116/43) [57/25]
+|   |   |   |   |   |   |   |   dst_host_diff_srv_rate >= 0.04 : snmpgetattack (5/1) [0/0]
+|   |   |   |   |   |   |   duration >= 2.5 : normal (17/0) [5/0]
+|   |   |   |   count >= 4.5 : normal (354/0) [170/0]
+|   flag = RSTO : neptune (55/1) [32/0]
+|   flag = S0
+|   |   dst_host_serror_rate < 0.18
+|   |   |   same_srv_rate < 0.01 : satan (18/3) [11/1]
+|   |   |   same_srv_rate >= 0.01
+|   |   |   |   serror_rate < 0.37 : neptune (3/1) [5/0]
+|   |   |   |   serror_rate >= 0.37 : portsweep (6/0) [8/0]
+|   |   dst_host_serror_rate >= 0.18 : neptune (7312/0) [3573/1]
+|   flag = S3 : neptune (0/0) [0/0]
+|   flag = RSTR
+|   |   diff_srv_rate < 0.55 : portsweep (786/0) [372/2]
+|   |   diff_srv_rate >= 0.55
+|   |   |   dst_host_count < 182 : normal (4/0) [1/0]
+|   |   |   dst_host_count >= 182 : portsweep (10/0) [9/0]
+|   flag = S1 : normal (2/0) [0/0]
+|   flag = S2 : normal (1/0) [0/0]
+|   flag = OTH : portsweep (23/0) [8/0]
+|   flag = RSTOS0 : portsweep (34/0) [17/1]
+|   flag = SH : nmap (161/0) [71/0]
+service = other
+|   flag = REJ
+|   |   same_srv_rate < 0.42
+|   |   |   rerror_rate < 0.94
+|   |   |   |   rerror_rate < 0.9 : satan (313/0) [180/1]
+|   |   |   |   rerror_rate >= 0.9
+|   |   |   |   |   count < 438 : satan (108/0) [58/1]
+|   |   |   |   |   count >= 438
+|   |   |   |   |   |   serror_rate < 0.06 : saint (3/0) [1/0]
+|   |   |   |   |   |   serror_rate >= 0.06
+|   |   |   |   |   |   |   count < 488 : satan (48/0) [28/0]
+|   |   |   |   |   |   |   count >= 488
+|   |   |   |   |   |   |   |   count < 491.5
+|   |   |   |   |   |   |   |   |   dst_host_serror_rate < 0.06 : satan (2/0) [2/0]
+|   |   |   |   |   |   |   |   |   dst_host_serror_rate >= 0.06 : saint (6/0) [1/0]
+|   |   |   |   |   |   |   |   count >= 491.5
+|   |   |   |   |   |   |   |   |   count < 510.5 : satan (52/1) [25/0]
+|   |   |   |   |   |   |   |   |   count >= 510.5
+|   |   |   |   |   |   |   |   |   |   dst_host_rerror_rate < 0.92
+|   |   |   |   |   |   |   |   |   |   |   serror_rate < 0.08 : satan (2/0) [1/1]
+|   |   |   |   |   |   |   |   |   |   |   serror_rate >= 0.08
+|   |   |   |   |   |   |   |   |   |   |   |   serror_rate < 0.08 : saint (4/0) [3/0]
+|   |   |   |   |   |   |   |   |   |   |   |   serror_rate >= 0.08 : satan (4/1) [1/0]
+|   |   |   |   |   |   |   |   |   |   dst_host_rerror_rate >= 0.92 : satan (19/0) [9/0]
+|   |   |   rerror_rate >= 0.94
+|   |   |   |   dst_host_serror_rate < 0.01 : satan (32/0) [12/0]
+|   |   |   |   dst_host_serror_rate >= 0.01
+|   |   |   |   |   count < 506.5
+|   |   |   |   |   |   rerror_rate < 0.96 : saint (44/7) [23/6]
+|   |   |   |   |   |   rerror_rate >= 0.96 : satan (8/1) [6/2]
+|   |   |   |   |   count >= 506.5
+|   |   |   |   |   |   count < 509.5 : satan (19/1) [4/0]
+|   |   |   |   |   |   count >= 509.5
+|   |   |   |   |   |   |   rerror_rate < 0.94 : satan (12/2) [3/0]
+|   |   |   |   |   |   |   rerror_rate >= 0.94
+|   |   |   |   |   |   |   |   serror_rate < 0.03 : satan (3/0) [2/0]
+|   |   |   |   |   |   |   |   serror_rate >= 0.03
+|   |   |   |   |   |   |   |   |   duration < 3
+|   |   |   |   |   |   |   |   |   |   dst_host_serror_rate < 0.06
+|   |   |   |   |   |   |   |   |   |   |   dst_host_rerror_rate < 0.95 : saint (3/0) [1/0]
+|   |   |   |   |   |   |   |   |   |   |   dst_host_rerror_rate >= 0.95
+|   |   |   |   |   |   |   |   |   |   |   |   count < 510.5 : saint (5/1) [1/0]
+|   |   |   |   |   |   |   |   |   |   |   |   count >= 510.5 : satan (4/1) [5/1]
+|   |   |   |   |   |   |   |   |   |   dst_host_serror_rate >= 0.06 : satan (4/1) [2/1]
+|   |   |   |   |   |   |   |   |   duration >= 3 : saint (2/0) [0/0]
+|   |   same_srv_rate >= 0.42
+|   |   |   dst_host_same_src_port_rate < 0.03 : httptunnel (57/0) [26/0]
+|   |   |   dst_host_same_src_port_rate >= 0.03 : normal (25/1) [10/0]
+|   flag = SF
+|   |   src_bytes < 41.5
+|   |   |   src_bytes < 2.5
+|   |   |   |   dst_host_diff_srv_rate < 0.45 : satan (129/0) [57/0]
+|   |   |   |   dst_host_diff_srv_rate >= 0.45
+|   |   |   |   |   dst_host_same_srv_rate < 0.01 : satan (65/0) [33/0]
+|   |   |   |   |   dst_host_same_srv_rate >= 0.01 : normal (7/1) [6/1]
+|   |   |   src_bytes >= 2.5 : satan (21/11) [6/3]
+|   |   src_bytes >= 41.5
+|   |   |   dst_host_same_src_port_rate < 0.03
+|   |   |   |   protocol_type = tcp : httptunnel (11/0) [6/0]
+|   |   |   |   protocol_type = udp : normal (3/0) [1/0]
+|   |   |   |   protocol_type = icmp : httptunnel (0/0) [0/0]
+|   |   |   dst_host_same_src_port_rate >= 0.03 : normal (1330/9) [672/2]
+|   flag = RSTO : neptune (5/0) [5/0]
+|   flag = S0
+|   |   count < 313.5 : neptune (32/0) [11/0]
+|   |   count >= 313.5 : satan (70/9) [30/3]
+|   flag = S3 : warezclient (0/0) [1/0]
+|   flag = RSTR
+|   |   dst_host_same_src_port_rate < 0.97
+|   |   |   dst_host_diff_srv_rate < 0.2 : portsweep (6/2) [4/0]
+|   |   |   dst_host_diff_srv_rate >= 0.2 : normal (13/0) [6/0]
+|   |   dst_host_same_src_port_rate >= 0.97 : portsweep (255/0) [128/0]
+|   flag = S1 : normal (4/0) [3/0]
+|   flag = S2 : normal (2/0) [2/1]
+|   flag = OTH : normal (0/0) [0/0]
+|   flag = RSTOS0 : satan (1/0) [0/0]
+|   flag = SH : normal (0/0) [0/0]
+service = smtp
+|   dst_bytes < 295
+|   |   src_bytes < 2572
+|   |   |   count < 2.5
+|   |   |   |   dst_host_same_src_port_rate < 0.16
+|   |   |   |   |   dst_host_serror_rate < 0.81 : normal (268/1) [135/1]
+|   |   |   |   |   dst_host_serror_rate >= 0.81 : neptune (5/0) [4/0]
+|   |   |   |   dst_host_same_src_port_rate >= 0.16
+|   |   |   |   |   flag = REJ : normal (0/0) [0/0]
+|   |   |   |   |   flag = SF
+|   |   |   |   |   |   dst_host_count < 4 : normal (3/0) [1/0]
+|   |   |   |   |   |   dst_host_count >= 4 : ipsweep (4/0) [2/0]
+|   |   |   |   |   flag = RSTO : portsweep (3/2) [1/0]
+|   |   |   |   |   flag = S0 : normal (1/0) [0/0]
+|   |   |   |   |   flag = S3 : normal (0/0) [0/0]
+|   |   |   |   |   flag = RSTR : portsweep (1/0) [2/0]
+|   |   |   |   |   flag = S1 : normal (1/0) [1/0]
+|   |   |   |   |   flag = S2 : normal (1/0) [0/0]
+|   |   |   |   |   flag = OTH : portsweep (1/0) [0/0]
+|   |   |   |   |   flag = RSTOS0 : normal (0/0) [0/0]
+|   |   |   |   |   flag = SH : nmap (1/0) [0/0]
+|   |   |   count >= 2.5
+|   |   |   |   diff_srv_rate < 0.28 : neptune (136/0) [57/0]
+|   |   |   |   diff_srv_rate >= 0.28
+|   |   |   |   |   rerror_rate < 0.17 : normal (4/0) [2/1]
+|   |   |   |   |   rerror_rate >= 0.17 : satan (7/3) [2/1]
+|   |   src_bytes >= 2572
+|   |   |   dst_host_count < 238.5 : normal (6/1) [4/0]
+|   |   |   dst_host_count >= 238.5 : mailbomb (156/0) [80/2]
+|   dst_bytes >= 295
+|   |   dst_host_rerror_rate < 0.3 : normal (3705/1) [1775/2]
+|   |   dst_host_rerror_rate >= 0.3
+|   |   |   dst_host_rerror_rate < 0.33 : satan (3/0) [4/1]
+|   |   |   dst_host_rerror_rate >= 0.33 : normal (122/1) [52/1]
+service = telnet
+|   flag = REJ : mscan (44/0) [22/0]
+|   flag = SF
+|   |   dst_bytes < 194
+|   |   |   duration < 3636
+|   |   |   |   src_bytes < 100 : mscan (37/10) [23/4]
+|   |   |   |   src_bytes >= 100 : guess_passwd (181/1) [98/1]
+|   |   |   duration >= 3636 : processtable (240/0) [128/0]
+|   |   dst_bytes >= 194
+|   |   |   hot < 0.5
+|   |   |   |   dst_host_srv_rerror_rate < 0.51 : normal (424/18) [210/12]
+|   |   |   |   dst_host_srv_rerror_rate >= 0.51
+|   |   |   |   |   srv_rerror_rate < 0.14 : normal (6/4) [4/2]
+|   |   |   |   |   srv_rerror_rate >= 0.14 : mscan (15/0) [7/0]
+|   |   |   hot >= 0.5
+|   |   |   |   duration < 836
+|   |   |   |   |   src_bytes < 1357.5 : normal (10/5) [11/9]
+|   |   |   |   |   src_bytes >= 1357.5
+|   |   |   |   |   |   urgent < 0.5 : buffer_overflow (20/1) [6/0]
+|   |   |   |   |   |   urgent >= 0.5 : xterm (3/0) [1/0]
+|   |   |   |   duration >= 836 : normal (16/2) [5/1]
+|   flag = RSTO
+|   |   count < 10.5
+|   |   |   srv_rerror_rate < 0.9 : mscan (54/0) [23/2]
+|   |   |   srv_rerror_rate >= 0.9
+|   |   |   |   num_failed_logins < 0.5
+|   |   |   |   |   dst_host_diff_srv_rate < 0.79 : normal (27/3) [22/3]
+|   |   |   |   |   dst_host_diff_srv_rate >= 0.79 : ipsweep (4/1) [2/0]
+|   |   |   |   num_failed_logins >= 0.5 : guess_passwd (37/2) [19/1]
+|   |   count >= 10.5 : neptune (80/4) [27/0]
+|   flag = S0
+|   |   count < 1.5
+|   |   |   srv_serror_rate < 0.8 : mscan (26/0) [8/0]
+|   |   |   srv_serror_rate >= 0.8
+|   |   |   |   dst_host_srv_count < 84 : neptune (6/1) [5/4]
+|   |   |   |   dst_host_srv_count >= 84 : mscan (3/0) [1/0]
+|   |   count >= 1.5 : neptune (690/0) [341/1]
+|   flag = S3
+|   |   src_bytes < 16 : processtable (121/0) [54/0]
+|   |   src_bytes >= 16 : guess_passwd (7/2) [1/0]
+|   flag = RSTR
+|   |   duration < 16.5 : portsweep (4/1) [3/2]
+|   |   duration >= 16.5 : normal (15/1) [5/1]
+|   flag = S1
+|   |   count < 3 : normal (34/0) [24/0]
+|   |   count >= 3 : mscan (3/0) [1/0]
+|   flag = S2 : processtable (3/0) [1/0]
+|   flag = OTH : normal (2/0) [1/1]
+|   flag = RSTOS0 : portsweep (0/0) [2/0]
+|   flag = SH : nmap (0/0) [1/0]
+service = eco_i
+|   dst_host_srv_diff_host_rate < 0.49
+|   |   src_bytes < 13
+|   |   |   dst_host_srv_count < 2.5 : ipsweep (18/6) [9/3]
+|   |   |   dst_host_srv_count >= 2.5 : nmap (509/0) [266/0]
+|   |   src_bytes >= 13
+|   |   |   src_bytes < 25
+|   |   |   |   src_bytes < 19 : ipsweep (159/0) [78/0]
+|   |   |   |   src_bytes >= 19
+|   |   |   |   |   dst_host_count < 45 : saint (46/0) [30/0]
+|   |   |   |   |   dst_host_count >= 45 : satan (11/1) [5/0]
+|   |   |   src_bytes >= 25 : normal (282/0) [144/0]
+|   dst_host_srv_diff_host_rate >= 0.49 : ipsweep (1577/6) [769/1]
+service = X11 : normal (48/9) [21/3]
+service = ntp_u : normal (87/0) [54/0]
+service = ftp
+|   src_bytes < 174
+|   |   flag = REJ : saint (0/0) [1/0]
+|   |   flag = SF
+|   |   |   duration < 236.5
+|   |   |   |   src_bytes < 31
+|   |   |   |   |   src_bytes < 18.5 : satan (3/1) [2/0]
+|   |   |   |   |   src_bytes >= 18.5 : guess_passwd (45/0) [30/0]
+|   |   |   |   src_bytes >= 31
+|   |   |   |   |   dst_host_srv_count < 4.5
+|   |   |   |   |   |   dst_host_diff_srv_rate < 0.04
+|   |   |   |   |   |   |   dst_host_diff_srv_rate < 0.02 : multihop (3/0) [3/2]
+|   |   |   |   |   |   |   dst_host_diff_srv_rate >= 0.02 : rootkit (4/1) [2/0]
+|   |   |   |   |   |   dst_host_diff_srv_rate >= 0.04 : named (8/7) [1/0]
+|   |   |   |   |   dst_host_srv_count >= 4.5 : normal (15/1) [14/3]
+|   |   |   duration >= 236.5 : warezmaster (260/0) [123/0]
+|   |   flag = RSTO
+|   |   |   count < 58
+|   |   |   |   dst_host_same_src_port_rate < 0.05 : normal (8/0) [4/0]
+|   |   |   |   dst_host_same_src_port_rate >= 0.05
+|   |   |   |   |   dst_bytes < 30.5 : portsweep (3/0) [1/0]
+|   |   |   |   |   dst_bytes >= 30.5 : ipsweep (7/0) [2/0]
+|   |   |   count >= 58 : neptune (60/0) [32/0]
+|   |   flag = S0 : neptune (208/0) [99/0]
+|   |   flag = S3 : neptune (0/0) [0/0]
+|   |   flag = RSTR : portsweep (3/0) [0/0]
+|   |   flag = S1 : normal (1/0) [3/2]
+|   |   flag = S2 : neptune (0/0) [0/0]
+|   |   flag = OTH : normal (0/0) [1/0]
+|   |   flag = RSTOS0 : portsweep (1/0) [0/0]
+|   |   flag = SH : neptune (0/0) [0/0]
+|   src_bytes >= 174
+|   |   duration < 4.5
+|   |   |   flag = REJ : warezclient (0/0) [0/0]
+|   |   |   flag = SF : warezclient (140/0) [77/0]
+|   |   |   flag = RSTO : warezclient (0/0) [0/0]
+|   |   |   flag = S0 : warezclient (0/0) [0/0]
+|   |   |   flag = S3 : warezclient (0/0) [0/0]
+|   |   |   flag = RSTR : warezclient (0/0) [0/0]
+|   |   |   flag = S1 : normal (3/0) [3/0]
+|   |   |   flag = S2 : warezclient (0/0) [0/0]
+|   |   |   flag = OTH : normal (1/0) [0/0]
+|   |   |   flag = RSTOS0 : warezclient (0/0) [0/0]
+|   |   |   flag = SH : warezclient (0/0) [0/0]
+|   |   duration >= 4.5
+|   |   |   duration < 2949.5 : normal (507/2) [233/2]
+|   |   |   duration >= 2949.5 : warezclient (21/0) [3/0]
+service = IRC : normal (104/3) [58/0]
+service = time
+|   same_srv_rate < 0.77 : neptune (311/0) [176/4]
+|   same_srv_rate >= 0.77
+|   |   dst_host_same_srv_rate < 0.43
+|   |   |   dst_bytes < 2 : portsweep (6/0) [3/1]
+|   |   |   dst_bytes >= 2 : ipsweep (3/0) [2/0]
+|   |   dst_host_same_srv_rate >= 0.43 : normal (43/0) [19/0]
+service = finger
+|   flag = REJ : neptune (0/0) [0/0]
+|   flag = SF
+|   |   srv_count < 1.5
+|   |   |   src_bytes < 2.5 : ipsweep (5/0) [4/0]
+|   |   |   src_bytes >= 2.5 : normal (295/1) [160/4]
+|   |   srv_count >= 1.5
+|   |   |   count < 2.5
+|   |   |   |   duration < 0.5 : normal (3/0) [3/0]
+|   |   |   |   duration >= 0.5 : saint (2/0) [3/2]
+|   |   |   count >= 2.5 : satan (8/0) [6/1]
+|   flag = RSTO
+|   |   dst_host_rerror_rate < 0.84
+|   |   |   diff_srv_rate < 0.23 : normal (3/1) [3/0]
+|   |   |   diff_srv_rate >= 0.23 : portsweep (3/0) [0/0]
+|   |   dst_host_rerror_rate >= 0.84 : neptune (58/0) [25/0]
+|   flag = S0
+|   |   dst_host_count < 38.5 : land (19/6) [4/0]
+|   |   dst_host_count >= 38.5
+|   |   |   srv_serror_rate < 0.58 : normal (3/0) [3/1]
+|   |   |   srv_serror_rate >= 0.58 : neptune (599/0) [305/4]
+|   flag = S3 : normal (1/0) [0/0]
+|   flag = RSTR : portsweep (5/2) [2/0]
+|   flag = S1 : normal (2/0) [1/0]
+|   flag = S2 : saint (1/0) [0/0]
+|   flag = OTH : neptune (0/0) [0/0]
+|   flag = RSTOS0 : portsweep (1/0) [0/0]
+|   flag = SH : neptune (0/0) [0/0]
+service = urp_i
+|   dst_host_count < 19
+|   |   src_bytes < 84.5
+|   |   |   src_bytes < 36.5 : snmpguess (2/0) [1/0]
+|   |   |   src_bytes >= 36.5 : satan (4/0) [0/0]
+|   |   src_bytes >= 84.5 : normal (4/0) [1/0]
+|   dst_host_count >= 19 : normal (338/0) [151/0]
+service = auth
+|   flag = REJ
+|   |   count < 61.5 : normal (10/1) [4/0]
+|   |   count >= 61.5 : neptune (76/1) [51/0]
+|   flag = SF
+|   |   dst_bytes < 35.5
+|   |   |   dst_host_diff_srv_rate < 0.37 : normal (15/4) [7/0]
+|   |   |   dst_host_diff_srv_rate >= 0.37 : satan (5/1) [2/0]
+|   |   dst_bytes >= 35.5 : normal (103/0) [54/0]
+|   flag = RSTO : normal (3/0) [0/0]
+|   flag = S0 : neptune (311/0) [155/0]
+|   flag = S3 : neptune (0/0) [0/0]
+|   flag = RSTR : portsweep (3/0) [2/0]
+|   flag = S1 : neptune (0/0) [0/0]
+|   flag = S2 : neptune (0/0) [0/0]
+|   flag = OTH : neptune (0/0) [0/0]
+|   flag = RSTOS0 : neptune (0/0) [0/0]
+|   flag = SH : nmap (1/0) [0/0]
+service = ecr_i
+|   count < 20.5
+|   |   wrong_fragment < 0.5
+|   |   |   src_bytes < 286
+|   |   |   |   src_bytes < 25
+|   |   |   |   |   src_bytes < 19 : ipsweep (19/5) [14/2]
+|   |   |   |   |   src_bytes >= 19 : satan (6/2) [2/0]
+|   |   |   |   src_bytes >= 25 : normal (112/0) [51/0]
+|   |   |   src_bytes >= 286
+|   |   |   |   src_bytes < 10520 : smurf (57/0) [21/2]
+|   |   |   |   src_bytes >= 10520 : normal (5/0) [6/0]
+|   |   wrong_fragment >= 0.5 : pod (129/6) [69/7]
+|   count >= 20.5 : smurf (1708/0) [865/1]
+service = domain
+|   flag = REJ : neptune (76/1) [26/2]
+|   flag = SF
+|   |   dst_bytes < 24 : ipsweep (5/2) [3/0]
+|   |   dst_bytes >= 24 : normal (18/0) [13/0]
+|   flag = RSTO : named (2/1) [1/0]
+|   flag = S0 : neptune (213/1) [129/0]
+|   flag = S3 : neptune (0/0) [0/0]
+|   flag = RSTR : portsweep (5/0) [1/0]
+|   flag = S1 : neptune (0/0) [0/0]
+|   flag = S2 : neptune (0/0) [0/0]
+|   flag = OTH : neptune (0/0) [0/0]
+|   flag = RSTOS0 : portsweep (1/0) [0/0]
+|   flag = SH : nmap (1/0) [0/0]
+service = pop_3
+|   flag = REJ : mscan (24/0) [16/0]
+|   flag = SF
+|   |   src_bytes < 33.5
+|   |   |   src_bytes < 15.5 : mscan (7/1) [5/1]
+|   |   |   src_bytes >= 15.5 : guess_passwd (406/0) [187/0]
+|   |   src_bytes >= 33.5
+|   |   |   dst_host_srv_diff_host_rate < 0.09
+|   |   |   |   src_bytes < 37
+|   |   |   |   |   dst_bytes < 183 : normal (14/0) [7/0]
+|   |   |   |   |   dst_bytes >= 183 : guess_passwd (3/0) [2/0]
+|   |   |   |   src_bytes >= 37 : normal (21/0) [9/0]
+|   |   |   dst_host_srv_diff_host_rate >= 0.09 : normal (63/0) [32/0]
+|   flag = RSTO
+|   |   dst_bytes < 18 : neptune (10/0) [6/0]
+|   |   dst_bytes >= 18 : mscan (71/0) [35/0]
+|   flag = S0
+|   |   count < 11 : mscan (29/1) [17/0]
+|   |   count >= 11 : neptune (31/0) [11/0]
+|   flag = S3 : guess_passwd (0/0) [0/0]
+|   flag = RSTR : portsweep (4/1) [2/1]
+|   flag = S1 : normal (1/0) [0/0]
+|   flag = S2 : guess_passwd (0/0) [0/0]
+|   flag = OTH : guess_passwd (0/0) [0/0]
+|   flag = RSTOS0 : guess_passwd (0/0) [0/0]
+|   flag = SH : guess_passwd (0/0) [0/0]
+service = urh_i : normal (4/0) [3/0]
+service = red_i : normal (3/0) [4/0]
+service = remote_job
+|   dst_host_diff_srv_rate < 0.1 : neptune (42/0) [15/0]
+|   dst_host_diff_srv_rate >= 0.1
+|   |   dst_host_count < 149.5 : ipsweep (3/1) [3/1]
+|   |   dst_host_count >= 149.5 : portsweep (7/0) [4/3]
+service = tftp_u : normal (2/0) [2/0]
+service = ssh
+|   flag = REJ : neptune (36/0) [15/0]
+|   flag = SF : normal (3/1) [4/1]
+|   flag = RSTO : ipsweep (9/5) [1/0]
+|   flag = S0 : neptune (132/0) [64/0]
+|   flag = S3 : neptune (0/0) [0/0]
+|   flag = RSTR : portsweep (2/0) [2/0]
+|   flag = S1 : neptune (0/0) [0/0]
+|   flag = S2 : neptune (0/0) [0/0]
+|   flag = OTH : neptune (0/0) [0/0]
+|   flag = RSTOS0 : portsweep (1/0) [0/0]
+|   flag = SH : nmap (0/0) [1/0]
+service = shell
+|   flag = REJ : neptune (0/0) [0/0]
+|   flag = SF : satan (4/1) [1/0]
+|   flag = RSTO : neptune (11/2) [6/0]
+|   flag = S0 : neptune (27/0) [17/0]
+|   flag = S3 : neptune (0/0) [0/0]
+|   flag = RSTR : portsweep (3/0) [0/0]
+|   flag = S1 : normal (1/0) [0/0]
+|   flag = S2 : neptune (0/0) [0/0]
+|   flag = OTH : neptune (0/0) [0/0]
+|   flag = RSTOS0 : neptune (0/0) [0/0]
+|   flag = SH : neptune (0/0) [0/0]
+service = imap4
+|   count < 6.5
+|   |   flag = REJ : mscan (42/1) [15/0]
+|   |   flag = SF : mscan (11/4) [6/1]
+|   |   flag = RSTO : mscan (68/0) [35/1]
+|   |   flag = S0 : mscan (28/0) [19/0]
+|   |   flag = S3 : mscan (0/0) [0/0]
+|   |   flag = RSTR : portsweep (2/0) [2/0]
+|   |   flag = S1 : imap (0/0) [1/0]
+|   |   flag = S2 : mscan (0/0) [0/0]
+|   |   flag = OTH : mscan (0/0) [0/0]
+|   |   flag = RSTOS0 : mscan (0/0) [0/0]
+|   |   flag = SH : imap (5/1) [0/0]
+|   count >= 6.5 : neptune (355/0) [186/3]
+service = tim_i : pod (8/2) [3/1]
+service = link
+|   dst_host_same_src_port_rate < 0.01 : neptune (263/1) [133/1]
+|   dst_host_same_src_port_rate >= 0.01
+|   |   dst_host_count < 101.5 : ipsweep (4/0) [2/0]
+|   |   dst_host_count >= 101.5 : portsweep (7/1) [5/1]
+service = uucp
+|   flag = REJ : satan (1/1) [1/0]
+|   flag = SF : satan (2/0) [0/0]
+|   flag = RSTO : neptune (101/2) [56/0]
+|   flag = S0 : neptune (326/0) [146/0]
+|   flag = S3 : neptune (0/0) [0/0]
+|   flag = RSTR : portsweep (1/0) [0/0]
+|   flag = S1 : neptune (0/0) [0/0]
+|   flag = S2 : neptune (0/0) [0/0]
+|   flag = OTH : neptune (0/0) [0/0]
+|   flag = RSTOS0 : neptune (0/0) [0/0]
+|   flag = SH : nmap (1/0) [1/0]
+service = whois
+|   dst_host_diff_srv_rate < 0.12 : neptune (379/0) [190/0]
+|   dst_host_diff_srv_rate >= 0.12
+|   |   dst_host_same_src_port_rate < 0.11
+|   |   |   count < 4.5 : ipsweep (3/0) [1/0]
+|   |   |   count >= 4.5 : satan (2/0) [1/0]
+|   |   dst_host_same_src_port_rate >= 0.11 : portsweep (9/0) [2/0]
+service = mtp
+|   dst_host_diff_srv_rate < 0.13 : neptune (243/0) [118/0]
+|   dst_host_diff_srv_rate >= 0.13 : portsweep (9/4) [7/2]
+service = Z39_50
+|   dst_host_diff_srv_rate < 0.3 : neptune (450/0) [245/0]
+|   dst_host_diff_srv_rate >= 0.3 : portsweep (4/1) [2/1]
+service = supdup
+|   dst_host_same_src_port_rate < 0.02 : neptune (304/0) [148/2]
+|   dst_host_same_src_port_rate >= 0.02 : portsweep (6/0) [5/0]
+service = login : neptune (235/9) [105/1]
+service = http_443
+|   dst_host_diff_srv_rate < 0.4 : neptune (289/0) [150/0]
+|   dst_host_diff_srv_rate >= 0.4 : portsweep (3/1) [2/1]
+service = bgp
+|   same_srv_rate < 0.47 : neptune (419/0) [191/2]
+|   same_srv_rate >= 0.47 : portsweep (4/1) [2/0]
+service = uucp_path
+|   dst_host_diff_srv_rate < 0.28 : neptune (375/0) [210/0]
+|   dst_host_diff_srv_rate >= 0.28 : portsweep (6/1) [4/1]
+service = sql_net
+|   dst_host_diff_srv_rate < 0.29 : neptune (138/0) [60/0]
+|   dst_host_diff_srv_rate >= 0.29 : portsweep (6/2) [4/2]
+service = hostnames
+|   diff_srv_rate < 0.41 : neptune (253/0) [134/3]
+|   diff_srv_rate >= 0.41 : portsweep (4/2) [3/1]
+service = iso_tsap
+|   count < 2.5 : portsweep (6/0) [4/2]
+|   count >= 2.5 : neptune (382/0) [192/3]
+service = nnsp
+|   dst_host_diff_srv_rate < 0.57 : neptune (352/0) [183/0]
+|   dst_host_diff_srv_rate >= 0.57 : portsweep (4/1) [4/1]
+service = csnet_ns
+|   dst_host_diff_srv_rate < 0.26 : neptune (304/0) [151/1]
+|   dst_host_diff_srv_rate >= 0.26 : portsweep (7/2) [2/0]
+service = vmnet
+|   dst_host_diff_srv_rate < 0.31 : neptune (332/0) [200/0]
+|   dst_host_diff_srv_rate >= 0.31 : portsweep (5/1) [5/2]
+service = kshell : neptune (162/2) [95/1]
+service = sunrpc
+|   flag = REJ : mscan (76/0) [33/0]
+|   flag = SF : satan (1/0) [1/0]
+|   flag = RSTO : neptune (54/1) [23/1]
+|   flag = S0 : neptune (168/0) [88/0]
+|   flag = S3 : neptune (0/0) [0/0]
+|   flag = RSTR : portsweep (3/0) [1/0]
+|   flag = S1 : neptune (0/0) [0/0]
+|   flag = S2 : neptune (0/0) [0/0]
+|   flag = OTH : portsweep (1/0) [0/0]
+|   flag = RSTOS0 : neptune (0/0) [0/0]
+|   flag = SH : nmap (1/0) [0/0]
+service = efs : neptune (266/1) [148/0]
+service = klogin
+|   dst_host_diff_srv_rate < 0.38 : neptune (227/0) [133/0]
+|   dst_host_diff_srv_rate >= 0.38 : portsweep (5/1) [3/2]
+service = ldap
+|   flag = REJ : neptune (47/0) [29/2]
+|   flag = SF : neptune (0/0) [0/0]
+|   flag = RSTO : neptune (0/0) [0/0]
+|   flag = S0 : neptune (179/0) [84/0]
+|   flag = S3 : neptune (0/0) [0/0]
+|   flag = RSTR : portsweep (1/0) [2/0]
+|   flag = S1 : neptune (0/0) [0/0]
+|   flag = S2 : neptune (0/0) [0/0]
+|   flag = OTH : neptune (0/0) [0/0]
+|   flag = RSTOS0 : neptune (0/0) [0/0]
+|   flag = SH : nmap (1/0) [0/0]
+service = pop_2
+|   flag = REJ : neptune (18/1) [7/1]
+|   flag = SF : satan (1/0) [0/0]
+|   flag = RSTO : neptune (0/0) [0/0]
+|   flag = S0 : neptune (30/0) [13/0]
+|   flag = S3 : neptune (0/0) [0/0]
+|   flag = RSTR : portsweep (3/0) [1/0]
+|   flag = S1 : neptune (0/0) [0/0]
+|   flag = S2 : neptune (0/0) [0/0]
+|   flag = OTH : neptune (0/0) [0/0]
+|   flag = RSTOS0 : neptune (0/0) [0/0]
+|   flag = SH : neptune (0/0) [0/0]
+service = netstat
+|   dst_host_same_src_port_rate < 0.01 : neptune (208/2) [97/0]
+|   dst_host_same_src_port_rate >= 0.01 : portsweep (12/2) [3/0]
+service = daytime
+|   flag = REJ : portsweep (3/2) [1/0]
+|   flag = SF : neptune (0/0) [0/0]
+|   flag = RSTO : neptune (55/0) [26/1]
+|   flag = S0 : neptune (234/0) [117/0]
+|   flag = S3 : neptune (0/0) [0/0]
+|   flag = RSTR : portsweep (6/0) [3/1]
+|   flag = S1 : neptune (0/0) [0/0]
+|   flag = S2 : neptune (0/0) [0/0]
+|   flag = OTH : neptune (0/0) [0/0]
+|   flag = RSTOS0 : portsweep (2/0) [0/0]
+|   flag = SH : nmap (1/0) [0/0]
+service = exec
+|   dst_host_diff_srv_rate < 0.42 : neptune (263/0) [127/1]
+|   dst_host_diff_srv_rate >= 0.42 : portsweep (5/2) [2/1]
+service = discard
+|   flag = REJ : portsweep (1/1) [1/0]
+|   flag = SF : neptune (0/0) [0/0]
+|   flag = RSTO : neptune (77/1) [35/0]
+|   flag = S0 : neptune (223/0) [108/0]
+|   flag = S3 : neptune (0/0) [0/0]
+|   flag = RSTR : portsweep (2/0) [2/0]
+|   flag = S1 : neptune (0/0) [0/0]
+|   flag = S2 : neptune (0/0) [0/0]
+|   flag = OTH : neptune (0/0) [0/0]
+|   flag = RSTOS0 : portsweep (1/0) [0/0]
+|   flag = SH : neptune (0/0) [0/0]
+service = netbios_dgm
+|   dst_host_diff_srv_rate < 0.29 : neptune (223/0) [117/0]
+|   dst_host_diff_srv_rate >= 0.29 : portsweep (7/1) [4/1]
+service = systat
+|   dst_host_same_src_port_rate < 0.03 : neptune (287/2) [122/1]
+|   dst_host_same_src_port_rate >= 0.03 : portsweep (7/0) [7/1]
+service = name
+|   dst_host_diff_srv_rate < 0.11 : neptune (252/0) [117/0]
+|   dst_host_diff_srv_rate >= 0.11 : portsweep (14/7) [5/1]
+service = ctf
+|   dst_host_diff_srv_rate < 0.25
+|   |   diff_srv_rate < 0.28 : neptune (301/0) [142/0]
+|   |   diff_srv_rate >= 0.28 : portsweep (2/1) [1/0]
+|   dst_host_diff_srv_rate >= 0.25
+|   |   dst_host_same_src_port_rate < 0.33 : ipsweep (4/1) [3/1]
+|   |   dst_host_same_src_port_rate >= 0.33 : portsweep (8/1) [0/0]
+service = rje
+|   dst_host_diff_srv_rate < 0.2 : neptune (44/0) [23/2]
+|   dst_host_diff_srv_rate >= 0.2
+|   |   dst_host_same_src_port_rate < 0.23 : ipsweep (4/1) [1/0]
+|   |   dst_host_same_src_port_rate >= 0.23 : portsweep (6/0) [1/0]
+service = netbios_ns
+|   dst_host_diff_srv_rate < 0.29 : neptune (191/0) [112/0]
+|   dst_host_diff_srv_rate >= 0.29 : portsweep (5/1) [5/1]
+service = courier
+|   dst_host_diff_srv_rate < 0.39 : neptune (407/0) [208/0]
+|   dst_host_diff_srv_rate >= 0.39
+|   |   flag = REJ : portsweep (2/1) [1/0]
+|   |   flag = SF : portsweep (0/0) [0/0]
+|   |   flag = RSTO : portsweep (0/0) [0/0]
+|   |   flag = S0 : portsweep (0/0) [0/0]
+|   |   flag = S3 : portsweep (0/0) [0/0]
+|   |   flag = RSTR : portsweep (0/0) [2/0]
+|   |   flag = S1 : portsweep (0/0) [0/0]
+|   |   flag = S2 : portsweep (0/0) [0/0]
+|   |   flag = OTH : portsweep (0/0) [0/0]
+|   |   flag = RSTOS0 : portsweep (0/0) [0/0]
+|   |   flag = SH : nmap (2/0) [0/0]
+service = echo
+|   dst_host_same_src_port_rate < 0.01 : neptune (244/1) [115/0]
+|   dst_host_same_src_port_rate >= 0.01 : portsweep (6/2) [8/1]
+service = gopher
+|   dst_host_diff_srv_rate < 0.1 : neptune (285/2) [126/0]
+|   dst_host_diff_srv_rate >= 0.1
+|   |   flag = REJ : satan (6/3) [1/0]
+|   |   flag = SF : ipsweep (7/2) [2/0]
+|   |   flag = RSTO : portsweep (2/1) [1/0]
+|   |   flag = S0 : portsweep (2/0) [0/0]
+|   |   flag = S3 : portsweep (0/0) [0/0]
+|   |   flag = RSTR : portsweep (6/0) [0/0]
+|   |   flag = S1 : portsweep (0/0) [0/0]
+|   |   flag = S2 : portsweep (0/0) [0/0]
+|   |   flag = OTH : portsweep (0/0) [0/0]
+|   |   flag = RSTOS0 : portsweep (1/0) [0/0]
+|   |   flag = SH : nmap (1/0) [0/0]
+service = netbios_ssn
+|   dst_host_diff_srv_rate < 0.29 : neptune (205/0) [91/0]
+|   dst_host_diff_srv_rate >= 0.29 : portsweep (5/1) [3/1]
+service = printer
+|   flag = REJ : neptune (0/0) [0/0]
+|   flag = SF : satan (1/0) [1/0]
+|   flag = RSTO : neptune (9/0) [5/1]
+|   flag = S0 : neptune (28/0) [16/0]
+|   flag = S3 : neptune (0/0) [0/0]
+|   flag = RSTR : portsweep (3/0) [0/0]
+|   flag = S1 : satan (1/0) [0/0]
+|   flag = S2 : neptune (0/0) [0/0]
+|   flag = OTH : neptune (0/0) [0/0]
+|   flag = RSTOS0 : neptune (0/0) [0/0]
+|   flag = SH : neptune (0/0) [0/0]
+service = nntp
+|   flag = REJ : portsweep (3/1) [1/1]
+|   flag = SF : satan (4/0) [1/0]
+|   flag = RSTO : neptune (25/1) [10/0]
+|   flag = S0 : neptune (144/0) [64/0]
+|   flag = S3 : neptune (0/0) [0/0]
+|   flag = RSTR : portsweep (4/0) [0/0]
+|   flag = S1 : neptune (0/0) [0/0]
+|   flag = S2 : neptune (0/0) [0/0]
+|   flag = OTH : portsweep (0/0) [1/0]
+|   flag = RSTOS0 : neptune (0/0) [0/0]
+|   flag = SH : neptune (0/0) [0/0]
+service = http_2784 : satan (1/0) [0/0]
+service = aol : satan (0/0) [2/0]
+service = pm_dump : mscan (8/1) [9/3]
+service = http_8001 : satan (1/0) [1/0]
+service = harvest : satan (0/0) [1/0]
+
+Size of the tree : 819
+
+Time taken to build model: 1.55 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0.2 seconds
+
+=== Summary ===
+
+Correctly Classified Instances       29454               99.1083 %
+Incorrectly Classified Instances       265                0.8917 %
+Kappa statistic                          0.9859
+Mean absolute error                      0.0007
+Root mean squared error                  0.0198
+Relative absolute error                  2.1437 %
+Root relative squared error             15.7154 %
+Total Number of Instances            29719     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.997    0.007    0.994      0.997    0.995      0.991    0.999     0.999     normal
+                 1.000    0.003    0.994      1.000    0.997      0.996    0.999     0.998     neptune
+                 0.949    0.000    0.966      0.949    0.958      0.957    1.000     0.959     warezclient
+                 0.987    0.000    0.989      0.987    0.988      0.988    0.999     0.992     ipsweep
+                 0.948    0.001    0.962      0.948    0.955      0.954    0.985     0.958     portsweep
+                 1.000    0.000    0.978      1.000    0.989      0.989    1.000     0.983     teardrop
+                 0.949    0.000    1.000      0.949    0.974      0.974    0.979     0.958     nmap
+                 0.942    0.001    0.977      0.942    0.959      0.958    0.991     0.970     satan
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     smurf
+                 1.000    0.000    0.907      1.000    0.951      0.952    1.000     0.961     pod
+                 1.000    0.000    0.996      1.000    0.998      0.998    1.000     0.996     back
+                 0.988    0.000    0.992      0.988    0.990      0.990    1.000     0.994     guess_passwd
+                 0.000    0.000    ?          0.000    ?          ?        0.831     0.337     ftp_write
+                 0.000    0.000    0.000      0.000    0.000      -0.000   0.677     0.001     multihop
+                 0.000    0.000    ?          0.000    ?          ?        0.680     0.023     rootkit
+                 0.500    0.000    0.714      0.500    0.588      0.598    0.947     0.398     buffer_overflow
+                 0.000    0.000    ?          0.000    ?          ?        1.000     0.429     imap
+                 0.969    0.000    0.974      0.969    0.971      0.971    1.000     0.994     warezmaster
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     phf
+                 1.000    0.000    0.833      1.000    0.909      0.913    1.000     0.833     land
+                 0.000    0.000    ?          0.000    ?          ?        0.831     0.044     loadmodule
+                 0.000    0.000    ?          0.000    ?          ?        0.997     0.006     spy
+                 0.000    0.000    ?          0.000    ?          ?        0.997     0.006     perl
+                 0.813    0.000    0.813      0.813    0.813      0.812    0.984     0.770     saint
+                 0.985    0.001    0.929      0.985    0.956      0.956    1.000     0.985     mscan
+                 0.993    0.000    1.000      0.993    0.997      0.997    1.000     1.000     apache2
+                 0.111    0.000    0.444      0.111    0.178      0.222    0.998     0.348     snmpgetattack
+                 0.993    0.000    1.000      0.993    0.996      0.996    1.000     1.000     processtable
+                 0.963    0.000    1.000      0.963    0.981      0.981    1.000     0.970     httptunnel
+                 0.000    0.000    ?          0.000    ?          ?        1.000     0.211     ps
+                 0.985    0.000    1.000      0.985    0.992      0.992    0.993     0.985     snmpguess
+                 1.000    0.000    0.983      1.000    0.992      0.992    1.000     0.983     mailbomb
+                 0.000    0.000    0.000      0.000    0.000      -0.000   0.993     0.034     named
+                 0.000    0.000    ?          0.000    ?          ?        0.971     0.002     sendmail
+                 0.333    0.000    0.500      0.333    0.400      0.408    0.996     0.205     xterm
+                 0.000    0.000    ?          0.000    ?          ?        0.997     0.006     worm
+                 0.000    0.000    ?          0.000    ?          ?        1.000     0.105     xlock
+                 0.000    0.000    ?          0.000    ?          ?        1.000     0.111     xsnoop
+                 0.000    0.000    ?          0.000    ?          ?        1.000     0.111     sqlattack
+                 0.000    0.000    ?          0.000    ?          ?        0.998     0.007     udpstorm
+Weighted Avg.    0.991    0.004    ?          0.991    ?          ?        0.998     0.993     
+
+=== Confusion Matrix ===
+
+     a     b     c     d     e     f     g     h     i     j     k     l     m     n     o     p     q     r     s     t     u     v     w     x     y     z    aa    ab    ac    ad    ae    af    ag    ah    ai    aj    ak    al    am    an   <-- classified as
+ 15369     3     3     4     0     4     0     5     0     5     1     2     0     0     0     0     0     3     0     1     0     0     0     0     5     0     5     0     0     0     0     1     0     0     0     0     0     0     0     0 |     a = normal
+     0  9174     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     b = neptune
+     7     0   169     0     0     0     0     0     0     0     0     0     0     0     0     0     0     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     c = warezclient
+     1     2     0   738     6     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     d = ipsweep
+     5    20     1     1   586     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     2     0     0     0     0     0     0     0     2     0     0     0     0     0     0     0 |     e = portsweep
+     0     0     0     0     0   181     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     f = teardrop
+     1     6     0     1     8     0   298     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     g = nmap
+     6    19     0     2     7     0     0   823     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0    12     4     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0 |     h = satan
+     0     0     0     0     0     0     0     0   663     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     i = smurf
+     0     0     0     0     0     0     0     0     0    49     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     j = pod
+     0     0     0     0     0     0     0     0     0     0   263     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     k = back
+     2     0     0     0     1     0     0     0     0     0     0   254     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     l = guess_passwd
+     1     1     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     m = ftp_write
+     4     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     n = multihop
+     2     0     1     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0 |     o = rootkit
+     5     0     0     0     0     0     0     0     0     0     0     0     0     0     0     5     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     p = buffer_overflow
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     3     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     q = imap
+     6     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0   187     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     r = warezmaster
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     s = phf
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     5     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     t = land
+     2     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     u = loadmodule
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     v = spy
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     w = perl
+     2     0     0     0     0     0     0    10     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0    52     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     x = saint
+     3     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0   197     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     y = mscan
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0   147     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |     z = apache2
+    32     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     4     0     0     0     0     0     0     0     0     0     0     0     0     0 |    aa = snmpgetattack
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0   136     0     0     0     0     0     0     0     0     0     0     0     0 |    ab = processtable
+     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0    26     0     0     0     0     0     0     0     0     0     0     0 |    ac = httptunnel
+     3     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    ad = ps
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0    66     0     0     0     0     0     0     0     0     0 |    ae = snmpguess
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0    59     0     0     0     0     0     0     0     0 |    af = mailbomb
+     3     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    ag = named
+     3     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    ah = sendmail
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     1     0     0     0     0     0 |    ai = xterm
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    aj = worm
+     2     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    ak = xlock
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    al = xsnoop
+     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    am = sqlattack
+     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0 |    an = udpstorm
+

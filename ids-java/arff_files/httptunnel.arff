@@ -1,0 +1,74 @@
+@relation test-20
+
+@attribute duration numeric
+@attribute protocol_type {tcp,udp,icmp}
+@attribute service {http,domain_u,ftp_data,private,other,smtp,telnet,eco_i,X11,ntp_u,ftp,IRC,time,finger,urp_i,auth,ecr_i,domain,pop_3,urh_i,red_i,remote_job,tftp_u,ssh,shell,imap4,tim_i,link,uucp,whois,mtp,Z39_50,supdup,login,http_443,bgp,uucp_path,sql_net,hostnames,iso_tsap,nnsp,csnet_ns,vmnet,kshell,sunrpc,efs,klogin,ldap,pop_2,netstat,daytime,exec,discard,netbios_dgm,systat,name,ctf,rje,netbios_ns,courier,echo,gopher,netbios_ssn,printer,nntp,http_2784,aol,pm_dump,http_8001,harvest}
+@attribute flag {REJ,SF,RSTO,S0,S3,RSTR,S1,S2,OTH,RSTOS0,SH}
+@attribute src_bytes numeric
+@attribute dst_bytes numeric
+@attribute land numeric
+@attribute wrong_fragment numeric
+@attribute urgent numeric
+@attribute hot numeric
+@attribute num_failed_logins numeric
+@attribute logged_in numeric
+@attribute num_compromised numeric
+@attribute root_shell numeric
+@attribute su_attempted numeric
+@attribute num_root numeric
+@attribute num_file_creations numeric
+@attribute num_shells numeric
+@attribute num_access_files numeric
+@attribute num_outbound_cmds numeric
+@attribute is_host_login numeric
+@attribute is_guest_login numeric
+@attribute count numeric
+@attribute srv_count numeric
+@attribute serror_rate numeric
+@attribute srv_serror_rate numeric
+@attribute rerror_rate numeric
+@attribute srv_rerror_rate numeric
+@attribute same_srv_rate numeric
+@attribute diff_srv_rate numeric
+@attribute srv_diff_host_rate numeric
+@attribute dst_host_count numeric
+@attribute dst_host_srv_count numeric
+@attribute dst_host_same_srv_rate numeric
+@attribute dst_host_diff_srv_rate numeric
+@attribute dst_host_same_src_port_rate numeric
+@attribute dst_host_srv_diff_host_rate numeric
+@attribute dst_host_serror_rate numeric
+@attribute dst_host_srv_serror_rate numeric
+@attribute dst_host_rerror_rate numeric
+@attribute dst_host_srv_rerror_rate numeric
+@attribute outcome {normal,neptune,warezclient,ipsweep,portsweep,teardrop,nmap,satan,smurf,pod,back,guess_passwd,ftp_write,multihop,rootkit,buffer_overflow,imap,warezmaster,phf,land,loadmodule,spy,perl,saint,mscan,apache2,snmpgetattack,processtable,httptunnel,ps,snmpguess,mailbomb,named,sendmail,xterm,worm,xlock,xsnoop,sqlattack,udpstorm}
+@attribute difficulty_level numeric
+
+@data
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,0,0,84,7,0.08,0.04,0.01,0,0,0,0.08,1,httptunnel,12
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,0,0,255,5,0.02,0.01,0,0,0,0,0.02,1,httptunnel,18
+0,tcp,other,SF,249,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0.5,0.5,1,0,0,255,17,0.07,0.02,0,0,0,0,0.07,0.94,httptunnel,6
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,0,0,255,3,0.01,0.02,0,0,0,0,0.01,1,httptunnel,18
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,0,0,255,9,0.04,0.02,0,0,0,0,0.05,1,httptunnel,18
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,0,0,255,30,0.12,0.02,0,0,0,0,0.1,0.73,httptunnel,16
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,0,0,255,46,0.18,0.02,0,0,0,0,0.16,0.83,httptunnel,15
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,0,0,120,18,0.15,0.06,0.01,0,0,0,0.1,0.67,httptunnel,11
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,0,0,255,6,0.02,0.01,0,0,0,0,0.02,1,httptunnel,18
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,0,0,255,51,0.2,0.02,0,0,0,0,0.18,0.84,httptunnel,15
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,0,0,123,21,0.17,0.06,0.01,0,0,0,0.12,0.71,httptunnel,11
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,0,0,255,47,0.18,0.02,0,0,0,0,0.16,0.83,httptunnel,15
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,0,0,83,6,0.07,0.04,0.01,0,0,0,0.07,1,httptunnel,12
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,0,0,44,3,0.07,0.11,0.02,0,0,0,0.02,0.33,httptunnel,12
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,0,0,116,15,0.13,0.06,0.01,0,0,0,0.08,0.6,httptunnel,11
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,0,0,87,9,0.1,0.03,0.01,0,0,0,0.1,1,httptunnel,12
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,0,0,255,18,0.07,0.02,0,0,0,0,0.08,0.94,httptunnel,16
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,1,0,0,0.5,1,0.5,1,0,255,9,0.04,0.02,0,0,0,0,0.04,1,httptunnel,20
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,0,0,255,19,0.07,0.01,0,0,0,0,0.07,0.89,httptunnel,15
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,0,0,255,7,0.03,0.02,0,0,0,0,0.03,1,httptunnel,18
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,0,0,80,4,0.05,0.04,0.01,0,0,0,0.05,1,httptunnel,12
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,0,0,255,12,0.05,0.02,0,0,0,0,0.05,1,httptunnel,17
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,0,0,126,23,0.18,0.06,0.01,0,0,0,0.13,0.74,httptunnel,10
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,1,0,0,0.33,1,0.33,0.67,0,255,22,0.09,0.01,0,0,0,0,0.06,0.73,httptunnel,16
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,0,0,255,28,0.11,0.02,0,0,0,0,0.09,0.75,httptunnel,16
+0,tcp,other,SF,263,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,115,14,0.12,0.06,0.01,0,0,0,0.07,0.57,httptunnel,8
+0,tcp,other,REJ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,1,0,0,0.5,1,0.5,1,0,255,4,0.02,0.02,0,0,0,0,0.02,1,httptunnel,20
